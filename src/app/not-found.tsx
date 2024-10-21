@@ -2,10 +2,8 @@ import Image from "next/image";
 import { Fragment } from "react";
 // GLOBAL CUSTOM COMPONENTS
 import { Footer8 } from "components/blocks/footer";
-import Navbar from "components/blocks/navbar/navbar-1";
 import NextLink from "components/reuseable/links/NextLink";
 // IMAGES
-import notFoundImage from "../../public/img/illustrations/404.png";
 
 export default function NotFound() {
   return (
@@ -19,7 +17,7 @@ export default function NotFound() {
             <div className="row">
               <div className="col-lg-9 col-xl-8 mx-auto">
                 <figure className="mb-10">
-                  <Image src={notFoundImage} alt="not found" />
+                {/*   <Image src={notFoundImage} alt="not found" /> */}
                 </figure>
               </div>
 
