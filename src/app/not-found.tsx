@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Fragment } from "react";
 // GLOBAL CUSTOM COMPONENTS
-import { Footer8 } from "components/blocks/footer";
 import NextLink from "components/reuseable/links/NextLink";
+import Footer from "components/blocks/footer/FooterMn";
 // IMAGES
 
 export default function NotFound() {
@@ -33,10 +33,11 @@ export default function NotFound() {
             </div>
           </div>
         </section>
+        <Footer />
       </main>
 
       {/* ========== footer section ========== */}
-      <Footer8 />
+      
     </Fragment>
   );
 }

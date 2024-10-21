@@ -223,9 +223,13 @@ const ourSectors = [
   thum: "/img/icons/menu/marine.svg",
   title: "Marine, Energy & Crewing"},
   {id: 2,
-  url: "/marine-energy",
-  thum: "/img/icons/menu/marine.svg",
-  title: "Marine, Energy & Crewing"}
+  url: "/ports-and-terminals",
+  thum: "/img/icons/menu/ports.svg",
+  title: "Ports & Terminals"},
+  {id: 2,
+  url: "/personal-lines",
+  thum: "/img/icons/menu/personal.svg",
+  title: "Personal Lines"}
 ]; // documentation pages links
 
 

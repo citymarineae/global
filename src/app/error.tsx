@@ -2,10 +2,10 @@
 
 import { Fragment } from "react";
 // -------- CUSTOM COMPONENTS -------- //
-import { Footer8 } from "components/blocks/footer";
 import Navbar from "components/blocks/navbar/navbar-1";
 import FigureImage from "components/reuseable/FigureImage";
 import NextLink from "components/reuseable/links/NextLink";
+import Footer from "components/blocks/footer/FooterMn";
 
 // ==============================================================
 interface Props {
@@ -56,10 +56,11 @@ export default function NotFound({ error, reset }: Props) {
             </div>
           </div>
         </section>
+        <Footer />
       </main>
 
       {/* ========== footer section ========== */}
-      <Footer8 />
+  
     </Fragment>
   );
 }
