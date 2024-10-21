@@ -1,16 +1,18 @@
 "use client";
 // components/ContactForm.tsx
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    message: '',
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -30,11 +32,102 @@ const ContactForm: React.FC = () => {
         <div className="row justify-content-between gx-lg-5 contact-main__div">
           <div className="col-lg-6 contact-main__left py-10 py-lg-14">
             <div className="contact-main__head">
-              <h2 className="sbttl">Want to know more about City Marine Insurance Brokers L.L.C?</h2>
+              <h2 className="sbttl">
+                Want to know more about City Marine Insurance Brokers L.L.C?
+              </h2>
               <p>Feel free to contact us, we’re happy to help you</p>
             </div>
             <div className="contact-main__form">
-              <form onSubmit={handleSubmit}>
+              <form className="contact-form needs-validation" method="post">
+                <div className="messages"></div>
+                <div className="row gx-4">
+                  <div className="col-12">
+                    <div className="form-floating mb-4">
+                      <input
+                        required
+                        type="text"
+                        name="name"
+                        id="form_name"
+                        placeholder="Jane"
+                        className="form-control"
+                      />
+                      <label htmlFor="form_name">Name *</label>
+                      <div className="valid-feedback"> Looks good! </div>
+                      <div className="invalid-feedback">
+                        {" "}
+                        Please enter your first name.{" "}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="col-12">
+                    <div className="form-floating mb-4">
+                      <input
+                        required
+                        type="text"
+                        name="surname"
+                        placeholder="Doe"
+                        id="form_lastname"
+                        className="form-control"
+                      />
+                      <label htmlFor="form_lastname">Phone Number (optional)</label>
+                      <div className="valid-feedback"> Looks good! </div>
+                      <div className="invalid-feedback">
+                        {" "}
+                        Please enter your last name.{" "}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="col-12">
+                    <div className="form-floating mb-4">
+                      <input
+                        required
+                        type="email"
+                        name="email"
+                        id="form_email"
+                        className="form-control"
+                        placeholder="jane.doe@example.com"
+                      />
+                      <label htmlFor="form_email">Email Address *</label>
+                      <div className="valid-feedback"> Looks good! </div>
+                      <div className="invalid-feedback">
+                        {" "}
+                        Please provide a valid email address.{" "}
+                      </div>
+                    </div>
+                  </div>
+
+                 
+
+                  <div className="col-12">
+                    <div className="form-floating mb-4">
+                      <textarea
+                        required
+                        name="message"
+                        id="form_message"
+                        className="form-control"
+                        placeholder="Your message"
+                        style={{ height: 150 }}
+                      />
+
+                      <label htmlFor="form_message">Message *</label>
+                      <div className="valid-feedback"> Looks good! </div>
+                      <div className="invalid-feedback">
+                        {" "}
+                        Please enter your messsage.{" "}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="col">
+                  <button type="submit" className="btn rounded-pill btnCty d-flex ms-lg-auto">Send Message<i
+                                        className="icbc"></i></button>
+                  </div>
+                </div>
+              </form>
+
+              {/*    <form onSubmit={handleSubmit}>
                 <div className="mb-3 mb-lg-10">
                   <input
                     type="text"
@@ -83,7 +176,7 @@ const ContactForm: React.FC = () => {
                   Send Message
                   <i className="icbc"></i>
                 </button>
-              </form>
+              </form> */}
               <div className="contact-main__shape d-none d-lg-block">
                 <div className="img-box">
                   <img src="/img/icons/shape-down.svg" alt="shape" />
@@ -94,25 +187,45 @@ const ContactForm: React.FC = () => {
           <div className="col-lg-5 contact-main__right p-md-0 mb-10 mb-md-0">
             <div className="contact-main__info px-0 pt-8 pb-6 p-lg-10 p-xl-12 ps-xl-14">
               <div className="contact-main__info-shape d-none d-lg-block">
-                <img src="/img/icons/shape-up.svg" width="100" height="100" alt="Shape" />
+                <img
+                  src="/img/icons/shape-up.svg"
+                  width="100"
+                  height="100"
+                  alt="Shape"
+                />
               </div>
               <ul className="list-unstyled">
                 <li>
-                  <img src="/img/icons/phone.svg" width="16" height="16" alt="Phone Number" />
+                  <img
+                    src="/img/icons/phone.svg"
+                    width="16"
+                    height="16"
+                    alt="Phone Number"
+                  />
                   <article>
                     <span>Phone</span>
                     <a href="tel:+97165758800">+971 6 5758 800</a>
                   </article>
                 </li>
                 <li>
-                  <img src="/img/icons/fax.svg" width="16" height="16" alt="Fax" />
+                  <img
+                    src="/img/icons/fax.svg"
+                    width="16"
+                    height="16"
+                    alt="Fax"
+                  />
                   <article>
                     <span>Fax</span>
                     <a href="tel:+97165758878">+971 6 5758 878</a>
                   </article>
                 </li>
                 <li>
-                  <img src="/img/icons/map-icon.svg" width="16" height="16" alt="Location" />
+                  <img
+                    src="/img/icons/map-icon.svg"
+                    width="16"
+                    height="16"
+                    alt="Location"
+                  />
                   <article>
                     <span>Address</span>
                     <address>
