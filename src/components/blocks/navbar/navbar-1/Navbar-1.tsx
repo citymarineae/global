@@ -103,7 +103,7 @@ export default function NavbarOne({
             <li className="nav-item">
               <NextLink
                 className="nav-link"
-                href="our-team"
+                href="/our-team"
                 title="Our Team"
               ></NextLink>
             </li>
@@ -114,9 +114,9 @@ export default function NavbarOne({
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="news">
-                News
-              </a>
+              <NextLink className="nav-link" href="/news" title="News">
+                
+              </NextLink>
             </li>
             <li className="nav-item d-lg-none">
               <a className="nav-link" href="contact-us">

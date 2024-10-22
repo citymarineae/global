@@ -2,12 +2,13 @@
 
 import React from 'react';
 import newsData, { NewsItem } from 'data/contents/newsContent';
+import Link from 'next/link';
 
 const NewsSection: React.FC = () => {
     return (
         <section className="topnews py-10 py-lg-14 position-relative">
             <div className="shape position-absolute top-5 end-min-2 d-none d-md-block z-index-min-1">
-                <img src="./assets/img/icons/shape-down.svg" width="200" height="200" style={{ transform: 'rotate(177deg)' }} alt="" />
+                <img src="/img/icons/shape-down.svg" width="200" height="200" style={{ transform: 'rotate(177deg)' }} alt="" />
             </div>
             <div className="container">
                 <div className="row d-flex align-items-stretch gy-lg-12 gy-8">
@@ -22,10 +23,10 @@ const NewsSection: React.FC = () => {
                                 </div>
                                 <h3 className="news-title">{newsData[0].title}</h3>
                                 <p className="news-short-desc">{newsData[0].description}</p>
-                                <a href={newsData[0].link} className="news-link text-primary">
+                                <Link href={`/news/${newsData[0].id}`} className="news-link text-primary">
                                     <span>Read More</span>
                                     <i className="nws-arrow"></i>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -46,10 +47,10 @@ const NewsSection: React.FC = () => {
                                         <p className="news-short-desc">{item.description}</p>
                                     </div>
                                     <div className="news-card__footer">
-                                        <a href={item.link} className="news-link text-primary">
+                                        <Link href={`/news/${item.id}`} className="news-link text-primary">
                                             <span>Read More</span>
                                             <i className="nws-arrow"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
