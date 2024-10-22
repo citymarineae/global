@@ -69,7 +69,7 @@ const IndiMemeberPage = () => {
                     </div>
                     <div className="col mt-4">
                         <div className="go-back">
-                            <a href="our-team"
+                            <a href="/our-team"
                                 className="text-decoration-none text-primary d-flex align-items-center gap-2 fw-500">
                                 <img src="/img/icons/arrow-left.svg" width="50" height="100" className="" alt=""/>
                                 <span>Back</span></a>
