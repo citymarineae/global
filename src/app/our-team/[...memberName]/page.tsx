@@ -2,15 +2,16 @@
 import React from 'react'
 import teamMembers from 'data/contents/TeamMember'
 import { useParams } from 'next/navigation'
+import Link from 'next/link'
 
 
 const IndiMemeberPage = () => {
     
     const params = useParams()
-    const {memberId} = params
-    const member = parseInt(memberId[0])
-    const user = teamMembers.find((item)=>item.id==member)
-
+    const {memberName} = params
+    const member = memberName[0].replace(/%20/g, '').replace(/%2C/g, '');
+    const user = teamMembers.find((item)=>item.name.replace(/ /g, '').replace(/,/g, '')==member)
+    
   return (
     <main className="content-wrapper">
     <section className="pg-bnr" style={{backgroundImage: 'url(/img/team-bnr.webp)'}}>
@@ -28,7 +29,7 @@ const IndiMemeberPage = () => {
                     </div>
                     <div className="col d-flex flex-column justify-content-between">
                         <article className="member-details">
-                            <h2 className="sbttl text-primary">{user?.name}</h2>
+                            <h2 className="sbttl text-primary">{"userName"}</h2>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, perferendis?
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, perferendis?
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, perferendis?
@@ -69,10 +70,10 @@ const IndiMemeberPage = () => {
                     </div>
                     <div className="col mt-4">
                         <div className="go-back">
-                            <a href="/our-team"
+                            <Link href="/our-team"
                                 className="text-decoration-none text-primary d-flex align-items-center gap-2 fw-500">
                                 <img src="/img/icons/arrow-left.svg" width="50" height="100" className="" alt=""/>
-                                <span>Back</span></a>
+                                <span>Back</span></Link>
                         </div>
                     </div>
                 </div>
