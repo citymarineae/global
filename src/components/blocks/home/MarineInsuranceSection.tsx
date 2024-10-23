@@ -17,7 +17,7 @@ const MarineInsuranceSection = () => {
 
       <div className="container py-lg-14 py-10">
         <div className="row gy-5">
-          <div className="col-lg-6" data-cues="fadeIn">
+          <div className="col-lg-6">
             <div className="pe-lg-13 text-lg-start">
               <h2 className="sbttl text-primary mb-xl-6">{marineInsuranceContent.title}</h2>
               
