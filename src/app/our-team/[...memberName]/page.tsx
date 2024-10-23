@@ -6,12 +6,11 @@ import Link from 'next/link'
 
 
 const IndiMemeberPage = () => {
-    
     const params = useParams()
     const {memberName} = params
-    const member = memberName[0].replace(/%20/g, '').replace(/%2C/g, '');
-    const user = teamMembers.find((item)=>item.name.replace(/ /g, '').replace(/,/g, '')==member)
-    
+    const member = memberName[0].replace(/-/g, '')
+    const user = teamMembers.find((item)=>item.name.replace(/ /g, '').replace(/,/g, '').replace(/\./g, '').toLowerCase()==member)
+
   return (
     <main className="content-wrapper">
     <section className="pg-bnr" style={{backgroundImage: 'url(/img/team-bnr.webp)'}}>
@@ -29,7 +28,7 @@ const IndiMemeberPage = () => {
                     </div>
                     <div className="col d-flex flex-column justify-content-between">
                         <article className="member-details">
-                            <h2 className="sbttl text-primary">{"userName"}</h2>
+                            <h2 className="sbttl text-primary">{user?.name}</h2>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, perferendis?
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, perferendis?
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, perferendis?

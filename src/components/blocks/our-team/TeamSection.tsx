@@ -1,6 +1,7 @@
 import React from 'react';
 import teamMembers from 'data/contents/TeamMember';
 import Link from 'next/link';
+import { formatNameForURL } from 'app/helpers/formatLink';
 
 // Define the structure of a team member
 interface TeamMember {
@@ -18,7 +19,7 @@ const TeamSection: React.FC = () => {
       <div className="container">
         <div className="row row-cols-2 row-cols-md-3 row-cols-xxl-4 gy-4 gx-xl-10 team-wrapper__div">
           {teamMembers.map((member: TeamMember, index: number) => (
-            <Link href={`/our-team/${member.name}`} key={index}><div className="col">
+            <Link href={`/our-team/${formatNameForURL(member.name)}`} key={index}><div className="col">
               <div className="team-card">
                 <a href={member.detailsLink} className="team-card__link"></a>
                 <div className="team-card__head">

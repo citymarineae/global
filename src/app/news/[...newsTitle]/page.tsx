@@ -5,10 +5,12 @@ import newsData from 'data/contents/newsContent';
 import Link from 'next/link';
 
 const NewsPage: React.FC = () => {
-    const params = useParams()
-    const {newsId} = params
-    const news = newsId[0]
-    const foundNews = newsData.find((item)=>item.id.toString()==news)
+    const {newsTitle} = useParams()
+    const news = newsTitle[0].replace(/-/g, '').replace(/%E2%80%99/g,'')
+    console.log(news)
+    const newsItem = newsData.find((item)=>{
+        return item.title.replace(/ /g, '').replace(/,/g, '').replace(/\./g, '').replace(/’/g, '').replace(/-/g, '').toLowerCase()==news
+    })
 
     const recentNews = newsData.slice(newsData.length-3)
     
@@ -44,12 +46,12 @@ const NewsPage: React.FC = () => {
                         <div className="col-lg-8">
                             <div className="news-dtbox">
                                 <div className="date-tag rounded-pill mb-6">
-                                    <p>{foundNews?.date}</p>
+                                    <p>{newsItem?.date}</p>
                                 </div>
-                                <h2 className="sbttl text-primary">{foundNews?.title}</h2>
+                                <h2 className="sbttl text-primary">{newsItem?.title}</h2>
                                 <div className="news-dtbox__img py-6">
                                     <img 
-                                        src={foundNews?.imgSrc}
+                                        src={newsItem?.imgSrc}
                                         width="200" 
                                         height="200" 
                                         className="w-100 h-auto" 
@@ -57,13 +59,13 @@ const NewsPage: React.FC = () => {
                                     />
                                 </div>
                                 <p>
-                                    {foundNews?.description}
+                                    {newsItem?.description}
                                 </p>
                                 <p>
-                                    {foundNews?.description}
+                                    {newsItem?.description}
                                 </p>
                                 <p>
-                                    {foundNews?.description}
+                                    {newsItem?.description}
                                 </p>
                                 
                                 <div className="go-back">

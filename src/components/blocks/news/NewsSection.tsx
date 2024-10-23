@@ -3,6 +3,7 @@
 import React from 'react';
 import newsData, { NewsItem } from 'data/contents/newsContent';
 import Link from 'next/link';
+import { formatNewsForUrl } from 'app/helpers/formatLink';
 
 const NewsSection: React.FC = () => {
     return (
@@ -23,7 +24,7 @@ const NewsSection: React.FC = () => {
                                 </div>
                                 <h3 className="news-title">{newsData[0].title}</h3>
                                 <p className="news-short-desc">{newsData[0].description}</p>
-                                <Link href={`/news/${newsData[0].id}`} className="news-link text-primary">
+                                <Link href={`/news/${formatNewsForUrl(newsData[0].title)}`} className="news-link text-primary">
                                     <span>Read More</span>
                                     <i className="nws-arrow"></i>
                                 </Link>
@@ -47,7 +48,7 @@ const NewsSection: React.FC = () => {
                                         <p className="news-short-desc">{item.description}</p>
                                     </div>
                                     <div className="news-card__footer">
-                                        <Link href={`/news/${item.id}`} className="news-link text-primary">
+                                        <Link href={`/news/${formatNewsForUrl(item.title)}`} className="news-link text-primary">
                                             <span>Read More</span>
                                             <i className="nws-arrow"></i>
                                         </Link>
