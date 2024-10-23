@@ -6,11 +6,10 @@ import Link from 'next/link'
 
 
 const IndiMemeberPage = () => {
-    
     const params = useParams()
     const {memberName} = params
-    const member = memberName[0].replace(/%20/g, '').replace(/%2C/g, '');
-    const user = teamMembers.find((item)=>item.name.replace(/ /g, '').replace(/,/g, '')==member)
+    const member = memberName[0].replace(/-/g, '')
+    const user = teamMembers.find((item)=>item.name.replace(/ /g, '').replace(/,/g, '').replace(/\./g, '').toLowerCase()==member)
 
   return (
     <main className="content-wrapper">
