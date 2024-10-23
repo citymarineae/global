@@ -24,7 +24,7 @@ interface SectorItem {
   
 const SectorItem = () => {
   return (
-    <div className="row gy-5 gy-lg-8" data-cues="fadeIn">
+    <div className="row gy-5 gy-lg-8">
     {marineEnergyItems.map((item, index) => (
         <div className="col-md-6 col-lg-4 col-xxl-3" key={index}>
           <div className="hverbx">
