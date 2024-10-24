@@ -1,6 +1,15 @@
 "use client";
 // components/ContactForm.tsx
 import React, { useState } from "react";
+import { useForm , SubmitHandler  } from "react-hook-form";
+
+type Inputs = {
+  name: string
+  phone?: string
+  email:string
+  message:string
+};
+
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -20,11 +29,42 @@ const ContactForm: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(formData);
-    // You can add form submission logic here
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   console.log(formData);
+  //   // You can add form submission logic here
+  // };
+
+  const { register, handleSubmit, reset, formState: { errors ,isSubmitting} } = useForm<Inputs>();
+
+
+  const onSubmit: SubmitHandler<Inputs> = async(data) => {
+    try {
+      const formData = new FormData()
+      formData.append("name",data.name)
+      formData.append("email",data.email)
+      formData.append("message",data.message)
+      if(data.phone){
+        formData.append("phone",data.phone)
+      }
+
+      const response = await fetch('/api/send-mail',{
+        method:"POST",
+        body:formData
+      })
+
+      if(response.ok){
+        alert("email send successfully")
+        reset()
+      }else{
+        alert('error in sending email')
+      }
+
+    } catch (error) {
+      console.log("Error while trying to send email:",error)
+    }
   };
+
 
   return (
     <section className="contact-main overflow-hidden">
@@ -38,7 +78,7 @@ const ContactForm: React.FC = () => {
               <p>Feel free to contact us, we’re happy to help you</p>
             </div>
             <div className="contact-main__form">
-              <form className="contact-form needs-validation" method="post">
+              <form className="contact-form needs-validation" method="post" onSubmit={handleSubmit(onSubmit)}>
                 <div className="messages"></div>
                 <div className="row gx-4">
                   <div className="col-12">
@@ -46,16 +86,16 @@ const ContactForm: React.FC = () => {
                       <input
                         required
                         type="text"
-                        name="name"
                         id="form_name"
                         placeholder="Jane"
                         className="form-control"
+                        {...register("name",{required:"Name is required"})}
                       />
                       <label htmlFor="form_name">Name *</label>
                       <div className="valid-feedback"> Looks good! </div>
                       <div className="invalid-feedback">
                         {" "}
-                        Please enter your first name.{" "}
+                        {errors.name && <span className="text-danger">{errors.name.message}</span>}
                       </div>
                     </div>
                   </div>
@@ -63,12 +103,11 @@ const ContactForm: React.FC = () => {
                   <div className="col-12">
                     <div className="form-floating mb-4">
                       <input
-                        required
                         type="text"
-                        name="surname"
                         placeholder="Doe"
                         id="form_lastname"
                         className="form-control"
+                        {...register("phone",{required:false})}
                       />
                       <label htmlFor="form_lastname">Phone Number (optional)</label>
                       <div className="valid-feedback"> Looks good! </div>
@@ -84,16 +123,16 @@ const ContactForm: React.FC = () => {
                       <input
                         required
                         type="email"
-                        name="email"
                         id="form_email"
                         className="form-control"
                         placeholder="jane.doe@example.com"
+                        {...register("email",{required:"Email is required"})}
                       />
                       <label htmlFor="form_email">Email Address *</label>
                       <div className="valid-feedback"> Looks good! </div>
                       <div className="invalid-feedback">
                         {" "}
-                        Please provide a valid email address.{" "}
+                        {errors.email && <span className="text-danger">{errors.email.message}</span>}
                       </div>
                     </div>
                   </div>
@@ -104,24 +143,24 @@ const ContactForm: React.FC = () => {
                     <div className="form-floating mb-4">
                       <textarea
                         required
-                        name="message"
                         id="form_message"
                         className="form-control"
                         placeholder="Your message"
                         style={{ height: 150 }}
+                        {...register("message",{required:"Message is required"})}
                       />
 
                       <label htmlFor="form_message">Message *</label>
                       <div className="valid-feedback"> Looks good! </div>
                       <div className="invalid-feedback">
                         {" "}
-                        Please enter your messsage.{" "}
+                        {errors.message && <span className="text-danger">{errors.message.message}</span>}
                       </div>
                     </div>
                   </div>
 
                   <div className="col">
-                  <button type="submit" className="btn rounded-pill btnCty d-flex ms-lg-auto">Send Message<i
+                  <button type="submit" className="btn rounded-pill btnCty d-flex ms-lg-auto">{isSubmitting ? "Sending Mail":"Send Message"}<i
                                         className="icbc"></i></button>
                   </div>
                 </div>
