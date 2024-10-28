@@ -1,13 +1,54 @@
+"use client"
+
 import MarineInsuranceSection from "components/blocks/home/MarineInsuranceSection";
 import { BannerVideo } from "components/blocks/includes/BannerVideo";
 import SectorItem from "components/blocks/includes/SectorItem";
 import Image from "next/image";
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
+import apiService from "services/api";
+import { Claims as claimsType } from "types/Claims";
 export default function Claims() {
+  
+  const [loading,setLoading] = useState(true)
+  const [claimsData,setClaimsData] = useState<{
+    pageHeading: string
+    contentHeading: string
+    content: string
+    image?: string
+  } | null | null>()
+
+  async function fetchClaimsData() {
+    console.log("Called fetch")
+    setLoading(true);
+    try {
+      const data:claimsType = await apiService.get("/claims");
+      // setClaimsData(data);
+      
+      if (data.claims[0]) {
+        const claimsData = data.claims[0]
+        console.log(claimsData)
+        setClaimsData(claimsData);
+      }
+
+      console.log("one news:", data);
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+
+  useEffect(() => {
+    console.log("useeffect")
+    fetchClaimsData();
+  }, []);
+
+
   return (
     <Fragment>
          <main className="content-wrapper">
-        <BannerVideo title="Claims" videoSrc=""  posterSrc="/img/claims-bnr.webp" ></BannerVideo>
+        <BannerVideo title={claimsData?.pageHeading || ""} videoSrc=""  posterSrc="/img/claims-bnr.webp" ></BannerVideo>
         <section className="wrapper py-10 py-lg-14 position-relative overflow-hidden">
       <div className="shape position-absolute top-20 start-min-2 d-none d-md-block opacity-25">
         <img
@@ -23,7 +64,7 @@ export default function Claims() {
           <div className="col d-flex order-lg-last">
             <div className="img-box img-box-grd flex-grow-1">
               <img
-                src="/img/claims-img1.webp"
+                src={claimsData?.image}
                 className="w-100 h-100"
                 alt="marine energy"
               />
@@ -32,7 +73,7 @@ export default function Claims() {
           <div className="col d-flex flex-column order-lg-first">
             <div className="wrapper-content d-flex flex-column h-100">
               <div>
-                <h2 className="sbttl text-primary mb-lg-6">Our Expertise and Proactive Approach</h2>
+                <h2 className="sbttl text-primary mb-lg-6">{claimsData?.contentHeading}</h2>
                 <p>
                   At City Marine Insurance Brokers, our claims team is renowned for its proactive
                   approach and unwavering dedication to assisting Shipowners in the event of a claim.

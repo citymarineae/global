@@ -1,7 +1,9 @@
 "use client";
 // components/ContactForm.tsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm , SubmitHandler  } from "react-hook-form";
+import apiService from "services/api";
+import { Contact } from "types/Contact";
 
 type Inputs = {
   name: string
@@ -12,22 +14,48 @@ type Inputs = {
 
 
 const ContactForm: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    message: "",
-  });
+  const [contactData, setContactData] = useState<{
+    fax: string;
+    phone?: string;
+    address: string;
+    map: string;
+} | null | null>(null);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+  const [loading,setLoading] = useState(true)
+
+
+  async function fetchContactData() {
+    setLoading(true);
+    try {
+      const data: Contact = await apiService.get("/contact-us");
+      if(data.contact[0]){
+        const contactData = data.contact[0]
+        setContactData(contactData);
+      }
+
+      console.log("one news:", data);
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+
+  useEffect(() => {
+    fetchContactData();
+  }, []);
+  
+
+  // const handleChange = (
+  //   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  // ) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     [name]: value,
+  //   }));
+  // };
 
   // const handleSubmit = (e: React.FormEvent) => {
   //   e.preventDefault();
@@ -243,7 +271,7 @@ const ContactForm: React.FC = () => {
                   />
                   <article>
                     <span>Phone</span>
-                    <a href="tel:+97165758800">+971 6 5758 800</a>
+                    <a href="tel:+97165758800">{contactData?.phone}</a>
                   </article>
                 </li>
                 <li>
@@ -255,7 +283,7 @@ const ContactForm: React.FC = () => {
                   />
                   <article>
                     <span>Fax</span>
-                    <a href="tel:+97165758878">+971 6 5758 878</a>
+                    <a href="tel:+97165758878">{contactData?.fax}</a>
                   </article>
                 </li>
                 <li>
@@ -268,10 +296,11 @@ const ContactForm: React.FC = () => {
                   <article>
                     <span>Address</span>
                     <address>
-                      City Marine Insurance Brokers L.L.C <br />
+                      {/* City Marine Insurance Brokers L.L.C <br />
                       Golden Tower, Office # 1701, 1702, 1703 & 1704 <br />
                       P.O Box 26629 <br />
-                      Al Majaz 1, Sharjah United Arab Emirates
+                      Al Majaz 1, Sharjah United Arab Emirates */}
+                      {contactData?.address}
                     </address>
                   </article>
                 </li>
@@ -279,7 +308,7 @@ const ContactForm: React.FC = () => {
             </div>
             <div className="contact-main__map mt-auto pb-5 pb-md-0">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.9079267963302!2d55.383108975386385!3d25.34087047761882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5bc2ec95ccb5%3A0xc03be5efbd8a8332!2sCity%20Marine%20Insurance%20Brokers%20LLC!5e0!3m2!1sen!2sin!4v1726654539694!5m2!1sen!2sin"
+                src={contactData?.map}
                 width="600"
                 height="300"
                 style={{ border: 0 }}
