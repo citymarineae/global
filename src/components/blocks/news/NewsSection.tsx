@@ -6,6 +6,9 @@ import { formatNewsForUrl } from "app/helpers/formatLink";
 import apiService from "services/api";
 import { News } from "types/News";
 
+const CACHE_KEY = "newsData";
+const CACHE_DURATION = 10 * 60 * 1000; // 5 minutes in milliseconds
+
 const NewsSection: React.FC = () => {
   const [news, setNews] = useState<News[]>([]);
   const [loading, setLoading] = useState(true);
@@ -16,6 +19,14 @@ const NewsSection: React.FC = () => {
     try {
       const data: { news: News[] } = await apiService.get("/news");
       setNews(data.news);
+      // Cache the fetched data
+      localStorage.setItem(
+        CACHE_KEY,
+        JSON.stringify({
+          timestamp: Date.now(),
+          data: data.news,
+        })
+      );
     } catch (error) {
       console.error("Failed to fetch data:", error);
     } finally {
@@ -24,6 +35,16 @@ const NewsSection: React.FC = () => {
   }
 
   useEffect(() => {
+    const cachedData = localStorage.getItem(CACHE_KEY);
+    if (cachedData) {
+      const { timestamp, data } = JSON.parse(cachedData);
+      if (Date.now() - timestamp < CACHE_DURATION) {
+        // Use cached data if it's still valid
+        setNews(data);
+        setLoading(false);
+        return;
+      }
+    }
     fetchData();
   }, []);
 
