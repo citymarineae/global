@@ -1,30 +1,61 @@
-import React from 'react';
+"use client"
+
+import React, { useEffect, useState } from 'react';
 import teamMembers from 'data/contents/TeamMember';
 import Link from 'next/link';
 import { formatNameForURL } from 'app/helpers/formatLink';
+import apiService from 'services/api';
 
 // Define the structure of a team member
 interface TeamMember {
-  id:number,
+  id:string,
   name: string;
   position: string;
-  imageSrc: string;
-  detailsLink: string;
+  image: string;
 }
+
+
 
 // Define the props for the TeamSection component
 const TeamSection: React.FC = () => {
+
+  const [loading,setLoading] = useState(true)
+  const [memberDatas,setMemberDatas] = useState([])
+
+async function fetchMembers() {
+  setLoading(true);
+  try {
+    const data:any = await apiService.get("/team");
+    setMemberDatas(data);
+    console.log("one news:", data);
+  } catch (error) {
+    console.error("Failed to fetch data:", error);
+  } finally {
+    setLoading(false);
+  }
+}
+
+
+useEffect(() => {
+  fetchMembers()
+}, []);
+
+if(loading){
+  <div>Loading data....</div>
+}
+
+
   return (
     <section className="wrapper team-wrapper py-10 py-lg-14 position-relative overflow-hidden">
       <div className="container">
         <div className="row row-cols-2 row-cols-md-3 row-cols-xxl-4 gy-4 gx-xl-10 team-wrapper__div">
-          {teamMembers.map((member: TeamMember, index: number) => (
-            <Link href={`/our-team/${formatNameForURL(member.name)}`} key={index}><div className="col">
+          {memberDatas.map((member: TeamMember, index: number) => (
+            <Link href={`/our-team/${member.id}`} key={index}><div className="col">
               <div className="team-card">
-                <a href={member.detailsLink} className="team-card__link"></a>
+                {/* <a href={member.detailsLink} className="team-card__link"></a> */}
                 <div className="team-card__head">
                   <img
-                    src={member.imageSrc}
+                    src={member.image}
                     className="team-card__img"
                     width="150"
                     height="150"
@@ -43,7 +74,7 @@ const TeamSection: React.FC = () => {
       </div>
       <div className="team-wrapper__shape opacity-50 z-index-min-1">
         <img
-          src="assets/img/icons/shape-up.svg"
+          src="img/icons/shape-up.svg"
           width="150"
           height="150"
           alt="Shape"
