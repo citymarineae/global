@@ -24,6 +24,10 @@ const NewsPage: React.FC = () => {
   //   );
   // });
 
+
+
+  console.log("change")
+
   const recentNews = newsData.slice(newsData.length - 3);
 
   // fetch news with given id (replace with actual news id for individual news)
