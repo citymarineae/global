@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,6 +11,9 @@ import "swiper/css/navigation"; // Import navigation styles
 import { Pagination } from "swiper/modules";
 import SwiperCore from 'swiper'; // Import SwiperCore for TypeScript typing
 import Image from "next/image";
+import { News } from "types/News";
+import apiService from "services/api";
+import { LatestNews as latestNewsType } from "types/LatestNews";
 
 export default function LatestNews() {
   // Correctly define the swiper reference with SwiperCore type
@@ -24,10 +27,39 @@ export default function LatestNews() {
     swiperRef.current?.slideNext(); // Safe access to swiper instance
   };
 
+  const [loading, setLoading] = useState(true)
+  const [latestNews, setLatestNews] = useState<latestNewsType | null>(null)
+
+  async function fetchLatestNews() {
+    console.log("Called fetch")
+    setLoading(true);
+    try {
+      const data: latestNewsType = await apiService.get(`/news?limit=5`);
+      setLatestNews(data);
+      console.log(data)
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+
+
+
+  useEffect(() => {
+    console.log("useeffect")
+    fetchLatestNews();
+  }, []);
+
+  if (loading) {
+    return <div>Loading content....</div>
+  }
+
   return (
     <>
       <section className="wrapper bg-light hm-news-sec">
-        <div className="container py-lg-14 py-10" data-cues="fadeIn">
+        <div className="container py-lg-14 py-10">
           <div className="d-flex justify-content-between align-items-center nswttl gap-3">
             <h2 className="sbttl">Latest News</h2>
             <hr className="my-0" />
@@ -61,10 +93,10 @@ export default function LatestNews() {
                 className="mySwiper"
               >
                 <SwiperSlide>
-                <div className="nwslfts nsbx">
+                  <div className="nwslfts nsbx">
                     <figure>
-                      <Image
-                        src="/img/nws/001.jpg"
+                      <img
+                        src={latestNews?.news[0]?.image || ""}
                         width={500}
                         height={200}
                         alt=""
@@ -84,75 +116,59 @@ export default function LatestNews() {
                     </div>
                   </div>
                 </SwiperSlide>
-                <SwiperSlide><div className="nwslrts nsbx d-flex align-items-center ">
-                    <figure className="w-25">
-                      <Image
-                        src="/img/nws/002.jpg"
-                        width={200}
-                        height={200}
-                        alt=""
-                      />
-                    </figure>
-                    <div className="nsmbx">
-                      <span>20 August 2024</span>
-                      <h4>IG Supports Mercy Ships’ Life-Changing Mission</h4>
-                      <a className="rtarw" href="/news-details">
-                        Read More <i className="icbc"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="nwslrts nsbx d-flex align-items-center ">
-                    <figure className="w-25">
-                      <Image
-                        src="/img/nws/003.jpg"
-                        width={200}
-                        height={200}
-                        alt=""
-                      />
-                    </figure>
-                    <div className="nsmbx">
-                      <span>20 August 2024</span>
-                      <h4>IG Supports Mercy Ships’ Life-Changing Mission</h4>
-                      <a className="rtarw" href="/news-details">
-                        Read More <i className="icbc"></i>
-                      </a>
-                    </div>
-                  </div></SwiperSlide>
-                <SwiperSlide><div className="nwslrts nsbx d-flex align-items-center ">
-                    <figure className="w-25">
-                      <Image
-                        src="/img/nws/002.jpg"
-                        width={200}
-                        height={200}
-                        alt=""
-                      />
-                    </figure>
-                    <div className="nsmbx">
-                      <span>20 August 2024</span>
-                      <h4>IG Supports Mercy Ships’ Life-Changing Mission</h4>
-                      <a className="rtarw" href="/news-details">
-                        Read More <i className="icbc"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="nwslrts nsbx d-flex align-items-center ">
-                    <figure className="w-25">
-                      <Image
-                        src="/img/nws/003.jpg"
-                        width={200}
-                        height={200}
-                        alt=""
-                      />
-                    </figure>
-                    <div className="nsmbx">
-                      <span>20 August 2024</span>
-                      <h4>IG Supports Mercy Ships’ Life-Changing Mission</h4>
-                      <a className="rtarw" href="/news-details">
-                        Read More <i className="icbc"></i>
-                      </a>
-                    </div>
-                  </div></SwiperSlide>
                 
+                {latestNews?.news.slice(1).map((item,index) => {
+                  if (index % 2 === 0) { // Only render SwiperSlide for even indices
+                    const nextItem = latestNews.news[index + 2];
+                
+                    return (
+                      <SwiperSlide key={item.id}>
+                        <div className="nwslrts nsbx d-flex align-items-center">
+                          <figure className="w-25">
+                            <img
+                              src={item.image}
+                              width={200}
+                              height={200}
+                              alt=""
+                            />
+                          </figure>
+                          <div className="nsmbx">
+                            <span>20 August 2024</span>
+                            <h4>{item.title}</h4> {/* Use item.title for dynamic title */}
+                            <a className="rtarw" href="/news-details">
+                              Read More <i className="icbc"></i>
+                            </a>
+                          </div>
+                        </div>
+                
+                        {nextItem && (
+                          <div className="nwslrts nsbx d-flex align-items-center">
+                            <figure className="w-25">
+                              <img
+                                src={nextItem.image}
+                                width={200}
+                                height={200}
+                                alt=""
+                              />
+                            </figure>
+                            <div className="nsmbx">
+                              <span>20 August 2024</span>
+                              <h4>{nextItem.title}</h4> {/* Use nextItem.title for dynamic title */}
+                              <a className="rtarw" href="/news-details">
+                                Read More <i className="icbc"></i>
+                              </a>
+                            </div>
+                          </div>
+                        )}
+                      </SwiperSlide>
+                    );
+                  }
+                  return null; // Return null for odd indices to avoid rendering
+
+})}
+                
+
+
               </Swiper>
 
               <div className="nxtbrs d-flex justify-content-between align-items-center mt-5 mt-lg-10 gap-3">
