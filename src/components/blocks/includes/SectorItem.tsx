@@ -1,5 +1,6 @@
 "use client"
 
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import apiService from 'services/api';
 import { MarineInsuraceSectors } from 'types/MarineInsuraceSectors';
@@ -52,7 +53,7 @@ const SectorItem = () => {
     {marineInsuranceSectors?.marineSections && marineInsuranceSectors.marineSections.map((item, index) => (
         <div className="col-md-6 col-lg-4 col-xxl-3" key={index}>
           <div className="hverbx">
-            <a href="/marine-energy-details">
+            <Link href={`/marine-energy/${item.id}`}>
               <figure>
                 <img
                   src={item.image}
@@ -76,7 +77,7 @@ const SectorItem = () => {
                   </div>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       
