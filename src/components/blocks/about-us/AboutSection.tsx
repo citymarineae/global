@@ -5,6 +5,8 @@ import aboutContent from 'data/contents/aboutContent'
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import apiService from 'services/api';
 import { About } from 'types/About';
+import parse from 'html-react-parser';
+
 
 export const AboutSection = ({setBannerVideoTitle}:{
   setBannerVideoTitle:Dispatch<SetStateAction<string>>
@@ -45,6 +47,7 @@ export const AboutSection = ({setBannerVideoTitle}:{
     fetchContactData();
   }, []);
 
+
   return (
     <div>
       <section className="abt-sec1">
@@ -67,7 +70,7 @@ export const AboutSection = ({setBannerVideoTitle}:{
           <div className="abt-main__div py-10 py-lg-14">
             <div className="abt-main__content">
               <h2 className="sbttl mb-3">{aboutData?.contentHeading}</h2>
-              <p>{aboutData?.content}</p>
+              <p>{parse(aboutData?.content || "")}</p>
               {/* {aboutContent.paragraphs.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))} */}
