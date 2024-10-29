@@ -1,12 +1,12 @@
 "use client"
 
-import MarineInsuranceSection from "components/blocks/home/MarineInsuranceSection";
+
 import { BannerVideo } from "components/blocks/includes/BannerVideo";
-import SectorItem from "components/blocks/includes/SectorItem";
-import Image from "next/image";
 import { Fragment, useEffect, useState } from "react";
 import apiService from "services/api";
 import { Claims as claimsType } from "types/Claims";
+import parse from 'html-react-parser';
+
 export default function Claims() {
   
   const [loading,setLoading] = useState(true)
@@ -75,20 +75,7 @@ export default function Claims() {
               <div>
                 <h2 className="sbttl text-primary mb-lg-6">{claimsData?.contentHeading}</h2>
                 <p>
-                  At City Marine Insurance Brokers, our claims team is renowned for its proactive
-                  approach and unwavering dedication to assisting Shipowners in the event of a claim.
-                  We understand that the moments following an incident are crucial, and our team is
-                  always prepared to take swift, effective action to mitigate damage and ensure the
-                  best possible outcome for our clients.
-                </p>
-              </div>
-              <div className="d-flex flex-column mt-auto">
-                <h3 className="sbttl-small text-primary">Experience You Can Trust</h3>
-                <p>
-                  Our claims team consists of highly skilled claims handlers and maritime lawyers with
-                  extensive experience gained in the London Insurance Market. This deep knowledge base
-                  enables us to navigate complex marine claims with confidence and precision,
-                  providing our clients with the best possible service.
+                  {parse(claimsData?.content || "")}
                 </p>
               </div>
             </div>

@@ -5,6 +5,7 @@ import newsData from "data/contents/newsContent";
 import Link from "next/link";
 import apiService from "services/api";
 import { News } from "types/News";
+import parse from 'html-react-parser';
 
 const NewsPage: React.FC = () => {
   const { newsTitle } = useParams();
@@ -93,7 +94,7 @@ const NewsPage: React.FC = () => {
                 <div className="news-dtbox__img py-6">
                   <img src={news?.image} width="200" height="200" className="w-100 h-auto" alt="" />
                 </div>
-                <p>{news?.content}</p>
+                <p>{parse(news?.content)}</p>
 
                 <div className="go-back">
                   <Link
