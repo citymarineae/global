@@ -1,8 +1,38 @@
-import { Fragment } from "react";
-import { AboutSection } from "components/blocks/about-us/AboutSection";
+"use client"
+
+import { Fragment, useEffect, useState } from "react";
 import { BannerVideo } from "components/blocks/includes/BannerVideo";
+import apiService from "services/api";
+import { PortsAndTerminals as portAndTerminalsType } from "types/PortsAndTerminals";
+import parse from 'html-react-parser'
 
 export default function PortsAndTerminals() {
+
+  const [loading,setLoading] = useState(true)
+  const [portsAndTerminalData,setPortsAndTerminalData] = useState< portAndTerminalsType | null>(null)
+
+  async function fetchPortAndTerminalsData() {
+    setLoading(true);
+    try {
+      const data:portAndTerminalsType = await apiService.get("/sectors/portsAndTerminals");
+      setPortsAndTerminalData(data);
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+
+  useEffect(() => {
+    fetchPortAndTerminalsData();
+  }, []);
+
+  if(loading){
+    return <div>Loading content....</div>
+  }
+
+  
   return (
     <Fragment>
       <main className="content-wrapper">
@@ -25,8 +55,7 @@ export default function PortsAndTerminals() {
             <div className="row">
               <div className="col-md-9">
                 <h2 className="sbttl text-primary">
-                  Specialist cover for Port & Terminal Operators, stevedores,
-                  Shipping Agents, Freight Forwarders and NVOCC operators.
+                  {portsAndTerminalData?.title}
                 </h2>
               </div>
             </div>
@@ -40,7 +69,7 @@ export default function PortsAndTerminals() {
               <div className="col order-lg-last d-flex">
                 <div className="img-box img-box-grd flex-grow-1">
                   <img
-                    src="/img/port1.webp"
+                    src={portsAndTerminalData?.imageOne}
                     className="w-100 h-100"
                     alt="marine energy"
                   />
@@ -48,40 +77,7 @@ export default function PortsAndTerminals() {
               </div>
               <div className="col order-lg-first d-flex flex-column">
                 <div className="wrapper-content pe-5 d-flex flex-column">
-                  <h3 className="sbttl-sm text-primary mb-lg-6">
-                    Typical cover for ports and terminals
-                  </h3>
-                  <p className="mb-lg-10">
-                    No two ports or terminals are the same. That’s why we
-                    tailor-make policies to reflect the risks you face.
-                    Typically, cover may include:
-                  </p>
-                  <ul className="custom-list">
-                    <li>
-                      Liabilities for loss of, or damage to, cargo, customers'
-                      equipment and ships.
-                    </li>
-                    <li>
-                      Loss of, or damage to, equipment including loss due to
-                      strikes, riots and terrorist risks.
-                    </li>
-                    <li>
-                      Liabilities arising from errors and omissions including
-                      delay and unauthorized delivery.
-                    </li>
-                    <li>
-                      Third party liabilities including impact and sudden
-                      accidental pollution.
-                    </li>
-                    <li>
-                      Fines for regulatory breach such as customs, pollution and
-                      safety at work.
-                    </li>
-                    <li>Wreck removal costs.</li>
-                    <li>Investigation, defence and mitigation costs.</li>
-                    <li>Disposal costs following an accident.</li>
-                    <li>Quarantine and disinfection costs.</li>
-                  </ul>
+                  {parse(portsAndTerminalData?.contentOne || "")}
                 </div>
               </div>
             </div>
@@ -106,7 +102,7 @@ export default function PortsAndTerminals() {
               <div className="col d-flex flex-column">
                 <div className="img-box img-box-grd flex-grow-1">
                   <img
-                    src="/img/port2.webp"
+                    src={portsAndTerminalData?.imageTwo}
                     className="w-100 h-100"
                     alt="marine energy"
                   />
@@ -114,29 +110,7 @@ export default function PortsAndTerminals() {
               </div>
               <div className="col">
                 <div className="wrapper-content ps-md-5">
-                  <h3 className="sbttl-sm text-primary mb-lg-6 fs-3">
-                    Additional cover
-                  </h3>
-                  <p className="mb-lg-10">
-                    TT Club cover is designed to operate alongside other
-                    insurances, minimising the chance of gaps or overlapping
-                    covers. Additional cover for ports and terminals can
-                    include:
-                  </p>
-                  <ul className="custom-list">
-                    <li>Business interruption risks.</li>
-                    <li>Fire legal liability.</li>
-                    <li>Hull and P&I risks.</li>
-                    <li>Infringement of personal rights.</li>
-                    <li>Liability as a supplier of advice and information.</li>
-                    <li>Locomotives and rolling stock.</li>
-                    <li>Machinery and handling equipment.</li>
-                    <li>
-                      Property, from docks and berths to wharfs and jetties.
-                    </li>
-                    <li>Rail and road infrastructure.</li>
-                    <li>Ships' agency liabilities.</li>
-                  </ul>
+                  {parse(portsAndTerminalData?.contentTwo || "")}
                 </div>
               </div>
             </div>

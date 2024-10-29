@@ -1,6 +1,38 @@
-import React from 'react';
+"use client"
+
+import React, { useEffect, useState } from 'react';
+import apiService from 'services/api';
+import { PersonalLines } from 'types/PersonalLines';
+import parse from 'html-react-parser'
 
 const MedicalInsuranceSection: React.FC = () => {
+
+  const [loading,setLoading] = useState(true)
+  const [personalLinesData,setPersonalLinesData] = useState< PersonalLines | null>(null)
+
+  async function fetchPersonalLinesData() {
+    setLoading(true);
+    try {
+      const data:PersonalLines = await apiService.get("/sectors/personal-lines");
+      setPersonalLinesData(data);
+      console.log(data)
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+
+  useEffect(() => {
+    fetchPersonalLinesData();
+  }, []);
+
+  if(loading){
+    return <div>Loading content....</div>
+  }
+
+  
   return (
     <section className="wrapper py-10 py-lg-14 position-relative overflow-hidden">
       <div className="shape position-absolute top-20 end-0 d-none d-md-block opacity-25" style={{ zIndex: -1 }}>
@@ -17,7 +49,7 @@ const MedicalInsuranceSection: React.FC = () => {
           <div className="col d-flex order-md-last">
             <div className="img-box img-box-grd flex-grow-1">
               <img
-                src="/img/personal-lines.webp"
+                src={personalLinesData?.image}
                 className="w-100 h-100 object-fit-cover"
                 alt="marine energy"
               />
@@ -26,20 +58,9 @@ const MedicalInsuranceSection: React.FC = () => {
           <div className="col d-flex flex-column order-md-first">
             <div className="wrapper-content d-flex flex-column h-100">
               <h2 className="sbttl text-primary mb-lg-6">
-                Medical Insurance<br /> for Individuals & Group
+                {personalLinesData?.title}
               </h2>
-              <p>
-                We offer a wide range of customized and cost-effective health insurance products for both
-                Groups and Individuals through our local and international partners.
-              </p>
-              <p>
-                Now, more than ever is the time to invest in health insurance. Our team of experts
-                brings a wealth of skills and knowledge gained from experience of providing the best
-                possible coverage to our clients over the years. At CMIB, our team of advisors will help
-                identify your needs and provide you with insurance options that will cover
-                risks for you and your family, taking into consideration your budget, requirements,
-                circumstances, and needs to ensure your peace of mind.
-              </p>
+              {parse(personalLinesData?.content || "")}
               <div className="d-flex gap-3 gap-xl-5 flex-wrap flex-xxl-nowrap mt-auto">
                 <a href="#" className="btn btnCty btn-tall">
                   <span>Get Quote</span>
