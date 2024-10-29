@@ -1,5 +1,9 @@
-import Image from 'next/image';
-import React from 'react'
+"use client"
+
+import React, { useEffect, useState } from 'react'
+import apiService from 'services/api';
+import { MarineInsuraceSectors } from 'types/MarineInsuraceSectors';
+
 
 interface SectorItem {
     title: string;
@@ -23,15 +27,35 @@ interface SectorItem {
 
   
 const SectorItem = () => {
+
+  const [loading,setLoading] = useState(true)
+  const [marineInsuranceSectors,setMarineInsuranceSectors] = useState<MarineInsuraceSectors | null>(null)
+
+  async function fetchMarineInsuranceSectorsData() {
+    setLoading(true);
+    try {
+      const data:MarineInsuraceSectors = await apiService.get("/sectors/marine/section");
+      setMarineInsuranceSectors(data);
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    fetchMarineInsuranceSectorsData();
+  }, []);
+  
   return (
     <div className="row gy-5 gy-lg-8">
-    {marineEnergyItems.map((item, index) => (
+    {marineInsuranceSectors?.marineSections && marineInsuranceSectors.marineSections.map((item, index) => (
         <div className="col-md-6 col-lg-4 col-xxl-3" key={index}>
           <div className="hverbx">
             <a href="/marine-energy-details">
               <figure>
-                <Image
-                  src={`/img/pp/${item.img}`}
+                <img
+                  src={item.image}
                   alt={item.title}
                   width={400}
                   height={300}
@@ -43,7 +67,7 @@ const SectorItem = () => {
                     <h4>{item.title}</h4>
                   </div>
                   <div className="icms col-2 text-end">
-                    <Image
+                    <img
                       src="/img/icons/rndarw.svg"
                       alt="Arrow"
                       width={20}

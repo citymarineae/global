@@ -30,6 +30,8 @@ const NewsPage: React.FC = () => {
   console.log("change")
 
   const recentNews = newsData.slice(newsData.length - 3);
+  const CACHE_KEY:string = "indiNews"+newsTitle;
+  const CACHE_DURATION = 10 * 60 * 1000;
 
   // fetch news with given id (replace with actual news id for individual news)
   async function fetchDataWithId(id: string) {
@@ -37,6 +39,14 @@ const NewsPage: React.FC = () => {
     try {
       const data: News = await apiService.get("/news?id=" + id);
       setNews(data);
+      CACHE_KEY
+      localStorage.setItem(
+        CACHE_KEY,
+        JSON.stringify({
+          timestamp: Date.now(),
+          data: data,
+        })
+      );
       console.log("one news:", data);
     } catch (error) {
       console.error("Failed to fetch data:", error);
@@ -49,6 +59,21 @@ const NewsPage: React.FC = () => {
 
   useEffect(() => {
     if (!newsTitle) return;
+    const cachedData = localStorage.getItem(CACHE_KEY);
+    if (cachedData) {
+      const { timestamp, data } = JSON.parse(cachedData);
+      if (Date.now() - timestamp < CACHE_DURATION) {
+        // Use cached data if it's still valid
+        setNews(data);
+        console.log("using cache")
+        setLoading(false);
+        return;
+      }else{
+        localStorage.removeItem(CACHE_KEY)
+      }
+    }
+
+    console.log("no cache")
     fetchDataWithId(newsTitle as string);
   }, [newsTitle]);
 
