@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useForm , SubmitHandler  } from "react-hook-form";
 import apiService from "services/api";
 import { Contact } from "types/Contact";
+import parse from 'html-react-parser'
 
 type Inputs = {
   name: string
@@ -300,7 +301,7 @@ const ContactForm: React.FC = () => {
                       Golden Tower, Office # 1701, 1702, 1703 & 1704 <br />
                       P.O Box 26629 <br />
                       Al Majaz 1, Sharjah United Arab Emirates */}
-                      {contactData?.address}
+                      {parse(contactData?.address || "")}
                     </address>
                   </article>
                 </li>
