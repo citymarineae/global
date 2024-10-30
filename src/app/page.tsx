@@ -6,9 +6,10 @@ import { Fragment } from "react";
 import useLightBox from "hooks/useLightBox";
 import useReplaceMe from "hooks/useReplaceMe";
 import VideoSwiper from "components/blocks/home/VideoSwiper";
-import MarineInsuranceSection from "components/blocks/home/MarineInsuranceSection";
+import MarineInsuranceSection from "components/blocks/home/HomeAbout";
 import Sectors from "components/blocks/home/Sectors";
 import LatestNews from "components/blocks/home/LatestNews";
+import HomeAbout from "components/blocks/home/HomeAbout";
 
 export default function Home() {
   // USED FOR HERO AREA TEXT CHANGE FREQUENTLY
@@ -21,7 +22,7 @@ export default function Home() {
     <Fragment>
       <main className="content-wrapper">
           <VideoSwiper/>
-          <MarineInsuranceSection/>
+          <HomeAbout/>
           <Sectors/>
          <LatestNews/>
         

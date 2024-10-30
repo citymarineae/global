@@ -1,15 +1,17 @@
 "use client";
 // components/ContactForm.tsx
 import React, { useEffect, useState } from "react";
-import { useForm , SubmitHandler  } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import apiService from "services/api";
 import { Contact } from "types/Contact";
+import parse from 'html-react-parser'
+import { Element } from "html-react-parser";
 
 type Inputs = {
   name: string
   phone?: string
-  email:string
-  message:string
+  email: string
+  message: string
 };
 
 
@@ -19,16 +21,16 @@ const ContactForm: React.FC = () => {
     phone?: string;
     address: string;
     map: string;
-} | null | null>(null);
+  } | null | null>(null);
 
-  const [loading,setLoading] = useState(true)
+  const [loading, setLoading] = useState(true)
 
 
   async function fetchContactData() {
     setLoading(true);
     try {
       const data: Contact = await apiService.get("/contact-us");
-      if(data.contact[0]){
+      if (data.contact[0]) {
         const contactData = data.contact[0]
         setContactData(contactData);
       }
@@ -45,7 +47,7 @@ const ContactForm: React.FC = () => {
   useEffect(() => {
     fetchContactData();
   }, []);
-  
+
 
   // const handleChange = (
   //   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -63,33 +65,33 @@ const ContactForm: React.FC = () => {
   //   // You can add form submission logic here
   // };
 
-  const { register, handleSubmit, reset, formState: { errors ,isSubmitting} } = useForm<Inputs>();
+  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<Inputs>();
 
 
-  const onSubmit: SubmitHandler<Inputs> = async(data) => {
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
       const formData = new FormData()
-      formData.append("name",data.name)
-      formData.append("email",data.email)
-      formData.append("message",data.message)
-      if(data.phone){
-        formData.append("phone",data.phone)
+      formData.append("name", data.name)
+      formData.append("email", data.email)
+      formData.append("message", data.message)
+      if (data.phone) {
+        formData.append("phone", data.phone)
       }
 
-      const response = await fetch('/api/send-mail',{
-        method:"POST",
-        body:formData
+      const response = await fetch('/api/send-mail', {
+        method: "POST",
+        body: formData
       })
 
-      if(response.ok){
+      if (response.ok) {
         alert("email send successfully")
         reset()
-      }else{
+      } else {
         alert('error in sending email')
       }
 
     } catch (error) {
-      console.log("Error while trying to send email:",error)
+      console.log("Error while trying to send email:", error)
     }
   };
 
@@ -117,7 +119,7 @@ const ContactForm: React.FC = () => {
                         id="form_name"
                         placeholder="Jane"
                         className="form-control"
-                        {...register("name",{required:"Name is required"})}
+                        {...register("name", { required: "Name is required" })}
                       />
                       <label htmlFor="form_name">Name *</label>
                       <div className="valid-feedback"> Looks good! </div>
@@ -135,7 +137,7 @@ const ContactForm: React.FC = () => {
                         placeholder="Doe"
                         id="form_lastname"
                         className="form-control"
-                        {...register("phone",{required:false})}
+                        {...register("phone", { required: false })}
                       />
                       <label htmlFor="form_lastname">Phone Number (optional)</label>
                       <div className="valid-feedback"> Looks good! </div>
@@ -154,7 +156,7 @@ const ContactForm: React.FC = () => {
                         id="form_email"
                         className="form-control"
                         placeholder="jane.doe@example.com"
-                        {...register("email",{required:"Email is required"})}
+                        {...register("email", { required: "Email is required" })}
                       />
                       <label htmlFor="form_email">Email Address *</label>
                       <div className="valid-feedback"> Looks good! </div>
@@ -165,7 +167,7 @@ const ContactForm: React.FC = () => {
                     </div>
                   </div>
 
-                 
+
 
                   <div className="col-12">
                     <div className="form-floating mb-4">
@@ -175,7 +177,7 @@ const ContactForm: React.FC = () => {
                         className="form-control"
                         placeholder="Your message"
                         style={{ height: 150 }}
-                        {...register("message",{required:"Message is required"})}
+                        {...register("message", { required: "Message is required" })}
                       />
 
                       <label htmlFor="form_message">Message *</label>
@@ -188,8 +190,8 @@ const ContactForm: React.FC = () => {
                   </div>
 
                   <div className="col">
-                  <button type="submit" className="btn rounded-pill btnCty d-flex ms-lg-auto">{isSubmitting ? "Sending Mail":"Send Message"}<i
-                                        className="icbc"></i></button>
+                    <button type="submit" className="btn rounded-pill btnCty d-flex ms-lg-auto">{isSubmitting ? "Sending Mail" : "Send Message"}<i
+                      className="icbc"></i></button>
                   </div>
                 </div>
               </form>
@@ -300,7 +302,7 @@ const ContactForm: React.FC = () => {
                       Golden Tower, Office # 1701, 1702, 1703 & 1704 <br />
                       P.O Box 26629 <br />
                       Al Majaz 1, Sharjah United Arab Emirates */}
-                      {contactData?.address}
+                      {parse(contactData?.address || "")}
                     </address>
                   </article>
                 </li>
