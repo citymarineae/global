@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import MarineInsuranceSection from "components/blocks/home/MarineInsuranceSection";
+import MarineInsuranceSection from "components/blocks/sectors/MarineInsuranceSection";
 import { BannerVideo } from "components/blocks/includes/BannerVideo";
 import SectorItem from "components/blocks/includes/SectorItem";
 

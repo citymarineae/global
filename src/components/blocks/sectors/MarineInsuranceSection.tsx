@@ -1,6 +1,38 @@
-import React from 'react';
+"use client"
+
+import React, { useEffect, useState } from 'react';
+import apiService from 'services/api';
+import { MarineInsurace } from 'types/MarineInsurance';
+import parse from 'html-react-parser'
 
 const MarineInsuranceSection: React.FC = () => {
+
+  const [loading,setLoading] = useState(true)
+  const [marineInsuranceData,setMarineInsuranceData] = useState<MarineInsurace | null>(null)
+
+  async function fetchMarineInsuranceData() {
+    setLoading(true);
+    try {
+      const data:MarineInsurace = await apiService.get("/sectors/marine");
+      setMarineInsuranceData(data);
+      console.log("one news:", data);
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+
+  useEffect(() => {
+    fetchMarineInsuranceData();
+  }, []);
+
+  if(loading){
+    return <div>Loading content....</div>
+  }
+
+  
   return (
     <section className="wrapper py-10 py-lg-14 position-relative overflow-hidden">
       <div
@@ -20,7 +52,7 @@ const MarineInsuranceSection: React.FC = () => {
           <div className="col d-flex order-lg-last">
             <div className="img-box img-box-grd flex-grow-1">
               <img
-                src="/img/marine-img.webp"
+                src={marineInsuranceData?.image || ""}
                 alt="marine energy"
                 className="w-100 h-100 object-fit-cover"
               />
@@ -29,19 +61,9 @@ const MarineInsuranceSection: React.FC = () => {
           <div className="col d-flex flex-column order-lg-first">
             <div className="wrapper-content h-100">
               <h2 className="sbttl text-primary mb-lg-6">
-                Regional leaders in Industrial and Marine Insurance
+              {marineInsuranceData?.title}
               </h2>
-              <p>
-                Our regional and international insurance markets give us access to secure the most
-                competitive and comprehensive insurance protection in line with your risk exposures.
-                Our in-depth experience handling regional claims has enhanced our relationships with
-                supporting insurers.
-              </p>
-              <p>
-                Our relationship does not cease on the placing of the insurance covers, but continues as
-                a working partnership with you to ensure the continued understanding of your insurance
-                needs.
-              </p>
+              {parse(marineInsuranceData?.content || "")}
             </div>
           </div>
         </div>
