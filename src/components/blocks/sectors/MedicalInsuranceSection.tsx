@@ -62,15 +62,15 @@ const MedicalInsuranceSection: React.FC = () => {
               </h2>
               {parse(personalLinesData?.content || "")}
               <div className="d-flex gap-3 gap-xl-5 flex-wrap flex-xxl-nowrap mt-auto">
-                <a href="#" className="btn btnCty btn-tall">
+                <a href="https://www.orientonline.ae/PORTALS/Transaction/MedicalPolicyPlansNew.aspx?enc=r%2f1zfya9u7j70xnNqcjpZUSKDuUPbJozHe4kn%2fzUwPlfvNqgrQ8e4KVHD3Kc2Wdr" className="btn btnCty btn-tall" target='_blank'>
                   <span>Get Quote</span>
                   <i className="icbc"></i>
                 </a>
-                <a href="#" className="btn btnCty btn-tall">
+                <a href="http://hical.eclaimlink.ae/tracassist/enquiry?mylocale=en" className="btn btnCty btn-tall" target='_blank'>
                   <span>DHA Complaint</span>
                   <i className="icbc"></i>
                 </a>
-                <a href="#" className="btn btnCty btn-tall">
+                <a href="https://www.citymarinebrokers.com/wp-content/uploads/2022/07/Flow-Chart-Complaint-process.pdf" className="btn btnCty btn-tall" target='_blank'>
                   <span>CMIB-Complaint Procedure</span>
                   <i className="icbc"></i>
                 </a>

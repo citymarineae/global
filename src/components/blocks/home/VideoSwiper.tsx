@@ -55,7 +55,7 @@ const VideoSwiper = () => {
           <div className="swiper-slide">
             <div className="video-wrapper sldItm">
               <video
-                poster="/img/photos/movie2.webp"
+                poster="/img/bnr-01.jpg"
                 src="/media/002.mp4"
                 autoPlay
                 loop
@@ -67,7 +67,7 @@ const VideoSwiper = () => {
           <div className="swiper-slide">
             <div className="video-wrapper sldItm">
               <video
-                poster="/img/photos/movie2.webp"
+                poster="/img/bnr-02.jpg"
                 src="/media/hero.mp4"
                 autoPlay
                 loop
