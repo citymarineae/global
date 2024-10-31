@@ -1019,7 +1019,9 @@ footer .widget h5 {
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e7e7e7",endColorstr="#2f235c",GradientType=1);
     }
 }
-.custom-list {
+
+.custom-list{
+ul {
     list-style-type: none;
     padding-left: 24px;
     margin-bottom: 0;
@@ -1068,6 +1070,7 @@ footer .widget h5 {
             transform: translateX(5px);
         }
     }
+}
 }
 .custom-list-2 {
     list-style-type: none;
