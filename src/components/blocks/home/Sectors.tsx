@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import SectorItem from "../includes/SectorItem";
+import Link from "next/link";
 
 
 
@@ -123,12 +124,12 @@ export default function Sectors() {
 
             <div className="row">
               <div className="col-12 text-center">
-                <a
+                <Link
                   className="btn rounded-pill btnCty"
                   href="/ports-and-terminals"
                 >
                   Read More <i className="icbc"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

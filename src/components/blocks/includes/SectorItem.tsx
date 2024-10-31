@@ -83,9 +83,9 @@ const SectorItem = () => {
       
       ))}
         <div className="col-12 text-center">
-        <a className="btn rounded-pill btnCty" href="/marine-energy">
+        <Link className="btn rounded-pill btnCty" href="/marine-energy">
           Read More <i className="icbc"></i>
-        </a>
+        </Link>
         </div>
       </div>
   )

@@ -16,6 +16,7 @@ import MiniCart from "../components/mini-cart";
 import HeaderRight from "../components/header-right";
 import FancyHeader from "../components/fancy-header";
 import NavItem from "./NavItem";
+import Link from "next/link";
 
 // ===================================================================
 interface NavbarProps {
@@ -91,37 +92,35 @@ export default function NavbarOne({
         <div className="offcanvas-body ms-lg-auto d-flex flex-column h-100">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NextLink className="nav-link" href="/" title="Home" />
+              <Link className="nav-link" href="/">Home</Link>
             </li>
             <li className="nav-item">
-              <NextLink
+              <Link
                 className="nav-link"
                 href="/about-us"
-                title="About Us"
-              />
+              >About Us</Link>
             </li>
             <li className="nav-item">
-              <NextLink
+              <Link
                 className="nav-link"
                 href="/our-team"
-                title="Our Team"
-              ></NextLink>
+              >Our Team</Link>
             </li>
             <NavItem/>
             <li className="nav-item">
-              <a className="nav-link" href="claims">
+              <Link className="nav-link" href="claims">
                 Claims
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <NextLink className="nav-link" href="/news" title="News">
-                
-              </NextLink>
+              <Link className="nav-link" href="/news">
+                News
+              </Link>
             </li>
             <li className="nav-item d-lg-none">
-              <a className="nav-link" href="contact-us">
+              <Link className="nav-link" href="contact-us">
                 Contact Us
-              </a>
+              </Link>
             </li>
           </ul>
 

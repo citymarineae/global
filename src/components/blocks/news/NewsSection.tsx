@@ -89,7 +89,7 @@ const NewsSection: React.FC = () => {
               <div className={colClass} key={item.id}>
                 <div className="news-card">
                   <div className="news-card__head">
-                    <img src={item.image} width="200" height="200" alt="" />
+                    <img src={item.image} alt=""/>
                   </div>
                   <div className="news-card__body">
                     <div className="date-tag rounded-pill">

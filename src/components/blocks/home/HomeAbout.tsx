@@ -5,6 +5,7 @@ import { marineInsuranceContent } from '../../../data/contents/home'; // Import 
 import apiService from 'services/api';
 import { useEffect, useState } from 'react';
 import parse from 'html-react-parser'
+import Link from 'next/link';
 
 
 type HomeAboutData = {
@@ -70,9 +71,9 @@ const HomeAbout = () => {
               {parse(homeAboutData?.homeabout[0].content || "")}
               </div>
 
-              <a className="btn rounded-pill btnCty" href={marineInsuranceContent.buttonLink}>
+              <Link className="btn rounded-pill btnCty" href={marineInsuranceContent.buttonLink}>
                 {marineInsuranceContent.buttonText} <i className="icbc"></i>
-              </a>
+              </Link>
             </div>
           </div>
 

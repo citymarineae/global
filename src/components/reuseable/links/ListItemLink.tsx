@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ReactElement } from "react";
 
 // =========================================================
@@ -19,10 +20,10 @@ export default function ListItemLink({
 }: ListItemLinkProps) {
   return (
     <li className={liClassName}>
-      <a className={linkClassName} href={href}>
+      <Link className={linkClassName} href={href}>
         {thum && <img src={thum} alt={title.toString()} />} {/* Render the image if `thum` is provided */}
         {title}
-      </a>
+      </Link>
     </li>
   );
 }

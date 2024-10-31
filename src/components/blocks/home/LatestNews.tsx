@@ -14,6 +14,7 @@ import Image from "next/image";
 import { News } from "types/News";
 import apiService from "services/api";
 import { LatestNews as latestNewsType } from "types/LatestNews";
+import Link from "next/link";
 
 export default function LatestNews() {
   // Correctly define the swiper reference with SwiperCore type
@@ -63,9 +64,9 @@ export default function LatestNews() {
           <div className="d-flex justify-content-between align-items-center nswttl gap-3">
             <h2 className="sbttl">Latest News</h2>
             <hr className="my-0" />
-            <a href="/news" className="btn rounded-pill btnCty">
+            <Link href="/news" className="btn rounded-pill btnCty">
               More News <i className="icbc"></i>
-            </a>
+            </Link>
           </div>
 
           <div className="row mt-lg-6 mt-5">
@@ -110,9 +111,9 @@ export default function LatestNews() {
                         life-saving surgeries and medical care for those in
                         need, transforming lives across the globe.
                       </p>
-                      <a className="rtarw" href="/news-details">
+                      <Link className="rtarw" href={`/news/${latestNews?.news[0].id}`}>
                         Read More <i className="icbc"></i>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </SwiperSlide>
@@ -135,9 +136,9 @@ export default function LatestNews() {
                           <div className="nsmbx">
                             <span>20 August 2024</span>
                             <h4>{item.title}</h4> {/* Use item.title for dynamic title */}
-                            <a className="rtarw" href="/news-details">
+                            <Link className="rtarw" href={`/news/${item.id}`}>
                               Read More <i className="icbc"></i>
-                            </a>
+                            </Link>
                           </div>
                         </div>
                 
@@ -154,9 +155,9 @@ export default function LatestNews() {
                             <div className="nsmbx">
                               <span>20 August 2024</span>
                               <h4>{nextItem.title}</h4> {/* Use nextItem.title for dynamic title */}
-                              <a className="rtarw" href="/news-details">
+                              <Link className="rtarw" href={`/news/${nextItem.id}`}>
                                 Read More <i className="icbc"></i>
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         )}

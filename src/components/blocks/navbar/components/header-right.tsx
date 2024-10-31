@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 // -------- PARTIAL LOCAL COMPONENTS -------- //
 import Social from "./social";
 import Language from "./language";
+import Link from "next/link";
 
 // ===================================================================
 interface HeaderRightProps {
@@ -28,9 +29,9 @@ export default function HeaderRight({
     <div className={navOtherClass}>
       <ul className="navbar-nav flex-row align-items-center ms-auto">
       <li className="nav-item d-none d-lg-block">
-        <a href="/contact-us" className="btn rounded-pill btnCty">
+        <Link href="/contact-us" className="btn rounded-pill btnCty">
             Contact <i className="icbc"></i>
-        </a>
+        </Link>
       </li>
         {/* ============= language dropdwown ============= */}
         {language ? <Language /> : null}
