@@ -6,6 +6,7 @@ import Link from "next/link";
 import apiService from "services/api";
 import { News } from "types/News";
 import parse from 'html-react-parser';
+import { LatestNews as latestNewsType } from "types/LatestNews";
 
 const NewsPage: React.FC = () => {
   const { newsTitle } = useParams();
@@ -29,8 +30,33 @@ const NewsPage: React.FC = () => {
 
   console.log("change")
 
+  const [latestNewsLoading, setLatestNewsLoading] = useState(true)
+  const [latestNews, setLatestNews] = useState<latestNewsType | null>(null)
+
+  async function fetchLatestNews() {
+    console.log("Called fetch")
+    setLatestNewsLoading(true);
+    try {
+      const data: latestNewsType = await apiService.get(`/news?limit=3`);
+      setLatestNews(data);
+      console.log(data)
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
+    } finally {
+      setLatestNewsLoading(false);
+    }
+  }
+
+
+  useEffect(() => {
+    console.log("useeffect")
+    fetchLatestNews();
+  }, []);
+
+ 
+
   const recentNews = newsData.slice(newsData.length - 3);
-  const CACHE_KEY:string = "indiNews"+newsTitle;
+  const CACHE_KEY: string = "indiNews" + newsTitle;
   const CACHE_DURATION = 10 * 60 * 1000;
 
   // fetch news with given id (replace with actual news id for individual news)
@@ -68,7 +94,7 @@ const NewsPage: React.FC = () => {
         console.log("using cache")
         setLoading(false);
         return;
-      }else{
+      } else {
         localStorage.removeItem(CACHE_KEY)
       }
     }
@@ -78,10 +104,15 @@ const NewsPage: React.FC = () => {
   }, [newsTitle]);
 
   // Todo: redo the below part with appropriate components and styles
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
 
+
+  if (loading || latestNewsLoading) {
+    return <div>Loading content....</div>
+  }
+  
   if (!news) {
     return <div>No news found!!</div>;
   }
@@ -134,11 +165,11 @@ const NewsPage: React.FC = () => {
             </div>
             <aside className="col-lg-4">
               <h2 className="sbttl text-primary mb-3 mb-lg-6">Recent News</h2>
-
-              {recentNews.map((item) => (
+              
+                {latestNews?.news.map((item) => (
                 <div className="smbox mb-5" key={item.id}>
                   <div className="smbox__head">
-                    <img src="/img/news-t1.webp" width="100" height="100" alt="" />
+                    <img src={item.image} width="100" height="100" alt="" />
                   </div>
                   <div className="smbox__body">
                     <h3 className="sbttl-sm">{item.title}</h3>
@@ -149,6 +180,8 @@ const NewsPage: React.FC = () => {
                   </div>
                 </div>
               ))}
+             
+
             </aside>
           </div>
         </div>

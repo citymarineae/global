@@ -76,7 +76,7 @@ export default function PortsAndTerminals() {
                 </div>
               </div>
               <div className="col order-lg-first d-flex flex-column">
-                <div className="wrapper-content pe-5 d-flex flex-column">
+                <div className="wrapper-content pe-5 d-flex flex-column pc-1 custom-list">
                   {parse(portsAndTerminalData?.contentOne || "")}
                 </div>
               </div>
@@ -109,7 +109,7 @@ export default function PortsAndTerminals() {
                 </div>
               </div>
               <div className="col">
-                <div className="wrapper-content ps-md-5">
+                <div className="wrapper-content ps-md-5 custom-list pc-1">
                   {parse(portsAndTerminalData?.contentTwo || "")}
                 </div>
               </div>
