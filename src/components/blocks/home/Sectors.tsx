@@ -17,7 +17,7 @@ export default function Sectors() {
         height={50}
       />
 
-      <div className="container py-lg-14 py-10" data-cues="fadeIn">
+      <div className="container py-lg-14 py-10" >
         <h2 className="sbttl text-white">Sectors</h2>
 
         <ul className="nav nav-tabs nav-tabs-basic sctnv mb-lg-7 mb-5">

@@ -84,7 +84,7 @@ const ContactForm: React.FC = () => {
       })
 
       if (response.ok) {
-        alert("email send successfully")
+        alert("email sent successfully")
         reset()
       } else {
         alert('error in sending email')
@@ -190,7 +190,7 @@ const ContactForm: React.FC = () => {
                   </div>
 
                   <div className="col">
-                    <button type="submit" className="btn rounded-pill btnCty d-flex ms-lg-auto">{isSubmitting ? "Sending Mail" : "Send Message"}<i
+                    <button type="submit" className="btn rounded-pill btnCty d-flex ms-lg-auto">Send Message<i
                       className="icbc"></i></button>
                   </div>
                 </div>

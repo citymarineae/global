@@ -9,12 +9,12 @@ export default function MarineEnergy() {
       <main className="content-wrapper">
         <BannerVideo
           title="Marine, Energy & Crewing"
-          videoSrc="/media/marineenergycrewing.mp4"
-          posterSrc="/media/marine-energy01.webp"
+          videoSrc="/media/marine-energy.mp4"
+          posterSrc="/media/marine-energy.png"
         ></BannerVideo>
         <MarineInsuranceSection />
         <section className="marine-grid lit-bg py-10 py-lg-14 position-relative">
-          <div className="container">
+          <div className="container" data-cues="fadeIn">
             <SectorItem />
           </div>
         </section>

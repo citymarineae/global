@@ -42,8 +42,8 @@ export default function Sector(){
         <main className="content-wrapper">
             <BannerVideo
                 title="Marine, Energy & Crewing"
-                videoSrc="/media/marineenergycrewing.mp4"
-                posterSrc="/media/marine-energy01.webp"
+                videoSrc="/media/marine-energy.mp4"
+                posterSrc="/marine-energy.png"
             ></BannerVideo>
 
             <section className="wrapper py-10 py-lg-14 position-relative overflow-hidden">

@@ -60,8 +60,8 @@ export default function LatestNews() {
   return (
     <>
       <section className="wrapper bg-light hm-news-sec">
-        <div className="container py-lg-14 py-10">
-          <div className="d-flex justify-content-between align-items-center nswttl gap-3">
+        <div className="container py-lg-14 py-10" >
+          <div className="d-flex justify-content-between align-items-center nswttl gap-3" >
             <h2 className="sbttl">Latest News</h2>
             <hr className="my-0" />
             <Link href="/news" className="btn rounded-pill btnCty">
@@ -117,11 +117,11 @@ export default function LatestNews() {
                     </div>
                   </div>
                 </SwiperSlide>
-                
+
                 {latestNews?.news.slice(1).map((item,index) => {
                   if (index % 2 === 0) { // Only render SwiperSlide for even indices
                     const nextItem = latestNews.news[index + 2];
-                
+
                     return (
                       <SwiperSlide key={item.id}>
                         <div className="nwslrts nsbx d-flex align-items-center">
@@ -141,7 +141,7 @@ export default function LatestNews() {
                             </Link>
                           </div>
                         </div>
-                
+
                         {nextItem && (
                           <div className="nwslrts nsbx d-flex align-items-center">
                             <figure className="w-25">
@@ -167,7 +167,7 @@ export default function LatestNews() {
                   return null; // Return null for odd indices to avoid rendering
 
 })}
-                
+
 
 
               </Swiper>

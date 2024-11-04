@@ -43,9 +43,9 @@ const HomeAbout = () => {
     fetchMarineInsuranceData();
   }, []);
 
-  if (loading) {
-    return <div className='text-center'>Loading content....</div>
-  }
+  // if (loading) {
+  //   return <div className='text-center'>Loading content....</div>
+  // }
 
   return (
     <section className="wrapper bg-rtps">
@@ -60,9 +60,9 @@ const HomeAbout = () => {
       </figure>
 
       <div className="container py-lg-14 py-10">
-        <div className="row gy-5">
+        <div className="row gy-5" data-cues="fadeIn">
           <div className="col-lg-6">
-            <div className="pe-lg-13 text-lg-start">
+            <div className="pe-lg-13 text-lg-start" >
               <h2 className="sbttl text-primary mb-xl-6">{homeAboutData?.homeabout[0].title}</h2>
 
               {/* Dynamically map over the paragraphs */}

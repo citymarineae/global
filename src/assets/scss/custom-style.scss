@@ -777,11 +777,8 @@
 
 /* Large devices (desktops, up to 1200px) */
 @media (max-width: 75em) {
+    .abt-sec1 h4{margin: auto;}
 
-    /* ... */
-    .smbox h3 {
-        // font-size: 0.8rem;
-    }
 
     .hm-news-sec {
         h2 {

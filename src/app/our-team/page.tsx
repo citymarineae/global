@@ -5,7 +5,7 @@ export default function About() {
   return (
     <Fragment>
          <main className="content-wrapper">
-        <BannerVideo title="Our Team" videoSrc="/media/our-team.mp4"  posterSrc="/img/our-team01.webp" ></BannerVideo>
+        <BannerVideo title="Our Team" videoSrc="/media/team.mp4"  posterSrc="/img/team.png" ></BannerVideo>
         <TeamSection/>
         </main>
     </Fragment>
