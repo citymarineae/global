@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import apiService from 'services/api';
 import { MarineInsuraceSectors } from 'types/MarineInsuraceSectors';
-import { useRouter } from 'next/router';
+import { usePathname, useRouter } from 'next/navigation';
 
 
 interface SectorItem {
@@ -28,9 +28,9 @@ interface SectorItem {
   ];
 
   
-export const SectorItem = () => {
-
-  // const router = useRouter()
+  export const SectorItem = () => {
+    
+    const router = usePathname()
 
   const [loading,setLoading] = useState(true)
   const [marineInsuranceSectors,setMarineInsuranceSectors] = useState<MarineInsuraceSectors | null>(null)
@@ -52,13 +52,13 @@ export const SectorItem = () => {
     fetchMarineInsuranceSectorsData();
   }, []);
 
-  // useEffect(()=>{
-  //   if(router.pathname.startsWith('/marine-energy')){
-  //     setReadMoreButton(false)
-  //   }else{
-  //     setReadMoreButton(true)
-  //   }
-  // },[router.pathname])
+  useEffect(()=>{
+    if(router.startsWith('/marine-energy')){
+      setReadMoreButton(false)
+    }else{
+      setReadMoreButton(true)
+    }
+  },[router])
   
   return (
     <div className="row gy-5 gy-lg-8">
@@ -94,11 +94,11 @@ export const SectorItem = () => {
         </div>
       
       ))}
-        {/* { readMoreButton && <div className="col-12 text-center">
+        { readMoreButton && <div className="col-12 text-center">
         <Link className="btn rounded-pill btnCty" href="/marine-energy">
           Read More <i className="icbc"></i>
         </Link>
-        </div>} */}
+        </div>}
       </div>
   )
 }
