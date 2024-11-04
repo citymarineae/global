@@ -25,7 +25,8 @@ export default function NavItem() {
         {ourSectors.map(({ id, url, title, thum, children }: Sector) => {
           if (!url && children) {
             return (
-              <li className="dropdown dropdown-submenu dropend" key={id}>
+              <li className="dropdown dropdown-submenu dropend" key={id}
+              data-bs-dismiss="offcanvas">
                 {/* You can add more custom components or logic here for nested children */}
               </li>
             );
@@ -42,6 +43,8 @@ export default function NavItem() {
           );
         })}
       </ul>
+
+
     </li>
   );
 }

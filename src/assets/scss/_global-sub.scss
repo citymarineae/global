@@ -40,7 +40,7 @@ $pgttl-base-size: 50px;
     background-color: var(--lit-bg);
 }
 body {
-    font-family: "Roboto", system-ui;
+    font-family: "Roboto", sans-serif !important;
     color: var(--bs-font-color);
     font-size: clamp(14px, 2vw + 1rem, 18px);
     font-weight: 400;
@@ -59,7 +59,7 @@ h6,
 .h6 {
     font-weight: 500;
     color: #373737;
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif  !important;
 }
 h5 {
     font-size: 0.9rem;
@@ -420,7 +420,7 @@ ul.tckul {
         h4 {
             color: #fff;
             margin-bottom: 0;
-            font-size: clamp(20px, 2vw + 1rem, 24px);
+            font-size: clamp(18px, 2vw, 24px);
         }
         .icms {
             overflow: hidden;
@@ -656,9 +656,10 @@ footer {
     .ftr-iconbox {
         border-radius: 50%;
         border: 1px solid #fff;
-        width: 30px;
-        height: 30px;
-        text-align: center;
+        img{    width: 36px;
+            height: 36px;
+            line-height: 36px;
+            padding: 8px;}
     }
 }
 .ftlgs img {
@@ -728,6 +729,9 @@ footer .widget h5 {
 @media (min-width: 768px) {
 }
 @media (min-width: 992px) {
+    .navbar-expand-lg.navbar-light .dropdown:not(.dropdown-submenu) > .dropdown-toggle:after {
+        color: var(--bs-nav-link-color) !important;
+    }
     .navbar-expand-lg.transparent:not(.fixed) {
         border-bottom: 1px solid rgb(255 255 255 / 20%);
         padding-bottom: 0rem;
@@ -757,11 +761,13 @@ footer .widget h5 {
     }
 }
 @media (max-width: 767px) {
+    .mnSlide {height: 60vh;}
     footer {
         .widget {
             h4.widget-title {
                 line-height: 36px;
                 margin-bottom: 10px !important;
+                font-size: 27px;
             }
             .list-unstyled:not(.tag-list) li + li,
             ul > li {

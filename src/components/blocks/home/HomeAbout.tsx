@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 type HomeAboutData = {
   homeabout:HomeAboutDataType[]
-} 
+}
 
 type HomeAboutDataType = {
     id: string
@@ -44,7 +44,7 @@ const HomeAbout = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading content....</div>
+    return <div className='text-center'>Loading content....</div>
   }
 
   return (
@@ -71,7 +71,7 @@ const HomeAbout = () => {
               {parse(homeAboutData?.homeabout[0].content || "")}
               </div>
 
-              <Link className="btn rounded-pill btnCty" href={marineInsuranceContent.buttonLink}>
+              <Link className="btn rounded-pill btnCty mt-4" href={marineInsuranceContent.buttonLink}>
                 {marineInsuranceContent.buttonText} <i className="icbc"></i>
               </Link>
             </div>
@@ -81,7 +81,7 @@ const HomeAbout = () => {
           <div className="col-lg-6">
             <figure className="d-block d-lg-none">
               <img
-                src={"mobile image"}
+                src={homeAboutData?.homeabout[0].image}
                 alt="About Us"
                 width={500}
                 height={300}

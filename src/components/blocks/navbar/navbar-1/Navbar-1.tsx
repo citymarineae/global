@@ -80,7 +80,11 @@ export default function NavbarOne({
         className="navbar-collapse offcanvas offcanvas-nav offcanvas-start"
       >
         <div className="offcanvas-header d-lg-none">
-          <h3 className="text-white fs-30 mb-0">City Marine</h3>
+        <img
+                className="lgbcs"
+                src="/img/logo-light.svg"
+                alt="City Marine Logo"
+              />
           <button
             type="button"
             aria-label="Close"
@@ -91,33 +95,39 @@ export default function NavbarOne({
 
         <div className="offcanvas-body ms-lg-auto d-flex flex-column h-100">
           <ul className="navbar-nav">
-            <li className="nav-item">
+            <li className="nav-item"
+            data-bs-dismiss="offcanvas">
               <Link className="nav-link" href="/">Home</Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item"
+            data-bs-dismiss="offcanvas">
               <Link
                 className="nav-link"
                 href="/about-us"
               >About Us</Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item"
+            data-bs-dismiss="offcanvas">
               <Link
                 className="nav-link"
                 href="/our-team"
               >Our Team</Link>
             </li>
             <NavItem/>
-            <li className="nav-item">
+            <li className="nav-item"
+            data-bs-dismiss="offcanvas">
               <Link className="nav-link" href="claims">
                 Claims
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item"
+            data-bs-dismiss="offcanvas">
               <Link className="nav-link" href="/news">
                 News
               </Link>
             </li>
-            <li className="nav-item d-lg-none">
+            <li className="nav-item d-lg-none"
+            data-bs-dismiss="offcanvas">
               <Link className="nav-link" href="contact-us">
                 Contact Us
               </Link>

@@ -32,7 +32,7 @@ const MarineInsuranceSection: React.FC = () => {
     return <div>Loading content....</div>
   }
 
-  
+
   return (
     <section className="wrapper py-10 py-lg-14 position-relative overflow-hidden">
       <div
@@ -60,7 +60,7 @@ const MarineInsuranceSection: React.FC = () => {
           </div>
           <div className="col d-flex flex-column order-lg-first">
             <div className="wrapper-content h-100">
-              <h2 className="sbttl text-primary mb-lg-6">
+              <h2 className="sbttl text-primary mb-lg-6 max-19ch">
               {marineInsuranceData?.title}
               </h2>
               {parse(marineInsuranceData?.content || "")}

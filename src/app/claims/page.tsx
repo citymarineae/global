@@ -8,7 +8,7 @@ import { Claims as claimsType } from "types/Claims";
 import parse from 'html-react-parser';
 
 export default function Claims() {
-  
+
   const [loading,setLoading] = useState(true)
   const [claimsData,setClaimsData] = useState<{
     pageHeading: string
@@ -23,7 +23,7 @@ export default function Claims() {
     try {
       const data:claimsType = await apiService.get("/claims");
       // setClaimsData(data);
-      
+
       if (data.claims[0]) {
         const claimsData = data.claims[0]
         console.log(claimsData)
@@ -71,7 +71,7 @@ export default function Claims() {
             </div>
           </div>
           <div className="col d-flex flex-column order-lg-first">
-            <div className="wrapper-content d-flex flex-column h-100">
+            <div className="wrapper-content d-flex flex-column h-100 mainsecrp">
               <div>
                 <h2 className="sbttl text-primary mb-lg-6">{claimsData?.contentHeading}</h2>
                 <p>
@@ -250,7 +250,7 @@ export default function Claims() {
                 />
               </div>
             </div>
-            <div className="col d-flex flex-column ps-md-8">
+            <div className="col d-flex flex-column ps-auto ps-lg-8">
               <div className="wrapper-content d-flex flex-column h-100">
                 <div>
                   <p>
@@ -261,7 +261,7 @@ export default function Claims() {
                     needed the most. Trust us to be there, every step of the way, ensuring your
                     interests are protected and your operations continue smoothly.
                   </p>
-                  <a href="#" className="text-primary" style={{ fontWeight: 500 }}>
+                  <a href="#" className="text-primary font-18" style={{ fontWeight: 500 }}>
                     Contact Us for Expert Claims Assistance
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

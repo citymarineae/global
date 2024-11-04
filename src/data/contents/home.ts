@@ -5,7 +5,7 @@ export interface MarineInsuranceContent {
     buttonText: string;
     buttonLink: string;
   }
-  
+
   export const marineInsuranceContent: MarineInsuranceContent = {
     title: "Leading Marine Insurance Brokers in the MENA Region",
     paragraphs: [
@@ -15,4 +15,3 @@ export interface MarineInsuranceContent {
     buttonText: "Read More",
     buttonLink: "/about-us",
   };
-  

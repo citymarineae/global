@@ -78,7 +78,7 @@ const IndiMemeberPage = () => {
                                 <p>{memeberData?.description}
                                 </p>
                             </article>
-                            <div className="pb-lg-10">
+                            <div className="pb-lg-10 pt-4 pt-xl-0">
                                 <ul className="list-unstyled list-style1">
                                     <li>
                                         <svg width="18" height="17" viewBox="0 0 18 17" fill="none"
