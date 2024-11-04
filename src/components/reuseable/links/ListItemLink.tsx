@@ -19,7 +19,8 @@ export default function ListItemLink({
   linkClassName = "nav-link"
 }: ListItemLinkProps) {
   return (
-    <li className={liClassName}>
+    <li className={liClassName}
+    data-bs-dismiss="offcanvas">
       <Link className={linkClassName} href={href}>
         {thum && <img src={thum} alt={title.toString()} />} {/* Render the image if `thum` is provided */}
         {title}

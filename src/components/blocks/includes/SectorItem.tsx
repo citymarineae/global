@@ -11,7 +11,7 @@ interface SectorItem {
     title: string;
     img: string;
   }
-  
+
   const marineEnergyItems: SectorItem[] = [
     { title: "Hull & Machinery", img: "001.webp" },
     { title: "Protection & Indemnity", img: "002.webp" },
@@ -27,9 +27,9 @@ interface SectorItem {
     { title: "Insurance for Specific Units", img: "012.webp" },
   ];
 
-  
+
   export const SectorItem = () => {
-    
+
     const router = usePathname()
 
   const [loading,setLoading] = useState(true)
@@ -59,11 +59,11 @@ interface SectorItem {
       setReadMoreButton(true)
     }
   },[router])
-  
+
   return (
     <div className="row gy-5 gy-lg-8">
     {marineInsuranceSectors?.marineSections && marineInsuranceSectors.marineSections.map((item, index) => (
-        <div className="col-md-6 col-lg-4 col-xxl-3" key={index}>
+        <div className="col-6 col-lg-4 col-xxl-3 item-ide" key={index}>
           <div className="hverbx">
             <Link href={`/marine-energy/${item.id}`}>
               <figure>
@@ -76,10 +76,10 @@ interface SectorItem {
               </figure>
               <div className="hbnmbxs">
                 <div className="row d-flex align-items-end">
-                  <div className="ttsc col-10">
+                  <div className="ttsc col-12 col-md-10">
                     <h4>{item.title}</h4>
                   </div>
-                  <div className="icms col-2 text-end">
+                  <div className="icms col-4  col-md-2 text-end d-none d-md-block">
                     <img
                       src="/img/icons/rndarw.svg"
                       alt="Arrow"
@@ -92,7 +92,7 @@ interface SectorItem {
             </Link>
           </div>
         </div>
-      
+
       ))}
         { readMoreButton && <div className="col-12 text-center">
         <Link className="btn rounded-pill btnCty" href="/marine-energy">

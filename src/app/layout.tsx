@@ -40,7 +40,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <ScrollCue>
         <header className="position-absolute w-100">
         <NavbarOne
-          navClassName="navbar navbar-expand-lg center-nav transparent navbar-dark avbar-dark caret-none" logoAlt="logo-light"
+          navClassName="navbar navbar-expand-lg center-nav transparent navbar-dark avbar-dark " logoAlt="logo-light"
         />
       </header>
           <ThemeProvider>{children}</ThemeProvider>

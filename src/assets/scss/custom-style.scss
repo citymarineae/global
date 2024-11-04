@@ -53,6 +53,12 @@
         max-width: 62ch;
     }
 }
+.font-18{ font-size: clamp(0.6rem, 3vw, 0.9rem);;}
+.max-19ch{max-width: 19ch;}
+.mainsecrp{
+    h3{color: var(--bs-primary) !important;
+    margin-top: 50px;}
+}
 
 .abt-main {
     position: relative;
@@ -805,7 +811,38 @@
 
 /* Medium devices (tablets, up to 992px) */
 @media (max-width: 62em) {
+    .mainsecrp{
+        h3{color: var(--bs-primary) !important;
+        margin-top: 25px;}
+    }
+    .dropdown-item {
+        img {
+            filter: brightness(0) invert(1) !important;
+        }
 
+        display: block;
+        width: 100%;
+        padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+        clear: both;
+        font-weight: 500;
+        color: var(--bs-dropdown-link-color);
+        text-align: inherit;
+        white-space: nowrap;
+        background-color: rgba(0, 0, 0, 0);
+        border: 0;
+        letter-spacing: -0.01rem;
+        font-size: 18px;
+        font-weight: 400;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+    }
+    .offcanvas.offcanvas-start{width: 18rem;}
+    .item-ide:nth-child(odd){
+        padding-right: 10px;
+    }
+    .item-ide:nth-child(even){
+        padding-left: 10px;
+    }
     /* ... */
     .navbar-brand a img {
         height: 70px;
@@ -827,8 +864,11 @@
         }
     }
 
-    .hverbx .hbnmbxs {
-        padding: 1.5em;
+    .hverbx {
+        height: 185px !important;
+        .hbnmbxs {
+            padding: 0.5em;
+        }
     }
 
     .abt-sec1 {
@@ -913,27 +953,7 @@
         font-size: 1rem;
     }
 
-    .dropdown-item {
-        img {
-            filter: brightness(0) invert(1) !important;
-        }
 
-        display: block;
-        width: 100%;
-        padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
-        clear: both;
-        font-weight: 500;
-        color: var(--bs-dropdown-link-color);
-        text-align: inherit;
-        white-space: nowrap;
-        background-color: rgba(0, 0, 0, 0);
-        border: 0;
-        letter-spacing: -0.01rem;
-        font-size: 18px;
-        font-weight: 400;
-        -webkit-transition: all .2s ease-in-out;
-        transition: all .2s ease-in-out;
-    }
 
     .shape-opmob {
         opacity: 0.1 !important;

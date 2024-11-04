@@ -37,12 +37,12 @@ export default function Sectors() {
           {/* Marine, Energy & Crewing Tab */}
           <div className="tab-pane fade show active" id="tab3-1">
             <SectorItem/>
- 
+
           </div>
 
           {/* Ports & Terminals Tab */}
           <div className="tab-pane fade" id="tab3-2">
-            <div className="row d-flex align-items-center">
+            <div className="row d-flex align-items-center mb-4 mb-lg-0">
               <div className="col-lg-8">
                 <h4>Typical cover for ports and terminals</h4>
                 <p>
@@ -89,7 +89,7 @@ export default function Sectors() {
               </div>
             </div>
 
-            <div className="row d-flex align-items-center">
+            <div className="row d-flex align-items-center mb-4 mb-lg-0">
               <div className="col-lg-8 order-lg-2">
                 <h4>Additional cover</h4>
                 <p>
