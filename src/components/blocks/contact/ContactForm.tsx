@@ -5,7 +5,8 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import apiService from "services/api";
 import { Contact } from "types/Contact";
 import parse from 'html-react-parser'
-import { Element } from "html-react-parser";
+import Swal from 'sweetalert2'
+import 'sweetalert2/src/sweetalert2.scss'
 
 type Inputs = {
   name: string
@@ -84,7 +85,13 @@ const ContactForm: React.FC = () => {
       })
 
       if (response.ok) {
-        alert("email sent successfully")
+        Swal.fire({
+          icon: "success",
+          title: "Thank You",
+          text:"Your submission has been received",
+          showConfirmButton: false,
+          timer: 1500
+        });
         reset()
       } else {
         alert('error in sending email')

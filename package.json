@@ -34,6 +34,7 @@
     "resend": "^4.0.0",
     "scrollcue": "^2.0.0",
     "sharp": "^0.33.2",
+    "sweetalert2": "^11.14.5",
     "swiper": "^11.0.6",
     "typewriter-effect": "^2.21.0"
   },
