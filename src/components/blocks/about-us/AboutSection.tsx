@@ -52,23 +52,23 @@ export const AboutSection = ({setBannerVideoTitle}:{
     <div>
       <section className="abt-sec1">
         <div className="container">
-          <div className="abt-sec1__div">
+          <div className="abt-sec1__div" data-cues="fadeIn">
             <div className="shape opacity-50">
               <img src="/img/icons/main-vector.svg" width="100" height="100" alt="Shape" />
             </div>
-            <h4>{aboutData?.description}</h4>
+            <h4  >{aboutData?.description}</h4>
           </div>
         </div>
       </section>
 
       {/* About Us Main */}
       <section className="wrapper abt-main position-relative overflow-hidden">
-        <div className="abt-main__img">
+        <div className="abt-main__img" >
           <img src={aboutData?.image} width="100" height="100" alt="About Us Main" />
         </div>
         <div className="container">
           <div className="abt-main__div py-10 py-lg-14">
-            <div className="abt-main__content">
+            <div className="abt-main__content" data-cues="fadeIn">
               <h2 className="sbttl mb-3">{aboutData?.contentHeading}</h2>
               <p>{parse(aboutData?.content || "")}</p>
               {/* {aboutContent.paragraphs.map((paragraph, index) => (

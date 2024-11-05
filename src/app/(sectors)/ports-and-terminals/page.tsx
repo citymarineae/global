@@ -32,14 +32,14 @@ export default function PortsAndTerminals() {
     return <div>Loading content....</div>
   }
 
-  
+
   return (
     <Fragment>
       <main className="content-wrapper">
         <BannerVideo
           title="Ports & Terminals"
-          videoSrc="/media/ports-terminals.mp4"
-          posterSrc="/media/ports-and-terminals01.webp"
+          videoSrc="/media/port.mp4"
+          posterSrc="/media/port.png"
         ></BannerVideo>
         <section className="wrapper pt-10 py-md-10 py-xl-10 py-xxl-14 position-relative overflow-hidden">
           <div className="shape position-absolute top-min-15 end-10 d-none d-md-block opacity-50">
@@ -76,7 +76,7 @@ export default function PortsAndTerminals() {
                 </div>
               </div>
               <div className="col order-lg-first d-flex flex-column">
-                <div className="wrapper-content pe-5 d-flex flex-column pc-1 custom-list">
+                <div className="wrapper-content pe-5 d-flex flex-column pc-1 custom-list cslis">
                   {parse(portsAndTerminalData?.contentOne || "")}
                 </div>
               </div>
