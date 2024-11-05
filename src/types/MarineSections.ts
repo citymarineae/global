@@ -3,4 +3,6 @@ export type MarineSection = {
     subTitle:string
     content:string
     image:string
+    bannerVideo:string
+    bannerImage:string
 }
