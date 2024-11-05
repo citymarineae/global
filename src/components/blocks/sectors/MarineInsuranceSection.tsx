@@ -48,7 +48,7 @@ const MarineInsuranceSection: React.FC = () => {
         />
       </div>
       <div className="container">
-        <div className="row row-cols-1 row-cols-lg-2 gx-lg-10 gx-xl-14 gy-8" data-cues="fadeIn">
+        <div className="row row-cols-1 row-cols-lg-2 gx-lg-10 gx-xl-14 gy-8" data-cues="fadeIn" data-delay="600">
           <div className="col d-flex order-lg-last">
             <div className="img-box img-box-grd flex-grow-1">
               <img
