@@ -9,7 +9,7 @@ export default function About() {
 
   return (
     <Fragment>
-         <main className="content-wrapper">
+         <main className="content-wrapper"  >
         <BannerVideo title={bannerVideoTitle} videoSrc="/media/about.mp4"  posterSrc="/media/about-us.png" ></BannerVideo>
         <AboutSection setBannerVideoTitle={setBannerVideoTitle}/>
         </main>

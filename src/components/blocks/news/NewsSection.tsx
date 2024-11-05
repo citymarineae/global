@@ -49,9 +49,9 @@ const NewsSection: React.FC = () => {
   }, []);
 
   // Todo: redo the below part with appropriate components and styles
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
 
   if (news.length === 0) {
     return <div>No news found.</div>;
@@ -59,12 +59,12 @@ const NewsSection: React.FC = () => {
 
   return (
     <section className="topnews py-10 py-lg-14 position-relative">
-      <div className="shape position-absolute top-5 end-min-2 d-none d-md-block z-index-min-1">
+      <div className="shape position-absolute top-5 end-min-2 d-none d-md-block z-index-min-1"   >
         <img src="/img/icons/shape-down.svg" width="200" height="200" style={{ transform: "rotate(177deg)" }} alt="" />
       </div>
       <div className="container">
-        <div className="row d-flex align-items-stretch gy-lg-12 gy-8">
-          <div className="col-lg-6">
+        <div className="row d-flex align-items-stretch gy-lg-12 gy-8"   >
+          <div className="col-lg-6" >
             <div className="bigbox h-100">
               <div className="bigbox__imgbox">
                 <img src={news[0].image} width="100" height="100" className="w-100 h-100" alt="" />

@@ -63,7 +63,7 @@ interface SectorItem {
   return (
     <div className="row gy-5 gy-lg-8" >
     {marineInsuranceSectors?.marineSections && marineInsuranceSectors.marineSections.map((item, index) => (
-        <div className="col-6 col-lg-4 col-xxl-3 item-ide" key={index} >
+        <div className="col-6 col-lg-4 col-xxl-3 item-ide" key={index}  >
           <div className="hverbx">
             <Link href={`/marine-energy/${item.id}`}>
               <figure>

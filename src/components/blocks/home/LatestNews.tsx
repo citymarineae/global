@@ -94,7 +94,8 @@ export default function LatestNews() {
                 modules={[Pagination]}
                 className="mySwiper"
               >
-                <SwiperSlide data-cues="fadeIn"  >
+                <SwiperSlide
+                 data-cues="fadeIn" data-delay="300" >
                   <div className="nwslfts nsbx">
                     <figure>
                       <img
@@ -124,7 +125,7 @@ export default function LatestNews() {
                     const nextItem = latestNews.news[index + 2];
 
                     return (
-                      <SwiperSlide key={item.id}>
+                      <SwiperSlide key={item.id} >
                         <div className="nwslrts nsbx d-flex align-items-center">
                           <figure className="w-25">
                             <img

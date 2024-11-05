@@ -11,10 +11,10 @@ export default function Sectors() {
     <section className="wrapper bg-primary sctrbs">
       <Image
         className="icone"
-        src="/assets/img/icons/icobs.svg"
+        src="/img/icons/icobs.svg"
         alt="Icon"
-        width={50}
-        height={50}
+        width={477}
+        height={477}
       />
 
       <div className="container py-lg-14 py-10"  data-cues="fadeIn">
