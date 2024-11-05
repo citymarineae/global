@@ -31,6 +31,7 @@ export default function Sector(){
     useEffect(() => {
         console.log("useeffect")
         fetchSectionData();
+        console.log(process.env.NEXT_PUBLIC_DOMAIN_URL)
     }, []);
 
     if(loading){
@@ -42,8 +43,8 @@ export default function Sector(){
         <main className="content-wrapper">
             <BannerVideo
                 title="Marine, Energy & Crewing"
-                videoSrc="/media/marine-energy.mp4"
-                posterSrc="/marine-energy.png"
+                videoSrc={process.env.NEXT_PUBLIC_DOMAIN_URL?  process.env.NEXT_PUBLIC_DOMAIN_URL + sectionData?.bannerVideo : ""}
+                posterSrc={sectionData?.bannerImage || ""}
             ></BannerVideo>
 
             <section className="wrapper py-10 py-lg-14 position-relative overflow-hidden">
