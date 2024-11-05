@@ -69,6 +69,7 @@ export default function NavbarOne({
               alt="logo"
               src={`/img/${logo}.svg`}
               srcSet={`/img/${logo}.svg 2x`}
+              className={logo}
             />
           }
         />
