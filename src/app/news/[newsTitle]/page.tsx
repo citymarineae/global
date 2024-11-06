@@ -60,10 +60,10 @@ const NewsPage: React.FC = () => {
   const CACHE_DURATION = 10 * 60 * 1000;
 
   // fetch news with given id (replace with actual news id for individual news)
-  async function fetchDataWithId(id: string) {
+  async function fetchDataWithId(newsTitle: string) {
     setLoading(true);
     try {
-      const data: News = await apiService.get("/news?id=" + id);
+      const data: News = await apiService.get("/news?slug=" + newsTitle);
       setNews(data);
       CACHE_KEY
       localStorage.setItem(

@@ -75,7 +75,7 @@ const NewsSection: React.FC = () => {
                 </div>
                 <h3 className="news-title">{news[0].title}</h3>
                 <p className="news-short-desc">{news[0].brief}</p>
-                <Link href={`/news/${news[0].id}`} className="news-link text-primary">
+                <Link href={`/news/${formatNewsForUrl(news[0].title)}`} className="news-link text-primary">
                   <span>Read More</span>
                   <i className="nws-arrow"></i>
                 </Link>
@@ -99,7 +99,7 @@ const NewsSection: React.FC = () => {
                     <p className="news-short-desc">{item.brief}</p>
                   </div>
                   <div className="news-card__footer">
-                    <Link href={`/news/${item.id}`} className="news-link text-primary">
+                    <Link href={`/news/${formatNewsForUrl(item.title)}`} className="news-link text-primary">
                       <span>Read More</span>
                       <i className="nws-arrow"></i>
                     </Link>
