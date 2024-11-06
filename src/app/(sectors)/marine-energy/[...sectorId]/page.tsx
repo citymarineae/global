@@ -29,7 +29,6 @@ export default function Sector(){
         }
     }
 
-
     useEffect(() => {
         console.log("useeffect")
         fetchSectionData();

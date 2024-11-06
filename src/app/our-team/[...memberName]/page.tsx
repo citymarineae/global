@@ -18,7 +18,7 @@ type Team = {
 const IndiMemeberPage = () => {
 
     const params = useParams()
-    const { memberId } = params
+    const { memberName } = params
     // const member = memberName[0].replace(/-/g, '')
     // const user = teamMembers.find((item)=>item.name.replace(/ /g, '').replace(/,/g, '').replace(/\./g, '').toLowerCase()==member)
 
@@ -33,11 +33,11 @@ const IndiMemeberPage = () => {
         email: string
     } | null>(null)
 
-    async function fetchDataWithId(id: string) {
+    async function fetchDataWithId(memberName: string) {
         setLoading(true);
         try {
-            console.log("ID", id)
-            const data: Team = await apiService.get("/team?id=" + id);
+            
+            const data: Team = await apiService.get("/team?slug=" + memberName);
             if (data) {
                 setMemberData(data);
             }
@@ -53,9 +53,9 @@ const IndiMemeberPage = () => {
     //   console.log(newsTitle);
 
     useEffect(() => {
-        if (!memberId) return;
-        fetchDataWithId(memberId as string);
-    }, [memberId]);
+        if (!memberName) return;
+        fetchDataWithId(memberName as string);
+    }, [memberName]);
 
     return (
         <main className="content-wrapper">
