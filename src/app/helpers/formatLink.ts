@@ -13,4 +13,18 @@ export const formatNewsForUrl = (news:string) =>{
         .replace(/\./g, '')
         .replace(/’/g,'')
         .toLowerCase();
-}   
+} 
+
+export const formatMarineSectionForURL = (name:string) => {
+
+
+    return name.replace(/&/g, '-')
+    .replace(/,/g, '')                  
+    .replace(/’/g, '-')
+    .replace(/'/g, '')                    
+    .replace(/ +/g, '-')                 
+    .replace(/-+/g, '-')                 
+    .toLowerCase()                       
+    .trim()
+        
+};

@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import apiService from 'services/api';
 import { MarineInsuraceSectors } from 'types/MarineInsuraceSectors';
 import { usePathname, useRouter } from 'next/navigation';
+import { formatMarineSectionForURL } from 'app/helpers/formatLink';
 
 
 interface SectorItem {
@@ -65,7 +66,7 @@ interface SectorItem {
     {marineInsuranceSectors?.marineSections && marineInsuranceSectors.marineSections.map((item, index) => (
         <div className="col-6 col-lg-4 col-xxl-3 item-ide" key={index}  >
           <div className="hverbx">
-            <Link href={`/marine-energy/${item.id}`}>
+            <Link href={`/marine-energy/${formatMarineSectionForURL(item.title)}`}>
               <figure>
                 <img
                   src={item.image}

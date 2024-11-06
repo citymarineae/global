@@ -2,6 +2,8 @@ import axios, { AxiosInstance, AxiosResponse } from "axios";
 
 const BASE_URL = "https://citymarine-admin.vercel.app/api";
 
+// const BASE_URL = "http://localhost:3001"
+
 class ApiService {
   private api: AxiosInstance;
 

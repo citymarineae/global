@@ -14,11 +14,13 @@ export default function Sector(){
     const [loading, setLoading] = useState(true)
     const [sectionData, setSectionData] = useState< MarineSection | null >(null)
 
+    const sectionName = sectorId[0]
+    console.log(sectionName)
     async function fetchSectionData() {
         console.log("Called fetch")
         setLoading(true);
         try {
-            const data:MarineSection = await apiService.get(`/sectors/marine/section?id=${sectorId}`);
+            const data:MarineSection = await apiService.get(`/sectors/marine/section?slug=${sectionName}`);
             setSectionData(data);
         } catch (error) {
             console.error("Failed to fetch data:", error);
@@ -26,7 +28,6 @@ export default function Sector(){
             setLoading(false);
         }
     }
-
 
     useEffect(() => {
         console.log("useeffect")
