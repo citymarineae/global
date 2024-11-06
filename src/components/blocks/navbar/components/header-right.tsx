@@ -30,7 +30,7 @@ export default function HeaderRight({
       <ul className="navbar-nav flex-row align-items-center ms-auto">
       <li className="nav-item d-none d-lg-block">
         <Link href="/contact-us" className="btn rounded-pill btnCty">
-            Contact <i className="icbc"></i>
+            Contact Us <i className="icbc"></i>
         </Link>
       </li>
         {/* ============= language dropdwown ============= */}
