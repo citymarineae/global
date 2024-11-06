@@ -66,13 +66,14 @@ export default function Sector(){
                                 </h2>
                                 {parse(sectionData?.content || "")}
                             </div>
-                        </div>
-                        <div className="col ms-auto">
+
+                        <div className="col ">
                             <div className="go-back">
                                 <Link href="/marine-energy"
                                     className="text-decoration-none text-primary d-flex align-items-center gap-2 fw-500">
                                     <img src="/img/icons/arrow-left.svg" width="50" height="50" alt="" /><span>Back</span></Link>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>

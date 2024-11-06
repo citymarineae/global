@@ -41,7 +41,7 @@ export default function PortsAndTerminals() {
           videoSrc="/media/port.mp4"
           posterSrc="/media/port.png"
         ></BannerVideo>
-        <section className="wrapper pt-10 py-md-10 py-xl-10 py-xxl-14 position-relative overflow-hidden" data-cues="fadeIn" data-delay="300">
+        <section className="wrapper pt-7 py-md-10 py-xl-10 py-xxl-14 position-relative overflow-hidden" data-cues="fadeIn" data-delay="300">
           <div className="shape position-absolute top-min-15 end-10 d-none d-md-block opacity-50" data-cues="fadeIn" >
             <img
               src="/img/icons/shape-up.svg"
@@ -76,7 +76,7 @@ export default function PortsAndTerminals() {
                 </div>
               </div>
               <div className="col order-lg-first d-flex flex-column">
-                <div className="wrapper-content pe-5 d-flex flex-column pc-1 custom-list cslis">
+                <div className="wrapper-content pe-5 d-flex flex-column pc-1 custom-list cslis main-sx">
                   {parse(portsAndTerminalData?.contentOne || "")}
                 </div>
               </div>
@@ -99,8 +99,8 @@ export default function PortsAndTerminals() {
           </div>
           <div className="container">
             <div className="row row-cols-1 row-cols-lg-2 gy-10" data-cues="fadeIn" data-delay="400" data-group="acta">
-              <div className="col d-flex flex-column">
-                <div className="img-box img-box-grd flex-grow-1" data-cues="fadeIn" data-delay="400">
+              <div className="col d-flex flex-column ">
+                <div className="img-box img-box-grd flex-grow-1 " data-cues="fadeIn" data-delay="400">
                   <img
                     src={portsAndTerminalData?.imageTwo}
                     className="w-100 h-100"
@@ -109,7 +109,7 @@ export default function PortsAndTerminals() {
                 </div>
               </div>
               <div className="col">
-                <div className="wrapper-content ps-md-5 custom-list pc-1">
+                <div className="wrapper-content ps-md-5 custom-list pc-1 main-sx">
                   {parse(portsAndTerminalData?.contentTwo || "")}
                 </div>
               </div>

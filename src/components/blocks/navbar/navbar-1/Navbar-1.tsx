@@ -117,7 +117,7 @@ export default function NavbarOne({
             <NavItem/>
             <li className="nav-item"
             data-bs-dismiss="offcanvas">
-              <Link className="nav-link" href="claims">
+              <Link className="nav-link" href="/claims">
                 Claims
               </Link>
             </li>
@@ -129,7 +129,7 @@ export default function NavbarOne({
             </li>
             <li className="nav-item d-lg-none"
             data-bs-dismiss="offcanvas">
-              <Link className="nav-link" href="contact-us">
+              <Link className="nav-link" href="/contact-us">
                 Contact Us
               </Link>
             </li>

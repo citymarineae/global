@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-primary">
       <div className="container pt-10 pt-lg-14 pb-lg-8 pb-5">
-        <div className="row gy-5 gy-lg-7 gy-lg-0" data-cues="fadeIn">
+        <div className="row gy-5 gy-lg-7 gy-lg-0 pb-0 pb-md-5 pb-lg-0" data-cues="fadeIn">
           <div className="col-lg-4">
             <div className="widget">
               <img
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="col-md-4">
+          <div className="col-md-6 col-lg-4">
             <div className="widget">
               <h4 className="widget-title mb-3 text-white">Quick Links</h4>
               <hr />
@@ -70,20 +70,21 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Column 3: Contact Us */}
-          <div className="col-md-4">
+          <div className="col-md-6 col-lg-4">
             <div className="widget msxgs">
               <h4 className="widget-title mb-3 text-white">Contact Us</h4>
               <hr />
-              <div className="d-flex gap-2 mb-2 align-items-center">
+              <div className="d-flex gap-4 mb-2 align-items-center">
                 <div className="ftr-iconbox">
                   <img src="/img/icons/email.svg" alt="Email Icon" />
                 </div>
                 <NextLink
                   href="mailto:info@citymarinebrokers.com"
                   title="info@citymarinebrokers.com"
+
                 ></NextLink>
               </div>
-              <div className="d-flex gap-2 align-items-center">
+              <div className="d-flex gap-4 align-items-center">
                 <div className="ftr-iconbox">
                   <img src="/img/icons/phone.svg" alt="Phone Icon" />
                 </div>

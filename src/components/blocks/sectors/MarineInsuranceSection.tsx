@@ -58,7 +58,7 @@ const MarineInsuranceSection: React.FC = () => {
               />
             </div>
           </div>
-          <div className="col d-flex flex-column order-lg-first">
+          <div className="col d-flex flex-column order-lg-first gy-7 gy-md-10">
             <div className="wrapper-content h-100">
               <h2 className="sbttl text-primary mb-lg-6 ">
               {marineInsuranceData?.title}

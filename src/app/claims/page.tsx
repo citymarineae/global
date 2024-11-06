@@ -49,7 +49,7 @@ export default function Claims() {
     <Fragment>
          <main className="content-wrapper">
         <BannerVideo title={claimsData?.pageHeading || ""} videoSrc=""  posterSrc="/img/claims-bnr.webp" ></BannerVideo>
-        <section className="wrapper py-10 py-lg-14 position-relative overflow-hidden">
+        <section className="wrapper py-7 py-lg-14 position-relative overflow-hidden">
       <div className="shape position-absolute top-20 start-min-2 d-none d-md-block opacity-25"  data-cues="fadeIn"   data-delay="600">
         <img
           src="/img/icons/shape-up.svg"
@@ -70,7 +70,7 @@ export default function Claims() {
               />
             </div>
           </div>
-          <div className="col d-flex flex-column order-lg-first">
+          <div className="col d-flex flex-column order-lg-first gy-7 gy-md-10">
             <div className="wrapper-content d-flex flex-column h-100 mainsecrp">
               <div>
                 <h2 className="sbttl text-primary mb-lg-6">{claimsData?.contentHeading}</h2>
@@ -83,7 +83,7 @@ export default function Claims() {
         </div>
       </div>
     </section>
-    <section className="wrapper case-stdy pb-10 pb-lg-14" data-cues="fadeIn"   data-delay="200">
+    <section className="wrapper case-stdy pb-7 pb-md-10 pb-lg-14" data-cues="fadeIn"   data-delay="200">
         <div className="container bg-primary text-white position-relative overflow-hidden"  data-cues="fadeIn"   data-delay="200">
           <div className="shape position-absolute top-0 end-10 d-none d-md-block">
             <img
@@ -94,9 +94,9 @@ export default function Claims() {
               style={{ scale: 1.5 }}
             />
           </div>
-          <div className="case-stdy__div py-10 p-md-5 py-md-10 p-lg-12 py-xxl-13" >
+          <div className="case-stdy__div py-7 p-md-5 py-md-10 p-lg-12 py-xxl-13" >
             <h3 className="sbttl text-white mb-4">Case Study</h3>
-            <article className="case-stdy__content-box mb-8">
+            <article className="case-stdy__content-box mb-3 mb-md-8">
               <h4 className="sbttl-sm">1. Pollution Incident</h4>
               <p>
                 Our claims team consists of highly skilled claims handlers and maritime lawyers with
@@ -105,8 +105,8 @@ export default function Claims() {
                 with the best possible service.
               </p>
             </article>
-            <div className="row row-cols-1 row-cols-lg-2 mb-8 gy-10 gy-lg-0">
-              <div className="col">
+            <div className="row row-cols-1 row-cols-lg-2 mb-3  mb-md-8 gy-10 gy-lg-0">
+              <div className="col ">
                 <article>
                   <h5 className="text-white mb-5">Immediate Actions Taken</h5>
                   <ul className="custom-list-2">
@@ -128,7 +128,7 @@ export default function Claims() {
                   </ul>
                 </article>
               </div>
-              <div className="col">
+              <div className="col mt-3 mt-md-0">
                 <div>
                   <h5 className="text-white mb-5">Minimizing Delays</h5>
                   <ul className="custom-list-2">
@@ -148,7 +148,7 @@ export default function Claims() {
                 </div>
               </div>
             </div>
-            <div className="bg-primary-lit case-stdy-box p-8 position-relative">
+            <div className="bg-primary-lit case-stdy-box p-3 p-md-8 position-relative">
               <div className="shape shape-white position-absolute top-min-15 end-5 d-none d-md-block">
                 <img src="/img/icons/shape-down.svg" width="200" height="200" alt="" />
               </div>
@@ -169,7 +169,7 @@ export default function Claims() {
                 </ul>
               </article>
             </div>
-            <article className="case-stdy__content-box my-8">
+            <article className="case-stdy__content-box my-5 my-md-8">
               <h4>2. FD&D Dispute Resolution</h4>
               <p>
                 Another testament to our claims team's expertise is our handling of an FD&D dispute involving
@@ -178,10 +178,10 @@ export default function Claims() {
                 losses.
               </p>
             </article>
-            <div className="row row-cols-1 row-cols-lg-2 mb-8 gy-10 gy-lg-0">
+            <div className="row row-cols-1 row-cols-lg-2 mb-3 mb-md-8 gy-10 gy-lg-0">
               <div className="col">
                 <article>
-                  <h5 className="text-white mb-5">Strategic Legal Action</h5>
+                  <h5 className="text-white mb-3 mb-md-5">Strategic Legal Action</h5>
                   <ul className="custom-list-2">
                     <li>
                       <strong>Immediate Notification and Legal Representation:</strong> Our claims
@@ -196,7 +196,7 @@ export default function Claims() {
                   </ul>
                 </article>
               </div>
-              <div className="col">
+              <div className="col mt-3 mt-md-0">
                 <article>
                   <h5 className="text-white mb-5">Alternative Dispute Resolution</h5>
                   <ul className="custom-list-2">
@@ -213,7 +213,7 @@ export default function Claims() {
                 </article>
               </div>
             </div>
-            <div className="bg-primary-lit case-stdy-box p-8 position-relative">
+            <div className="bg-primary-lit case-stdy-box p-3 p-md-8 position-relative">
               <div className="shape shape-white position-absolute top-min-15 end-5 d-none d-md-block">
                 <img src="/img/icons/shape-down.svg" width="200" height="200" alt="" />
               </div>
@@ -234,7 +234,7 @@ export default function Claims() {
         </div>
       </section>
 
-      <section className="wrapper pb-10 pb-lg-14 position-relative overflow-hidden">
+      <section className="wrapper pb-7 pb-md-10 pb-lg-14 position-relative overflow-hidden">
         <h2 className="d-none">City Marine Insurance Brokers</h2>
         <div className="shape shape-rotate position-absolute bottom-0 end-10 d-none d-md-block" style={{ opacity: 0.5 }}>
           <img src="/img/icons/shape-up.svg" width="200" height="200" alt="" />
@@ -250,7 +250,7 @@ export default function Claims() {
                 />
               </div>
             </div>
-            <div className="col d-flex flex-column ps-auto ps-lg-8">
+            <div className="col d-flex flex-column mt-5 mt-md-8 ps-auto ps-lg-8">
               <div className="wrapper-content d-flex flex-column h-100">
                 <div>
                   <p>
