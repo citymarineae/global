@@ -50,7 +50,7 @@ export default function Claims() {
          <main className="content-wrapper">
         <BannerVideo title={claimsData?.pageHeading || ""} videoSrc=""  posterSrc="/img/claims-bnr.webp" ></BannerVideo>
         <section className="wrapper py-10 py-lg-14 position-relative overflow-hidden">
-      <div className="shape position-absolute top-20 start-min-2 d-none d-md-block opacity-25">
+      <div className="shape position-absolute top-20 start-min-2 d-none d-md-block opacity-25"  data-cues="fadeIn"   data-delay="600">
         <img
           src="/img/icons/shape-up.svg"
           width="200"
@@ -60,8 +60,8 @@ export default function Claims() {
         />
       </div>
       <div className="container">
-        <div className="row row-cols-1 row-cols-lg-2 gy-10">
-          <div className="col d-flex order-lg-last">
+        <div className="row row-cols-1 row-cols-lg-2 gy-10"  data-cues="fadeIn"   data-delay="600">
+          <div className="col d-flex order-lg-last" >
             <div className="img-box img-box-grd flex-grow-1">
               <img
                 src={claimsData?.image}
@@ -83,8 +83,8 @@ export default function Claims() {
         </div>
       </div>
     </section>
-    <section className="wrapper case-stdy pb-10 pb-lg-14">
-        <div className="container bg-primary text-white position-relative overflow-hidden">
+    <section className="wrapper case-stdy pb-10 pb-lg-14" data-cues="fadeIn"   data-delay="200">
+        <div className="container bg-primary text-white position-relative overflow-hidden"  data-cues="fadeIn"   data-delay="200">
           <div className="shape position-absolute top-0 end-10 d-none d-md-block">
             <img
               src="/img/icons/shape-big-down.svg"
@@ -94,7 +94,7 @@ export default function Claims() {
               style={{ scale: 1.5 }}
             />
           </div>
-          <div className="case-stdy__div py-10 p-md-5 py-md-10 p-lg-12 py-xxl-13">
+          <div className="case-stdy__div py-10 p-md-5 py-md-10 p-lg-12 py-xxl-13" >
             <h3 className="sbttl text-white mb-4">Case Study</h3>
             <article className="case-stdy__content-box mb-8">
               <h4 className="sbttl-sm">1. Pollution Incident</h4>
@@ -240,7 +240,7 @@ export default function Claims() {
           <img src="/img/icons/shape-up.svg" width="200" height="200" alt="" />
         </div>
         <div className="container">
-          <div className="row row-cols-1 row-cols-lg-2 gy-10">
+          <div className="row row-cols-1 row-cols-lg-2 gy-10"  data-cues="fadeIn"   data-delay="300">
             <div className="col d-flex">
               <div className="img-box img-box-grd flex-grow-1">
                 <img

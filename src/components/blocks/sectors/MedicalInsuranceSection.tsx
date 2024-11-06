@@ -28,11 +28,11 @@ const MedicalInsuranceSection: React.FC = () => {
     fetchPersonalLinesData();
   }, []);
 
-  if(loading){
-    return <div>Loading content....</div>
-  }
+  // if(loading){
+  //   return <div>Loading content....</div>
+  // }
 
-  
+
   return (
     <section className="wrapper py-10 py-lg-14 position-relative overflow-hidden">
       <div className="shape position-absolute top-20 end-0 d-none d-md-block opacity-25" style={{ zIndex: -1 }}>
@@ -45,7 +45,7 @@ const MedicalInsuranceSection: React.FC = () => {
         />
       </div>
       <div className="container">
-        <div className="row row-cols-1 row-cols-lg-2 gx-lg-14 gy-10">
+        <div className="row row-cols-1 row-cols-lg-2 gx-lg-14 gy-10" data-cues="fadeIn" data-delay="400" data-group="sd">
           <div className="col d-flex order-md-last">
             <div className="img-box img-box-grd flex-grow-1">
               <img

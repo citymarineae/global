@@ -53,15 +53,15 @@ export default function LatestNews() {
     fetchLatestNews();
   }, []);
 
-  if (loading) {
-    return <div>Loading content....</div>
-  }
+  // if (loading) {
+  //   return <div>Loading content....</div>
+  // }
 
   return (
     <>
-      <section className="wrapper bg-light hm-news-sec">
+      <section className="wrapper bg-light hm-news-sec"  >
         <div className="container py-lg-14 py-10" >
-          <div className="d-flex justify-content-between align-items-center nswttl gap-3" >
+          <div className="d-flex justify-content-between align-items-center nswttl gap-3" data-cues="fadeIn">
             <h2 className="sbttl">Latest News</h2>
             <hr className="my-0" />
             <Link href="/news" className="btn rounded-pill btnCty">
@@ -72,6 +72,7 @@ export default function LatestNews() {
           <div className="row mt-lg-6 mt-5">
             <div className="col-lg-12">
               <Swiper
+                 data-cues="fadeIn"  data-group="gp"
                 onSwiper={(swiperInstance) => (swiperRef.current = swiperInstance)} // Assign swiper instance
                 slidesPerView={1}
                 spaceBetween={10}
@@ -93,7 +94,8 @@ export default function LatestNews() {
                 modules={[Pagination]}
                 className="mySwiper"
               >
-                <SwiperSlide>
+                <SwiperSlide
+                 data-cues="fadeIn" data-delay="300" >
                   <div className="nwslfts nsbx">
                     <figure>
                       <img
@@ -123,7 +125,7 @@ export default function LatestNews() {
                     const nextItem = latestNews.news[index + 2];
 
                     return (
-                      <SwiperSlide key={item.id}>
+                      <SwiperSlide key={item.id} >
                         <div className="nwslrts nsbx d-flex align-items-center">
                           <figure className="w-25">
                             <img

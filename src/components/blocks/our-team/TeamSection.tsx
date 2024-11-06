@@ -46,11 +46,11 @@ if(loading){
 
 
   return (
-    <section className="wrapper team-wrapper py-10 py-lg-14 position-relative overflow-hidden">
-      <div className="container">
-        <div className="row row-cols-2 row-cols-md-3 row-cols-xxl-4 gy-4 gx-xl-10 team-wrapper__div">
+    <section className="wrapper team-wrapper py-10 py-lg-14 position-relative overflow-hidden" data-cues="fadeIn"   data-delay="600" >
+      <div className="container" >
+        <div className="row row-cols-2 row-cols-md-3 row-cols-xxl-4 gy-4 gx-xl-10 team-wrapper__div" >
           {memberDatas.map((member: TeamMember, index: number) => (
-            <Link href={`/our-team/${member.id}`} key={index}><div className="col">
+            <Link href={`/our-team/${member.id}`} key={index}><div className="col" >
               <div className="team-card">
                 {/* <a href={member.detailsLink} className="team-card__link"></a> */}
                 <div className="team-card__head">
@@ -72,7 +72,7 @@ if(loading){
           ))}
         </div>
       </div>
-      <div className="team-wrapper__shape opacity-50 z-index-min-1">
+      <div className="team-wrapper__shape opacity-50 z-index-min-1" data-cue="fadeIn" data-delay="600">
         <img
           src="img/icons/shape-up.svg"
           width="150"

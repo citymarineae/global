@@ -28,9 +28,9 @@ export default function PortsAndTerminals() {
     fetchPortAndTerminalsData();
   }, []);
 
-  if(loading){
-    return <div>Loading content....</div>
-  }
+  // if(loading){
+  //   return <div>Loading content....</div>
+  // }
 
 
   return (
@@ -41,8 +41,8 @@ export default function PortsAndTerminals() {
           videoSrc="/media/port.mp4"
           posterSrc="/media/port.png"
         ></BannerVideo>
-        <section className="wrapper pt-10 py-md-10 py-xl-10 py-xxl-14 position-relative overflow-hidden">
-          <div className="shape position-absolute top-min-15 end-10 d-none d-md-block opacity-50">
+        <section className="wrapper pt-10 py-md-10 py-xl-10 py-xxl-14 position-relative overflow-hidden" data-cues="fadeIn" data-delay="300">
+          <div className="shape position-absolute top-min-15 end-10 d-none d-md-block opacity-50" data-cues="fadeIn" >
             <img
               src="/img/icons/shape-up.svg"
               width="200"
@@ -63,11 +63,11 @@ export default function PortsAndTerminals() {
         </section>
 
         {/* Second Section */}
-        <section className="wrapper pb-4 pb-lg-5 position-relative overflow-hidden">
+        <section className="wrapper pb-4 pb-lg-5 position-relative overflow-hidden"  >
           <div className="container">
-            <div className="row row-cols-1 row-cols-lg-2 gy-10">
+            <div className="row row-cols-1 row-cols-lg-2 gy-10" data-cues="fadeIn" data-delay="300" data-group="act">
               <div className="col order-lg-last d-flex">
-                <div className="img-box img-box-grd flex-grow-1">
+                <div className="img-box img-box-grd flex-grow-1" data-cues="fadeIn" data-delay="300">
                   <img
                     src={portsAndTerminalData?.imageOne}
                     className="w-100 h-100"
@@ -85,9 +85,9 @@ export default function PortsAndTerminals() {
         </section>
 
         {/* Third Section */}
-        <section className="wrapper pt-5 pt-md-10 pb-10 pb-lg-14 position-relative overflow-hidden">
+        <section className="wrapper pt-5 pt-md-10 pb-10 pb-lg-14 position-relative overflow-hidden" >
           <div
-            className="shape position-absolute bottom-0 end-0 d-none d-md-block opacity-25"
+            className="shape position-absolute bottom-0 end-0 d-none d-md-block opacity-25" data-cues="fadeIn"
             style={{ scale: 1.2 }}
           >
             <img
@@ -98,9 +98,9 @@ export default function PortsAndTerminals() {
             />
           </div>
           <div className="container">
-            <div className="row row-cols-1 row-cols-lg-2 gy-10">
+            <div className="row row-cols-1 row-cols-lg-2 gy-10" data-cues="fadeIn" data-delay="400" data-group="acta">
               <div className="col d-flex flex-column">
-                <div className="img-box img-box-grd flex-grow-1">
+                <div className="img-box img-box-grd flex-grow-1" data-cues="fadeIn" data-delay="400">
                   <img
                     src={portsAndTerminalData?.imageTwo}
                     className="w-100 h-100"

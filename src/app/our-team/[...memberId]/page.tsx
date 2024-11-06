@@ -59,18 +59,18 @@ const IndiMemeberPage = () => {
 
     return (
         <main className="content-wrapper">
-            <section className="pg-bnr" style={{ backgroundImage: 'url(/img/team-bnr.webp)' }}>
+            <section className="pg-bnr" style={{ backgroundImage: 'url(/img/team-bnr.webp)' }} >
                 <div className="container">
-                    <div className="pg-bnr__div">
+                    <div className="pg-bnr__div" >
                         <h1 className="pg-bnr__ttl">Our Team</h1>
                     </div>
                 </div>
             </section>
             <section className="wrapper py-10 py-lg-14 position-relative">
                 <div className="container">
-                    <div className="row row-cols-1 row-cols-md-2 gy-4 gy-lg-0 gx-lg-14">
+                    <div className="row row-cols-1 row-cols-md-2 gy-4 gy-lg-0 gx-lg-14" data-cues="fadeIn" data-group="images" data-delay="400">
                         <div className="col pe-md-8">
-                            <img src={memeberData?.image} width="300" height="300" className="w-100 h-100" alt="" />
+                            <img src={memeberData?.image} width="300" height="300" className="w-100 h-auto" alt="" />
                         </div>
                         <div className="col d-flex flex-column justify-content-between">
                             <article className="member-details">

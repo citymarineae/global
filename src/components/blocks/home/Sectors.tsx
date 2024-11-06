@@ -11,13 +11,13 @@ export default function Sectors() {
     <section className="wrapper bg-primary sctrbs">
       <Image
         className="icone"
-        src="/assets/img/icons/icobs.svg"
+        src="/img/icons/icobs.svg"
         alt="Icon"
-        width={50}
-        height={50}
+        width={477}
+        height={477}
       />
 
-      <div className="container py-lg-14 py-10" >
+      <div className="container py-lg-14 py-10"  data-cues="fadeIn">
         <h2 className="sbttl text-white">Sectors</h2>
 
         <ul className="nav nav-tabs nav-tabs-basic sctnv mb-lg-7 mb-5">
@@ -35,7 +35,7 @@ export default function Sectors() {
 
         <div className="tab-content mt-0 mt-md-5">
           {/* Marine, Energy & Crewing Tab */}
-          <div className="tab-pane fade show active" id="tab3-1">
+          <div className="tab-pane fade show active" id="tab3-1" data-cues="fadeIn" data-group="In">
             <SectorItem/>
 
           </div>
