@@ -20,7 +20,7 @@ export default function Sector(){
         console.log("Called fetch")
         setLoading(true);
         try {
-            const data:MarineSection = await apiService.get(`/sectors/marine/section?id=${sectionName}`);
+            const data:MarineSection = await apiService.get(`/sectors/marine/section?slug=${sectionName}`);
             setSectionData(data);
         } catch (error) {
             console.error("Failed to fetch data:", error);
