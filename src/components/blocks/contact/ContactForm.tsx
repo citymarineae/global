@@ -44,7 +44,6 @@ const ContactForm: React.FC = () => {
     }
   }
 
-
   useEffect(() => {
     fetchContactData();
   }, []);
