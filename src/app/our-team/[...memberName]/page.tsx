@@ -4,6 +4,7 @@ import teamMembers from 'data/contents/TeamMember'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import apiService from 'services/api'
+import { BannerVideo } from "components/blocks/includes/BannerVideo";
 
 type Team = {
     id: string
@@ -59,13 +60,9 @@ const IndiMemeberPage = () => {
 
     return (
         <main className="content-wrapper">
-            <section className="pg-bnr" style={{ backgroundImage: 'url(/img/team-bnr.webp)' }} >
-                <div className="container">
-                    <div className="pg-bnr__div" >
-                        <h1 className="pg-bnr__ttl">Our Team</h1>
-                    </div>
-                </div>
-            </section>
+
+ <BannerVideo title="Our Team" videoSrc="/media/team.mp4"  posterSrc="/img/team.png" ></BannerVideo>
+
             <section className="wrapper py-10 py-lg-14 position-relative">
                 <div className="container">
                     <div className="row row-cols-1 row-cols-lg-2 gy-4 gy-lg-0 gx-lg-14" data-cues="fadeIn" data-group="images" data-delay="400">
