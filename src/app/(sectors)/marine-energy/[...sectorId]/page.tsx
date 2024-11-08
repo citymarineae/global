@@ -44,7 +44,7 @@ export default function Sector(){
         <main className="content-wrapper">
             <BannerVideo
                 title="Marine, Energy & Crewing"
-                videoSrc={"https://citymarine.vercel.app/" + sectionData?.bannerVideo || ""}
+                videoSrc={sectionData?.bannerVideo || ""}
                 posterSrc={sectionData?.bannerImage || ""}
             ></BannerVideo>
 
