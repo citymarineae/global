@@ -67,13 +67,17 @@ const NewsSection: React.FC = () => {
           <div className="col-lg-6" >
             <div className="bigbox h-100">
               <div className="bigbox__imgbox">
-                <img src={news[0].image} width="100" height="100" className="w-100 h-100" alt="" />
+                <Link href={`/news/${formatNewsForUrl(news[0].title)}`} className="news-link text-primary">
+                  <img src={news[0].image} width="100" height="100" className="w-100 h-100" alt="" />
+                  </Link>
               </div>
               <div className="bigbox__content">
                 <div className="date-tag rounded-pill">
                   <p>{new Date(news[0].date).toDateString()}</p>
                 </div>
-                <h3 className="news-title">{news[0].title}</h3>
+                <Link href={`/news/${formatNewsForUrl(news[0].title)}`} className="news-link text-primary">
+                  <h3 className="news-title">{news[0].title}</h3>
+                  </Link>
                 <p className="news-short-desc">{news[0].brief}</p>
                 <Link href={`/news/${formatNewsForUrl(news[0].title)}`} className="news-link text-primary">
                   <span>Read More</span>
@@ -89,13 +93,17 @@ const NewsSection: React.FC = () => {
               <div className={colClass} key={item.id}>
                 <div className="news-card">
                   <div className="news-card__head">
+                  <Link href={`/news/${formatNewsForUrl(item.title)}`} >
                     <img src={item.image} alt=""/>
+                    </Link>
                   </div>
                   <div className="news-card__body">
                     <div className="date-tag rounded-pill">
                       <p>{new Date(news[0].date).toDateString()}</p>
                     </div>
-                    <h3 className="news-title">{item.title}</h3>
+                    <Link href={`/news/${formatNewsForUrl(item.title)}`} >
+                      <h3 className="news-title">{item.title}</h3>
+                    </Link>
                     <p className="news-short-desc">{item.brief}</p>
                   </div>
                   <div className="news-card__footer">

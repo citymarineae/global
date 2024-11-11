@@ -26,11 +26,13 @@ export default function Home() {
     <Fragment>
       {/* <DynamicHead title={homeMetaData?.title} description={homeMetaData?.desc} /> */}
       <main className="content-wrapper">
+          <div data-cues="fadeIn" data-group="piv" data-delay="300">
           <VideoSwiper/>
-          <HomeAbout/>
+          <HomeAbout />
+          </div>
           <Sectors/>
          <LatestNews/>
-        
+
       </main>
     </Fragment>
   );
