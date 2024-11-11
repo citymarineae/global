@@ -55,9 +55,9 @@ const MedicalInsuranceSection: React.FC = () => {
               />
             </div>
           </div>
-          <div className="col d-flex flex-column order-md-first">
+          <div className="col d-flex flex-column order-md-first gy-7 gy-md-10">
             <div className="wrapper-content d-flex flex-column h-100">
-              <h2 className="sbttl text-primary mb-lg-6">
+              <h2 className="sbttl text-primary mb-lg-6 mw-17c">
                 {personalLinesData?.title}
               </h2>
               {parse(personalLinesData?.content || "")}

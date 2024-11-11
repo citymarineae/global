@@ -4,6 +4,7 @@ import teamMembers from 'data/contents/TeamMember'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import apiService from 'services/api'
+import { BannerVideo } from "components/blocks/includes/BannerVideo";
 
 type Team = {
     id: string
@@ -36,7 +37,7 @@ const IndiMemeberPage = () => {
     async function fetchDataWithId(memberName: string) {
         setLoading(true);
         try {
-            
+
             const data: Team = await apiService.get("/team?slug=" + memberName);
             if (data) {
                 setMemberData(data);
@@ -59,18 +60,22 @@ const IndiMemeberPage = () => {
 
     return (
         <main className="content-wrapper">
-            <section className="pg-bnr" style={{ backgroundImage: 'url(/img/team-bnr.webp)' }} >
-                <div className="container">
-                    <div className="pg-bnr__div" >
-                        <h1 className="pg-bnr__ttl">Our Team</h1>
-                    </div>
-                </div>
-            </section>
+
+ <BannerVideo title="Our Team" videoSrc="/media/team.mp4"  posterSrc="/img/team.png" ></BannerVideo>
+
             <section className="wrapper py-10 py-lg-14 position-relative">
                 <div className="container">
-                    <div className="row row-cols-1 row-cols-md-2 gy-4 gy-lg-0 gx-lg-14" data-cues="fadeIn" data-group="images" data-delay="400">
+                    <div className="row row-cols-1 row-cols-lg-2 gy-4 gy-lg-0 gx-lg-14" data-cues="fadeIn" data-group="images" data-delay="400">
                         <div className="col pe-md-8">
                             <img src={memeberData?.image} width="300" height="300" className="w-100 h-auto" alt="" />
+                            <div className="col mt-7 d-none d-lg-block">
+                                <div className="go-back">
+                                    <Link href="/our-team"
+                                        className="text-decoration-none text-primary d-flex align-items-center gap-2 fw-500">
+                                        <img src="/img/icons/arrow-left.svg" width="50" height="100" className="" alt="" />
+                                        <span>Back</span></Link>
+                                </div>
+                            </div>
                         </div>
                         <div className="col d-flex flex-column justify-content-between">
                             <article className="member-details">
@@ -109,15 +114,16 @@ const IndiMemeberPage = () => {
                                     </li>
                                 </ul>
                             </div>
-                        </div>
-                        <div className="col mt-4">
-                            <div className="go-back">
-                                <Link href="/our-team"
-                                    className="text-decoration-none text-primary d-flex align-items-center gap-2 fw-500">
-                                    <img src="/img/icons/arrow-left.svg" width="50" height="100" className="" alt="" />
-                                    <span>Back</span></Link>
+                            <div className="col mt-4 d-block d-lg-none">
+                                <div className="go-back">
+                                    <Link href="/our-team"
+                                        className="text-decoration-none text-primary d-flex align-items-center gap-2 fw-500">
+                                        <img src="/img/icons/arrow-left.svg" width="50" height="100" className="" alt="" />
+                                        <span>Back</span></Link>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                     <div className="shape position-absolute bottom-10 end-2 d-none d-md-block opacity-25">
                         <img src="/img/icons/shape-up.svg" width="200" height="200" alt="" />

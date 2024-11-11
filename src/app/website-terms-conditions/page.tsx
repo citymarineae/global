@@ -3,7 +3,7 @@ import React from 'react'
 const WebsiteTermsAndConditions = () => {
   return (
     <main className="content-wrapper web-terms">
-      
+
       <section className="pg-bnr" style={{backgroundImage: 'url(/img/website-terms-banner.webp)'}}>
         <div className="container">
           <div className="pg-bnr__div">
@@ -43,7 +43,7 @@ const WebsiteTermsAndConditions = () => {
 
               <p className="mb-0">“Material” means the contents of the Site, including, but not limited to, text, graphics, logos, links, codes and data.</p>
             </div>
-            <div className="col-md-4 col-12 pr-0 my-10 mb-lg-0">
+            <div className="col-md-4 col-12 pr-0 my-10 mb-lg-0 d-none d-md-block">
               <div className="text-md-end">
                 <img src="/img/terms-cond.webp" className="w-100" alt=""/>
               </div>
@@ -125,7 +125,7 @@ const WebsiteTermsAndConditions = () => {
               </p>
             </div>
             <div className="vec-img p-0 position-absolute top-0 end-0 d-flex justify-content-end">
-              <img src="/img/svg/Vector-2.svg" alt=""/>
+              <img src="/img/svg/vector-2.svg" alt=""/>
             </div>
           </div>
         </div>
@@ -268,7 +268,8 @@ const WebsiteTermsAndConditions = () => {
               </p>
             </div>
             <div className="vec-img p-0  position-absolute top-0 end-0 d-flex justify-content-end">
-              <img src="/img/svg/Vector-4.svg" alt=""/>
+              <img src="/img/svg/vector-4.svg" alt="" />
+
             </div>
           </div>
         </div>
