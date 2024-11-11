@@ -1,13 +1,29 @@
-import ContactForm from "components/blocks/contact/ContactForm";
-import { BannerVideo } from "components/blocks/includes/BannerVideo";
-import { Fragment } from "react";
-export default function Contact() {
-  return (
-    <Fragment>
-         <main className="content-wrapper">
-        <BannerVideo title="Contact" videoSrc="/media/contact-us.webm"  posterSrc="media/contact-us01.webp" ></BannerVideo>
-        <ContactForm/>
-        </main>
-    </Fragment>
-  );
+import React from 'react'
+
+
+import apiService from 'services/api';
+import { Metadata } from 'next';
+import { Contact as contactType } from "types/Contact";
+import Contact from './ContactUs';
+
+export async function generateMetadata(): Promise<Metadata>{
+    
+  const data: contactType = await apiService.get("/contact-us");
+
+  
+  const metadataTitle = data.contact[0].metaDataTitle || "CITY MARINE - Marine, Energy & Crewing";
+  const metadataDescription = data.contact[0].metaDataDesc || "CITY MARINE - Marine, Energy & Crewing";
+    
+  return {
+    title: metadataTitle,
+    description: metadataDescription,
+  };
 }
+
+const page = () => {
+  return (
+    <Contact/>
+  )
+}
+
+export default page

@@ -4,5 +4,7 @@ export type MarineSection = {
     content:string
     image:string
     bannerVideo:string
-    bannerImage:string
+    bannerImage:string,
+    metaDataTitle:string,
+    metaDataDesc:string
 }

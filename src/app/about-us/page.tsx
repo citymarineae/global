@@ -1,18 +1,27 @@
-"use client"
+import React from 'react'
 
-import { AboutSection } from "components/blocks/about-us/AboutSection";
-import { BannerVideo } from "components/blocks/includes/BannerVideo";
-import { Fragment, useState } from "react";
-export default function About() {
+import apiService from 'services/api';
+import { Metadata } from 'next';
+import { About as aboutUsType } from 'types/About';
+import About from './AboutUs';
 
-  const [bannerVideoTitle,setBannerVideoTitle] = useState("")
-
-  return (
-    <Fragment>
-         <main className="content-wrapper"  >
-        <BannerVideo title={bannerVideoTitle} videoSrc="/media/about.mp4"  posterSrc="/media/about-us.png" ></BannerVideo>
-        <AboutSection setBannerVideoTitle={setBannerVideoTitle}/>
-        </main>
-    </Fragment>
-  );
+export async function generateMetadata(): Promise<Metadata>{
+    
+  const data: aboutUsType = await apiService.get("/about");
+  
+  const metadataTitle = data.about[0].metaDataTitle || "CITY MARINE - Marine, Energy & Crewing";
+  const metadataDescription = data.about[0].metaDataDesc || "CITY MARINE - Marine, Energy & Crewing";
+    
+  return {
+    title: metadataTitle,
+    description: metadataDescription,
+  };
 }
+
+const page = () => {
+  return (
+    <About/>
+  )
+}
+
+export default page

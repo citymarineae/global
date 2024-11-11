@@ -4,7 +4,9 @@ export type Contact = {
                 fax: string
                 phone?: string
                 address: string
-                map: string          
+                map: string  ,
+                metaDataTitle:string,
+                metaDataDesc:string        
         }
     }    
 };

@@ -1,18 +1,28 @@
-import { Fragment } from "react";
-import { BannerVideo } from "components/blocks/includes/BannerVideo";
-import MedicalInsuranceSection from "components/blocks/sectors/MedicalInsuranceSection";
+import React from 'react'
 
-export default function PersonalLines() {
-  return (
-    <Fragment>
-      <main className="content-wrapper">
-        <BannerVideo
-          title="Personal Lines"
-          videoSrc="/media/personal-lines.mp4"
-          posterSrc="/media/personal-lines01.webp"
-        ></BannerVideo>
-        <MedicalInsuranceSection />
-      </main>
-    </Fragment>
-  );
+
+import apiService from 'services/api';
+import { Metadata } from 'next';
+import { PersonalLines as personalLinesType } from 'types/PersonalLines';
+import PersonalLines from './PersonalLines';
+
+export async function generateMetadata(): Promise<Metadata>{
+    
+  const data:personalLinesType = await apiService.get("/sectors/personal-lines");
+  
+  const metadataTitle = data.metaDataTitle || "CITY MARINE - Marine, Energy & Crewing";
+  const metadataDescription = data.metaDataDesc || "CITY MARINE - Marine, Energy & Crewing";
+    
+  return {
+    title: metadataTitle,
+    description: metadataDescription,
+  };
 }
+
+const page = () => {
+  return (
+    <PersonalLines/>
+  )
+}
+
+export default page

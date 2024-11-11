@@ -9,7 +9,8 @@ import VideoSwiper from "components/blocks/home/VideoSwiper";
 import Sectors from "components/blocks/home/Sectors";
 import LatestNews from "components/blocks/home/LatestNews";
 import HomeAbout from "components/blocks/home/HomeAbout";
-import { useMetaData } from "./contexts/metaDataContext";
+
+
 
 
 
@@ -19,13 +20,11 @@ export default function Home() {
 
   // USED FOR SHOW POPUP WITH IMAGE
   useLightBox();
-
-  const {homeMetaData} = useMetaData()
-
-  console.log(homeMetaData)
+ 
 
   return (
     <Fragment>
+      {/* <DynamicHead title={homeMetaData?.title} description={homeMetaData?.desc} /> */}
       <main className="content-wrapper">
           <VideoSwiper/>
           <HomeAbout/>
