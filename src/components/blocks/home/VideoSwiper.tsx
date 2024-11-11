@@ -49,7 +49,7 @@ const VideoSwiper = () => {
   }, []);
 
   return (
-    <section className="wrapper bg-dark position-relative">
+    <section className="wrapper bg-dark position-relative" >
       <div className="swiper mySwiper mnSlide"  >
         <div className="swiper-wrapper">
           <div className="swiper-slide">

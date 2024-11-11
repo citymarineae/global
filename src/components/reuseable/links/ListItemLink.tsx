@@ -22,8 +22,12 @@ export default function ListItemLink({
     <li className={liClassName}
     data-bs-dismiss="offcanvas">
       <Link className={linkClassName} href={href}>
+      <div className="d-flex align-items-center">
+      <div className="mn-nav-li">
         {thum && <img src={thum} alt={title.toString()} />} {/* Render the image if `thum` is provided */}
-        {title}
+        </div>
+          <span className="fontsm16">{title}</span>
+          </div>
       </Link>
     </li>
   );

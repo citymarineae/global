@@ -98,7 +98,7 @@ export default function LatestNews() {
                 <SwiperSlide
                  data-cues="fadeIn" data-delay="300" >
                   <div className="nwslfts nsbx">
-                    <figure>
+                  <Link className="rtarw" href={`/news/${formatNewsForUrl(latestNews?.news[0].title || "")}`}> <figure>
                       <img
                         src={latestNews?.news[0]?.image || ""}
                         width={500}
@@ -106,9 +106,10 @@ export default function LatestNews() {
                         alt=""
                       />
                     </figure>
+                  </Link>
                     <div className="nsmbx">
                       <span>20 August 2024</span>
-                      <h4>IG Supports Mercy Ships’ Life-Changing Mission</h4>
+                      <Link className="rtarw" href={`/news/${formatNewsForUrl(latestNews?.news[0].title || "")}`}> <h4>IG Supports Mercy Ships’ Life-Changing Mission</h4> </Link>
                       <p>
                         IG provides crucial support to Mercy Ships, enabling
                         life-saving surgeries and medical care for those in
@@ -128,17 +129,19 @@ export default function LatestNews() {
                     return (
                       <SwiperSlide key={item.id} >
                         <div className="nwslrts nsbx d-flex align-items-center">
-                          <figure className="w-25">
+                        <Link className="" href={`/news/${formatNewsForUrl(item.title)}`}> <figure className="">
                             <img
                               src={item.image}
                               width={200}
                               height={200}
                               alt=""
                             />
-                          </figure>
+                          </figure></Link>
                           <div className="nsmbx">
                             <span>20 August 2024</span>
-                            <h4>{item.title}</h4> {/* Use item.title for dynamic title */}
+
+                            <Link className="rtarw" href={`/news/${formatNewsForUrl(item.title)}`}>
+                           <h4>{item.title}</h4> {/* Use item.title for dynamic title */} </Link>
                             <Link className="rtarw" href={`/news/${formatNewsForUrl(item.title)}`}>
                               Read More <i className="icbc"></i>
                             </Link>
@@ -147,7 +150,9 @@ export default function LatestNews() {
 
                         {nextItem && (
                           <div className="nwslrts nsbx d-flex align-items-center">
-                            <figure className="w-25">
+
+                            <Link className="rtarw" href={`/news/${formatNewsForUrl(nextItem.title)}`}>
+                              <figure>
                               <img
                                 src={nextItem.image}
                                 width={200}
@@ -155,9 +160,12 @@ export default function LatestNews() {
                                 alt=""
                               />
                             </figure>
+                            </Link>
                             <div className="nsmbx">
                               <span>20 August 2024</span>
-                              <h4>{nextItem.title}</h4> {/* Use nextItem.title for dynamic title */}
+                              <Link className="rtarw" href={`/news/${formatNewsForUrl(nextItem.title)}`}>
+                                <h4>{nextItem.title}</h4> {/* Use nextItem.title for dynamic title */}
+                                 </Link>
                               <Link className="rtarw" href={`/news/${formatNewsForUrl(nextItem.title)}`}>
                                 Read More <i className="icbc"></i>
                               </Link>

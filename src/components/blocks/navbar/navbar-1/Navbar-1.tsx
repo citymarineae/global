@@ -81,11 +81,14 @@ export default function NavbarOne({
         className="navbar-collapse offcanvas offcanvas-nav offcanvas-start"
       >
         <div className="offcanvas-header d-lg-none">
-        <img
+        <Link href="/" > <img
                 className="lgbcs"
                 src="/img/logo-light.svg"
-                alt="City Marine Logo"
-              />
+            alt="City Marine Logo"
+            data-bs-dismiss="offcanvas"
+          />
+          </Link>
+
           <button
             type="button"
             aria-label="Close"
@@ -139,12 +142,12 @@ export default function NavbarOne({
           <div className="offcanvas-footer d-lg-none">
             <div>
               <NextLink
-                title="info@email.com"
+                title="info@citymarinebrokers.com"
                 className="link-inverse"
-                href="mailto:first.last@email.com"
+                href="mailto:info@citymarinebrokers.com"
               />
               <br />
-              <NextLink href="tel:0123456789" title="00 (123) 456 78 90" />
+              <NextLink href="tel:97165758800" title="+971 6 575 8800" />
               <br />
               <SocialLinks />
             </div>

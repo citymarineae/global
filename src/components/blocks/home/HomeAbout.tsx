@@ -54,7 +54,7 @@ const HomeAbout = () => {
   // }
 
   return (
-    <section className="wrapper bg-rtps" data-cues="fadeIn" data-delay="300">
+    <section className="wrapper bg-rtps" >
       {/* Desktop Image */}
       <figure className="d-none d-lg-block">
         <img
@@ -68,13 +68,13 @@ const HomeAbout = () => {
       <div className="container py-lg-14 py-10">
         <div className="row gy-5"
                  >
-          <div className="col-lg-6">
+          <div className="col-lg-6" >
             <div className="pe-lg-13 text-lg-start" >
               <h2 className="sbttl text-primary mb-xl-6">{homeAboutData?.homeabout[0].title}</h2>
 
               {/* Dynamically map over the paragraphs */}
 
-              <div>
+              <div >
               {parse(homeAboutData?.homeabout[0].content || "")}
               </div>
 

@@ -15,7 +15,7 @@ type InfoProps = {
 export default function Info({
   address,
   title = "Sandbox",
-  phone = "00 (123) 456 78 90",
+  phone = "+971 6 575 8800",
   description = `Sandbox is a multipurpose HTML5 template with various layouts which will be a great solution for your business.`
 }: InfoProps) {
   const otherPages = [
@@ -52,12 +52,12 @@ export default function Info({
             </address>
           )}
           <NextLink
-            title="info@email.com"
+            title="info@citymarinebrokers.com"
             className="link-inverse"
-            href="mailto:first.last@email.com"
+            href="mailto:info@citymarinebrokers.com"
           />
           <br />
-          <NextLink href="tel:0123456789" title={phone!} />
+          <NextLink href="tel:97165758800" title={phone!} />
         </div>
 
         <div className="widget mb-8">
