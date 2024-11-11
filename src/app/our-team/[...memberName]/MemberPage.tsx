@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
+import { BannerVideo } from "components/blocks/includes/BannerVideo";
 import apiService from 'services/api'
 
 type Team = {
@@ -35,7 +36,7 @@ const IndiMemeberPage = () => {
     async function fetchDataWithId(memberName: string) {
         setLoading(true);
         try {
-            
+
             const data: Team = await apiService.get("/team?slug=" + memberName);
             if (data) {
                 setMemberData(data);
@@ -58,13 +59,8 @@ const IndiMemeberPage = () => {
 
     return (
         <main className="content-wrapper">
-            <section className="pg-bnr" style={{ backgroundImage: 'url(/img/team-bnr.webp)' }} >
-                <div className="container">
-                    <div className="pg-bnr__div" >
-                        <h1 className="pg-bnr__ttl">Our Team</h1>
-                    </div>
-                </div>
-            </section>
+
+        <BannerVideo title="Our Team" videoSrc="/media/team.mp4"  posterSrc="/img/team.png" ></BannerVideo>
             <section className="wrapper py-10 py-lg-14 position-relative">
                 <div className="container">
                     <div className="row row-cols-1 row-cols-md-2 gy-4 gy-lg-0 gx-lg-14" data-cues="fadeIn" data-group="images" data-delay="400">
