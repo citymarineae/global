@@ -64,7 +64,7 @@ export const AboutSection = ({setBannerVideoTitle}:{
       </section>
 
       {/* About Us Main */}
-      <section className="wrapper abt-main position-relative overflow-hidden" data-cues="fadeIn" data-delay="800" data-group="sd">
+      <section className="wrapper abt-main position-relative overflow-hidden" >
         <div className="abt-main__img" >
           <img src={aboutData?.image} width="100" height="100" alt="About Us Main" />
         </div>
