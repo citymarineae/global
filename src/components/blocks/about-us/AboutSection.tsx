@@ -50,7 +50,7 @@ export const AboutSection = ({setBannerVideoTitle}:{
 
   return (
     <div>
-      <section className="" data-cues="fadeIn" data-delay="600">
+      <section className="" >
         <div className='abt-sec1'>
         <div className="container ">
           <div className="abt-sec1__div"   >
