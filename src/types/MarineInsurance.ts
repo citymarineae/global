@@ -1,5 +1,7 @@
 export type MarineInsurace = {
     title:string
     image:string
-    content:string
+    content:string,
+    metaDataTitle:string,
+    metaDataDesc:string
 }

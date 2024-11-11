@@ -5,4 +5,6 @@ export type News = {
   content: string;
   image: string;
   date: Date;
+  metaDataTitle:string;
+  metaDataDesc:string;
 };

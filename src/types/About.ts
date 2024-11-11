@@ -5,7 +5,9 @@ export type About = {
             description: string
             contentHeading: string
             content: string
-            image?: string
+            image?: string,
+            metaDataTitle:string,
+            metaDataDesc:string
         }
     }
 

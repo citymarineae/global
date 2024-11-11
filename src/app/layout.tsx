@@ -25,23 +25,51 @@ import "assets/scss/style.scss";
 import "assets/scss/custom-style.scss";
 import NavbarOne from "components/blocks/navbar/navbar-1";
 import Footer from "components/blocks/footer/FooterMn";
-import MetaDataContextProvider, { useMetaData } from "./contexts/metaDataContext";
+
+
 
 
 const manrope = Manrope({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "CITY MARINE",
-  description: ""
-};
+
+import apiService from "services/api"
+
+type HomeAboutData = {
+    homeabout:HomeAboutDataType[]
+  }
+  
+  type HomeAboutDataType = {
+    id: string
+    title: string
+    content: string
+    image: string
+    metaDataTitle:string
+    metaDataDesc:string
+  }
+  
+export async function generateMetadata(): Promise<Metadata>{
+    
+    const data:HomeAboutData = await apiService.get("/home-about");
+  
+    // Assuming you want to use the first item's metadata for this example
+    const metadataTitle = data.homeabout[0]?.metaDataTitle || "Default Title";
+    const metadataDescription = data.homeabout[0]?.metaDataDesc || "Default description";
+      
+    return {
+      title: metadataTitle,
+      description: metadataDescription,
+    };
+    
+  }
 
 
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+ 
   return (
     <html lang="en">
       <body className={manrope.className}>
-        <MetaDataContextProvider>
+        
         <ScrollCue>
           <header className="position-absolute w-100">
           <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -54,7 +82,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <ThemeProvider>{children}</ThemeProvider>
           <Footer/>
         </ScrollCue>
-        </MetaDataContextProvider>
+        
         <PageProgress />
       </body>
     </html>
