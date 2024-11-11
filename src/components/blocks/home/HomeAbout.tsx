@@ -6,6 +6,7 @@ import apiService from 'services/api';
 import { useEffect, useState } from 'react';
 import parse from 'html-react-parser'
 import Link from 'next/link';
+import { useMetaData } from 'app/contexts/metaDataContext';
 
 
 type HomeAboutData = {
@@ -17,6 +18,8 @@ type HomeAboutDataType = {
     title: string
     content: string
     image: string
+    metaDataTitle:string
+    metaDataDesc:string
 }
 
 
@@ -25,12 +28,20 @@ const HomeAbout = () => {
   const [loading, setLoading] = useState(true)
   const [homeAboutData, setHomeAboutData] = useState<HomeAboutData | null>(null)
 
+  const {setHomeMetaData} = useMetaData()
+
   async function fetchMarineInsuranceData() {
     setLoading(true);
     try {
       const data:HomeAboutData = await apiService.get("/home-about");
       // setMarineInsuranceData(data);
       setHomeAboutData(data)
+      const metaData = {
+        title:data.homeabout[0].metaDataTitle,
+        desc:data.homeabout[0].metaDataDesc
+      }
+      setHomeMetaData(metaData)
+
     } catch (error) {
       console.error("Failed to fetch data:", error);
     } finally {

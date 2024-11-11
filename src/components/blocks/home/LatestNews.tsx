@@ -15,6 +15,7 @@ import { News } from "types/News";
 import apiService from "services/api";
 import { LatestNews as latestNewsType } from "types/LatestNews";
 import Link from "next/link";
+import {formatNewsForUrl} from '../../../app/helpers/formatLink'
 
 export default function LatestNews() {
   // Correctly define the swiper reference with SwiperCore type
@@ -113,7 +114,7 @@ export default function LatestNews() {
                         life-saving surgeries and medical care for those in
                         need, transforming lives across the globe.
                       </p>
-                      <Link className="rtarw" href={`/news/${latestNews?.news[0].id}`}>
+                      <Link className="rtarw" href={`/news/${formatNewsForUrl(latestNews?.news[0].title || "")}`}>
                         Read More <i className="icbc"></i>
                       </Link>
                     </div>
@@ -138,7 +139,7 @@ export default function LatestNews() {
                           <div className="nsmbx">
                             <span>20 August 2024</span>
                             <h4>{item.title}</h4> {/* Use item.title for dynamic title */}
-                            <Link className="rtarw" href={`/news/${item.id}`}>
+                            <Link className="rtarw" href={`/news/${formatNewsForUrl(item.title)}`}>
                               Read More <i className="icbc"></i>
                             </Link>
                           </div>
@@ -157,7 +158,7 @@ export default function LatestNews() {
                             <div className="nsmbx">
                               <span>20 August 2024</span>
                               <h4>{nextItem.title}</h4> {/* Use nextItem.title for dynamic title */}
-                              <Link className="rtarw" href={`/news/${nextItem.id}`}>
+                              <Link className="rtarw" href={`/news/${formatNewsForUrl(nextItem.title)}`}>
                                 Read More <i className="icbc"></i>
                               </Link>
                             </div>
