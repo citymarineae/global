@@ -79,7 +79,7 @@ const StandardTermsAndConditions = () => {
 
                     </div>
 
-                    <div className="col-md-4 col-12 pr-0 my-10 mb-lg-0">
+                    <div className="col-md-4 col-12 pr-0 my-10 mb-lg-0 d-none d-md-block">
 
                         <div className="text-md-end">
 
@@ -136,7 +136,7 @@ const StandardTermsAndConditions = () => {
 
                         </ul>
 
-                        
+
 
                         <p>1.3. Communication</p>
                         <p>We may communicate with each other by electronic mail, sometimes attaching further electronic
@@ -360,7 +360,7 @@ const StandardTermsAndConditions = () => {
                     </div>
                     <div className="vec-img position-absolute top-0 end-0 d-flex justify-content-end">
                        <div>
-                         <img src="/img/svg/Vector-2.svg" alt=""/>
+                         <img src="/img/svg/vector-2.svg" alt=""/>
                        </div>
                     </div>
                 </div>
@@ -398,9 +398,8 @@ const StandardTermsAndConditions = () => {
 
                         </p>
 
-                        <p>You must notify Us immediately You become aware of any claim or any circumstances that may
-
-                            give rise to a claim.
+                        <p>You must notify Us immediately You become aware of any claim or any circumstances that may give rise to a claim.
+                        </p>
 
                         <ul className="list-unstyled p-0">
 
@@ -418,7 +417,6 @@ const StandardTermsAndConditions = () => {
 
                                 Your claim.</li>
                         </ul>
-                        </p>
                     </div>
 
                     <div className="vec-img position-absolute top-0 end-0 d-flex justify-content-end">
@@ -618,7 +616,7 @@ const StandardTermsAndConditions = () => {
                     <div className="vec-img position-absolute top-0 end-0 d-flex justify-content-end">
 
                         <div>
-                            <img src="/img/svg/Vector-4.svg" alt=""/>
+                            <img src="/img/svg/vector-4.svg" alt=""/>
                         </div>
 
                     </div>
@@ -744,7 +742,7 @@ const StandardTermsAndConditions = () => {
                     </div>
                     <div className="vec-img position-absolute top-0 end-0 d-flex justify-content-end">
                       <div>
-                          <img src="/img/svg/Vector-5.svg" alt=""/>
+                          <img src="/img/svg/vector-5.svg" alt=""/>
                       </div>
                     </div>
                 </div>
@@ -921,7 +919,7 @@ const StandardTermsAndConditions = () => {
                     <div className="vec-img position-absolute top-0 end-0 d-flex justify-content-end">
 
                         <div>
-                            <img src="/img/svg/Vector-6.svg" alt=""/>
+                            <img src="/img/svg/vector-6.svg" alt=""/>
                         </div>
 
                     </div>
@@ -1100,7 +1098,7 @@ const StandardTermsAndConditions = () => {
 
                     <div className="vec-img position-absolute top-0 end-0 d-flex justify-content-end">
 
-                        <img src="/img/svg/Vector-7.svg" alt=""/>
+                        <img src="/img/svg/vector-7.svg" alt=""/>
 
                     </div>
 
@@ -1260,7 +1258,7 @@ const StandardTermsAndConditions = () => {
 
                     <div className="vec-img position-absolute top-0 end-0 d-flex justify-content-end">
 
-                        <img src="/img/svg/Vector-8.svg" alt=""/>
+                        <img src="/img/svg/vector-8.svg" alt=""/>
 
                     </div>
                 </div>
@@ -1435,20 +1433,20 @@ const StandardTermsAndConditions = () => {
 
                         <p>In the event any portion of this Agreement is found to be invalid or unenforceable, the
 
-                            remainder shall remain in full force and effect.</p> 
+                            remainder shall remain in full force and effect.</p>
                     </div>
 
                     <div className="vec-img position-absolute top-0 end-0 d-flex justify-content-end">
 
-                        <img src="/img/svg/Vector-9.svg" alt=""/>
+                        <img src="/img/svg/vector-9.svg" alt=""/>
 
-                    </div> 
+                    </div>
                 </div>
 
             </div>
 
-        </section> 
-        
+        </section>
+
     </main>
   )
 }
