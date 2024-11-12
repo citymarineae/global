@@ -261,7 +261,7 @@ export default function Claims() {
                     needed the most. Trust us to be there, every step of the way, ensuring your
                     interests are protected and your operations continue smoothly.
                   </p>
-                  <a href="#" className="text-primary font-18" style={{ fontWeight: 500 }}>
+                  <a href="contact-us" className="text-primary font-18" style={{ fontWeight: 500 }}>
                     Contact Us for Expert Claims Assistance
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
