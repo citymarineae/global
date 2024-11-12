@@ -103,7 +103,7 @@ export default function LatestNews() {
                         src={latestNews?.news[0]?.image || ""}
                         width={500}
                         height={200}
-                        alt=""
+                        alt={latestNews?.news[0].altTag}
                       />
                     </figure>
                   </Link>
@@ -134,7 +134,7 @@ export default function LatestNews() {
                               src={item.image}
                               width={200}
                               height={200}
-                              alt=""
+                              alt={item.altTag}
                             />
                           </figure></Link>
                           <div className="nsmbx">
@@ -157,7 +157,7 @@ export default function LatestNews() {
                                 src={nextItem.image}
                                 width={200}
                                 height={200}
-                                alt=""
+                                alt={nextItem.altTag}
                               />
                             </figure>
                             </Link>

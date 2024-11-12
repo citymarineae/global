@@ -12,6 +12,7 @@ interface TeamMember {
   name: string;
   position: string;
   image: string;
+  altTag:string;
 }
 
 
@@ -59,7 +60,7 @@ if(loading){
                     className="team-card__img"
                     width="150"
                     height="150"
-                    alt={member.name}
+                    alt={member.altTag}
                   />
                 </div>
                 <div className="team-card__body">

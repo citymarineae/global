@@ -51,7 +51,7 @@ const MedicalInsuranceSection: React.FC = () => {
               <img
                 src={personalLinesData?.image}
                 className="w-100 h-100 object-fit-cover"
-                alt="marine energy"
+                alt={personalLinesData?.altTag}
               />
             </div>
           </div>

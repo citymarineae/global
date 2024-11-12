@@ -6,5 +6,6 @@ export type LatestNews = {
         id:string
         image:string
         title:string
+        altTag:string
     }[]
 }

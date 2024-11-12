@@ -71,7 +71,7 @@ export default function PortsAndTerminals() {
                   <img
                     src={portsAndTerminalData?.imageOne}
                     className="w-100 h-100"
-                    alt="marine energy"
+                    alt={portsAndTerminalData?.altTagImageOne}
                   />
                 </div>
               </div>
@@ -104,7 +104,7 @@ export default function PortsAndTerminals() {
                   <img
                     src={portsAndTerminalData?.imageTwo}
                     className="w-100 h-100"
-                    alt="marine energy"
+                    alt={portsAndTerminalData?.altTagImageTwo}
                   />
                 </div>
               </div>

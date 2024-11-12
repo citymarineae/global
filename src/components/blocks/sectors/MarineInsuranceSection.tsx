@@ -53,7 +53,7 @@ const MarineInsuranceSection: React.FC = () => {
             <div className="img-box img-box-grd flex-grow-1">
               <img
                 src={marineInsuranceData?.image || ""}
-                alt="marine energy"
+                alt={marineInsuranceData?.altTag}
                 className="w-100 h-100 object-fit-cover"
               />
             </div>

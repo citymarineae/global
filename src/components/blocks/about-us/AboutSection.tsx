@@ -18,6 +18,7 @@ export const AboutSection = ({setBannerVideoTitle}:{
     contentHeading: string
     content: string
     image?: string
+    altTag:string
   } | null | null>(null);
 
   const [loading, setLoading] = useState(true)
@@ -66,7 +67,7 @@ export const AboutSection = ({setBannerVideoTitle}:{
       {/* About Us Main */}
       <section className="wrapper abt-main position-relative overflow-hidden" >
         <div className="abt-main__img" >
-          <img src={aboutData?.image} width="100" height="100" alt="About Us Main" />
+          <img src={aboutData?.image} width="100" height="100" alt={aboutData?.altTag} />
         </div>
         <div className="container">
           <div className="abt-main__div py-10 py-lg-14">
