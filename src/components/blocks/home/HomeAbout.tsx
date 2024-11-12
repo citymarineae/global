@@ -30,7 +30,7 @@ const HomeAbout = () => {
   const [homeAboutData, setHomeAboutData] = useState<HomeAboutData | null>(null)
 
 
-  async function fetchMarineInsuranceData() {
+  async function fetchHomeAbout() {
     setLoading(true);
     try {
       const data:HomeAboutData = await apiService.get("/home-about");
@@ -47,7 +47,7 @@ const HomeAbout = () => {
 
 
   useEffect(() => {
-    fetchMarineInsuranceData();
+    fetchHomeAbout();
   }, []);
 
   // if (loading) {
