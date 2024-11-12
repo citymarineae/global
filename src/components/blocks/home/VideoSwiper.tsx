@@ -1,13 +1,32 @@
 "use client";
 
 import { useEffect, useState } from 'react';
+import apiService from 'services/api';
 import Swiper, { Swiper as SwiperClass } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+type HomeAboutData = {
+  homeabout:HomeAboutDataType[]
+}
+
+type HomeAboutDataType = {
+    id: string
+    title: string
+    content: string
+    image: string
+    metaDataTitle:string
+    metaDataDesc:string
+    altTag:string;
+    bannerVideo1:string;
+    bannerVideo2:string;
+}
+
 const VideoSwiper = () => {
   const [totalSlides, setTotalSlides] = useState<number>(0);
+  const [loading,setLoading] = useState(true)
+  const [videoData,setVideoData] = useState<HomeAboutData | null>(null)
 
   useEffect(() => {
     let swiperInstance: SwiperClass | null = null;
@@ -48,6 +67,27 @@ const VideoSwiper = () => {
     };
   }, []);
 
+
+  async function fetchVideoData() {
+    setLoading(true);
+    try {
+      const data:HomeAboutData = await apiService.get("/home-about");
+      // setMarineInsuranceData(data);
+      setVideoData(data)
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+
+  useEffect(() => {
+    fetchVideoData();
+    
+  }, []);
+
+
   return (
     <section className="wrapper bg-dark position-relative" >
       <div className="swiper mySwiper mnSlide"  >
@@ -56,7 +96,7 @@ const VideoSwiper = () => {
             <div className="video-wrapper sldItm">
               <video
                 poster="/img/bnr-01.jpg"
-                src="/media/002.mp4"
+                src={videoData?.homeabout[0].bannerVideo1 || "/media/002.mp4"}
                 autoPlay
                 loop
                 playsInline
@@ -68,7 +108,7 @@ const VideoSwiper = () => {
             <div className="video-wrapper sldItm">
               <video
                 poster="/img/bnr-02.jpg"
-                src="/media/hero.mp4"
+                src={videoData?.homeabout[0].bannerVideo2 || "/media/hero.mp4"}
                 autoPlay
                 loop
                 playsInline
