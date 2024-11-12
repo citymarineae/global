@@ -4,6 +4,7 @@
 import { BannerVideo } from "components/blocks/includes/BannerVideo";
 import { Fragment, useEffect, useState } from "react";
 import apiService from "services/api";
+import Link from "next/link";
 import { Claims as claimsType } from "types/Claims";
 import parse from 'html-react-parser';
 
@@ -261,7 +262,7 @@ export default function Claims() {
                     needed the most. Trust us to be there, every step of the way, ensuring your
                     interests are protected and your operations continue smoothly.
                   </p>
-                  <a href="contact-us" className="text-primary font-18" style={{ fontWeight: 500 }}>
+                  <Link href="contact-us" className="text-primary font-18" style={{ fontWeight: 500 }}>
                     Contact Us for Expert Claims Assistance
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -276,7 +277,7 @@ export default function Claims() {
                         d="M5.854 10.096a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707L5.854 10.096z"
                       />
                     </svg>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
