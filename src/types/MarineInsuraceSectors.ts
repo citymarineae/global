@@ -5,5 +5,6 @@ export type MarineInsuraceSectors = {
         subTitle: string
         content: string
         image: string
+        altTag:string
     }[]
 }

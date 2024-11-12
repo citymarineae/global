@@ -20,6 +20,7 @@ type HomeAboutDataType = {
     image: string
     metaDataTitle:string
     metaDataDesc:string
+    altTag:string
 }
 
 
@@ -59,7 +60,7 @@ const HomeAbout = () => {
       <figure className="d-none d-lg-block">
         <img
           src={homeAboutData?.homeabout[0].image}
-          alt="About Us"
+          alt={homeAboutData?.homeabout[0].altTag}
           width={800}
           height={400}
         />

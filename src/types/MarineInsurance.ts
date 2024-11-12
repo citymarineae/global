@@ -3,5 +3,6 @@ export type MarineInsurace = {
     image:string
     content:string,
     metaDataTitle:string,
-    metaDataDesc:string
+    metaDataDesc:string,
+    altTag:string
 }

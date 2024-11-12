@@ -15,7 +15,8 @@ export default function Claims() {
     pageHeading: string
     contentHeading: string
     content: string
-    image?: string
+    image?: string,
+    altTag:string
   } | null | null>()
 
   async function fetchClaimsData() {
@@ -67,7 +68,7 @@ export default function Claims() {
               <img
                 src={claimsData?.image}
                 className="w-100 h-100"
-                alt="marine energy"
+                alt={claimsData?.altTag}
               />
             </div>
           </div>

@@ -3,5 +3,6 @@ export type PersonalLines = {
     image:string
     content:string,
     metaDataTitle:string,
-    metaDataDesc:string
+    metaDataDesc:string,
+    altTag:string
 }

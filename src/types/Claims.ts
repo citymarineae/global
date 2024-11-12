@@ -6,7 +6,8 @@ export type Claims = {
             content: string
             image?: string,
             metaDataTitle:string,
-            metaDataDesc:string
+            metaDataDesc:string,
+            altTag:string
         }
     }
 

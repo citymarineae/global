@@ -28,8 +28,12 @@ interface SectorItem {
     { title: "Insurance for Specific Units", img: "012.webp" },
   ];
 
+  type headingCardProps = {
+    heading:string
+    description:string
+  }
 
-  export const SectorItem = () => {
+  export const SectorItem = ({heading,description}:headingCardProps) => {
 
     const router = usePathname()
 
@@ -70,7 +74,7 @@ interface SectorItem {
               <figure>
                 <img
                   src={item.image}
-                  alt={item.title}
+                  alt={item.altTag}
                   width={400}
                   height={300}
                 />

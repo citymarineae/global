@@ -13,6 +13,7 @@ type Team = {
     description: string
     phone: string
     email: string
+    altTag:string
 }
 
 const IndiMemeberPage = () => {
@@ -30,7 +31,8 @@ const IndiMemeberPage = () => {
         position: string
         description: string
         phone: string
-        email: string
+        email: string,
+        altTag:string
     } | null>(null)
 
     async function fetchDataWithId(memberName: string) {
@@ -65,7 +67,7 @@ const IndiMemeberPage = () => {
                 <div className="container">
                     <div className="row row-cols-1 row-cols-md-2 gy-4 gy-lg-0 gx-lg-14" data-cues="fadeIn" data-group="images" data-delay="400">
                         <div className="col pe-md-8">
-                            <img src={memeberData?.image} width="300" height="300" className="w-100 h-auto" alt="" />
+                            <img src={memeberData?.image} width="300" height="300" className="w-100 h-auto" alt={memeberData?.altTag} />
                         </div>
                         <div className="col d-flex flex-column justify-content-between">
                             <article className="member-details">
