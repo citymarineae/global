@@ -820,6 +820,9 @@
     margin-right: 10px;
 }
 @media (max-width: 991px) {
+    .tp10sm{position: relative;
+        top: 10px;}
+    .gp10sm{gap:25px;}
     .fontsm16{font-size: 16px;}
     .dropdown .dropdown-menu .nav-item .mn-nav-li{
         background: none;

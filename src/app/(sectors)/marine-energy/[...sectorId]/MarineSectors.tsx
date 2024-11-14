@@ -53,11 +53,18 @@ export default function Sector(){
                     <img src="/img/icons/shape-up.svg" width="200" height="200" alt="" />
                 </div>
                 <div className="container">
-                    <div className="row row-cols-1 row-cols-lg-2 gy-10 gx-lg-14">
+                    <div className="row row-cols-1 row-cols-lg-2 gy-10 gx-lg-14 gp10sm">
                         <div className="col d-flex">
                             <div className="img-box img-box-grd flex-grow-1">
                                 <img src={sectionData?.image} className="w-100 h-100 object-fit-cover"
                                     alt="marine energy" />
+                                 <div className="col ms-auto mt-4">
+                            <div className="go-back">
+                                <Link href="/marine-energy"
+                                    className="text-decoration-none text-primary d-flex align-items-center gap-2 fw-500 tp10sm">
+                                    <img src="/img/icons/arrow-left.svg" width="50" height="50" alt="" /><span>Back</span></Link>
+                            </div>
+                        </div>
                             </div>
                         </div>
                         <div className="col d-flex flex-column h-100">
@@ -67,13 +74,7 @@ export default function Sector(){
                                 {parse(sectionData?.content || "")}
                             </div>
                         </div>
-                        <div className="col ms-auto">
-                            <div className="go-back">
-                                <Link href="/marine-energy"
-                                    className="text-decoration-none text-primary d-flex align-items-center gap-2 fw-500">
-                                    <img src="/img/icons/arrow-left.svg" width="50" height="50" alt="" /><span>Back</span></Link>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
 
