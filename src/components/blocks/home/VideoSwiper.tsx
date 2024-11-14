@@ -21,6 +21,8 @@ type HomeAboutDataType = {
     altTag:string;
     bannerVideo1:string;
     bannerVideo2:string;
+    videoPoster1:string;
+    videoPoster2:string;
 }
 
 const VideoSwiper = () => {
@@ -90,12 +92,12 @@ const VideoSwiper = () => {
 
   return (
     <section className="wrapper bg-dark position-relative" >
-      <div className="swiper mySwiper mnSlide"  >
+      <div className="swiper mySwiper mnSlide">
         <div className="swiper-wrapper">
           <div className="swiper-slide">
             <div className="video-wrapper sldItm">
               <video
-                poster="/img/bnr-01.jpg"
+                poster={videoData?.homeabout[0].videoPoster1 || "/img/bnr-01.jpg"}
                 src={videoData?.homeabout[0].bannerVideo1 || "/media/002.mp4"}
                 autoPlay
                 loop
@@ -107,7 +109,7 @@ const VideoSwiper = () => {
           <div className="swiper-slide">
             <div className="video-wrapper sldItm">
               <video
-                poster="/img/bnr-02.jpg"
+                poster={videoData?.homeabout[0].videoPoster2 || "/img/bnr-02.jpg"}
                 src={videoData?.homeabout[0].bannerVideo2 || "/media/hero.mp4"}
                 autoPlay
                 loop
