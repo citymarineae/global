@@ -6,6 +6,7 @@ import Swiper, { Swiper as SwiperClass } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { HomeBanner } from 'types/HomeBanner';
 
 type HomeAboutData = {
   homeabout:HomeAboutDataType[]
@@ -28,13 +29,11 @@ type HomeAboutDataType = {
 const VideoSwiper = () => {
   const [totalSlides, setTotalSlides] = useState<number>(0);
   const [loading,setLoading] = useState(true)
-  const [videoData,setVideoData] = useState<HomeAboutData | null>(null)
+  const [videoData,setVideoData] = useState<HomeBanner | null>(null)
 
   useEffect(() => {
-    let swiperInstance: SwiperClass | null = null;
-
-    if (typeof window !== 'undefined') {
-      swiperInstance = new Swiper('.mnSlide', {
+    if (videoData) {
+      let swiperInstance: SwiperClass | null = new Swiper('.mnSlide', {
         slidesPerView: 1,
         spaceBetween: 10,
         pagination: {
@@ -48,7 +47,7 @@ const VideoSwiper = () => {
         },
         on: {
           init: function (this: SwiperClass) {
-            setTotalSlides(this.slides.length); // Correctly typed this
+            setTotalSlides(this.slides.length);
           },
           slideChange: function (this: SwiperClass) {
             const currentSlide = this.realIndex + 1;
@@ -59,30 +58,31 @@ const VideoSwiper = () => {
           },
         },
       });
+  
+      return () => {
+        if (swiperInstance) {
+          swiperInstance.destroy();
+        }
+      };
     }
-
-    // Cleanup on unmount
-    return () => {
-      if (swiperInstance) {
-        swiperInstance.destroy();
-      }
-    };
-  }, []);
+  }, [videoData]);
 
 
   async function fetchVideoData() {
     setLoading(true);
     try {
-      const data:HomeAboutData = await apiService.get("/home-about");
+      const data:HomeBanner = await apiService.get("/home-banner");
       // setMarineInsuranceData(data);
       setVideoData(data)
+      data.homebanner.map((item)=>{
+        console.log(item)
+      })
     } catch (error) {
       console.error("Failed to fetch data:", error);
     } finally {
       setLoading(false);
     }
   }
-
 
   useEffect(() => {
     fetchVideoData();
@@ -94,11 +94,12 @@ const VideoSwiper = () => {
     <section className="wrapper bg-dark position-relative" >
       <div className="swiper mySwiper mnSlide">
         <div className="swiper-wrapper">
-          <div className="swiper-slide">
+          {videoData && videoData?.homebanner.map((item,index)=>(
+            <div className="swiper-slide" key={index}>
             <div className="video-wrapper sldItm">
               <video
-                poster={videoData?.homeabout[0].videoPoster1 || "/img/bnr-01.jpg"}
-                src={videoData?.homeabout[0].bannerVideo1 || "/media/002.mp4"}
+                poster={item.videoPoster || "/img/bnr-01.jpg"}
+                src={item.bannerVideo || "/media/002.mp4"}
                 autoPlay
                 loop
                 playsInline
@@ -106,18 +107,8 @@ const VideoSwiper = () => {
               ></video>
             </div>
           </div>
-          <div className="swiper-slide">
-            <div className="video-wrapper sldItm">
-              <video
-                poster={videoData?.homeabout[0].videoPoster2 || "/img/bnr-02.jpg"}
-                src={videoData?.homeabout[0].bannerVideo2 || "/media/hero.mp4"}
-                autoPlay
-                loop
-                playsInline
-                muted
-              ></video>
-            </div>
-          </div>
+          ))}
+          
         </div>
       </div>
 

@@ -36,7 +36,6 @@ async function fetchMembers() {
   }
 }
 
-
 useEffect(() => {
   fetchMembers()
 }, []);
