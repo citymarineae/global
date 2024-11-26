@@ -1,14 +1,20 @@
-import React from 'react';
+import React from "react";
 
 interface BannerVideoProps {
   title: string;
   videoSrc: string;
   posterSrc: string;
+  className?: string;
 }
 
-export const BannerVideo: React.FC<BannerVideoProps> = ({ title, videoSrc, posterSrc }) => {
+export const BannerVideo: React.FC<BannerVideoProps> = ({
+  title,
+  videoSrc,
+  posterSrc,
+  className,
+}) => {
   return (
-    <section className="pg-bnr banner-video"   >
+    <section className={`pg-bnr banner-video ${className || ""}`}>
       <div className="video-wrapper h-100">
         <video
           poster={posterSrc}
@@ -16,8 +22,7 @@ export const BannerVideo: React.FC<BannerVideoProps> = ({ title, videoSrc, poste
           autoPlay
           loop
           playsInline
-          muted
-        ></video>
+          muted></video>
       </div>
       <div className="container">
         <div className="pg-bnr__div" data-cues="fadeIn" data-delay="400">
