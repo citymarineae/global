@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
                 alt="City Marine Logo"
               />
               <hr />
-              <h5 className="mb-4">Securing Maritime Excellence Since 1997</h5>
+              {/* <h5 className="mb-4">Securing Maritime Excellence Since 1997</h5> */}
               <nav className="nav social social-white">
                 <a href="https://www.linkedin.com/company/city-insurance-brokers/" target="_blank">
                   <img src="/img/icons/linkedin.svg" alt="LinkedIn" />
