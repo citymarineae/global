@@ -424,8 +424,8 @@ ul.tckul {
     height: 100%;
     &::before {
       @extend .abcn-full;
-      opacity: 0.8;
-      @extend .linear-grd;
+      // opacity: 0.8;
+      // @extend .linear-grd;
     }
     img {
       @extend .full-cover;
@@ -438,6 +438,8 @@ ul.tckul {
     width: 100%;
     padding: 40px;
     z-index: 1;
+    background: #000;
+    background: linear-gradient(1deg, #000000c4, hsla(0, 0%, 100%, 0));
     &::before {
       @extend .abcn-full;
       background: #fff;
