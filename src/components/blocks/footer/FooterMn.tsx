@@ -47,6 +47,11 @@ const Footer: React.FC = () => {
                   <li>
                     <NextLink href="/our-team" title="Our Team"></NextLink>
                   </li>
+                  <li>
+                    <NextLink
+                      href="/personal-lines"
+                      title="Personal Lines"></NextLink>
+                  </li>
                   {/* <li>
                     <NextLink href="/news" title="News"></NextLink>
                   </li> */}
@@ -61,11 +66,6 @@ const Footer: React.FC = () => {
                     <NextLink
                       href="/ports-and-terminals"
                       title="Ports & Terminals"></NextLink>
-                  </li>
-                  <li>
-                    <NextLink
-                      href="/personal-lines"
-                      title="Personal Lines"></NextLink>
                   </li>
                 </ul>
               </div>
