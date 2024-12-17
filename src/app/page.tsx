@@ -26,6 +26,7 @@ export default function Home() {
           <HomeAbout />
         </div>
         <Sectors />
+        <hr className="m-0"></hr>
         {/* <LatestNews /> */}
       </main>
     </Fragment>
