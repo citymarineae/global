@@ -49,7 +49,7 @@ export default function Claims() {
         <BannerVideo
           title={claimsData?.pageHeading || ""}
           videoSrc="/media/Claim-bnr.mp4"
-          posterSrc="/img/claims-bnr.webp"></BannerVideo>
+          posterSrc="/media/claim-bnr.jpg"></BannerVideo>
         <section className="wrapper py-10 py-lg-14 position-relative overflow-hidden">
           <div
             className="shape position-absolute top-20 start-min-2 d-none d-md-block opacity-25"
