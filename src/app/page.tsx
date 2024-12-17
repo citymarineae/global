@@ -10,29 +10,23 @@ import Sectors from "components/blocks/home/Sectors";
 import LatestNews from "components/blocks/home/LatestNews";
 import HomeAbout from "components/blocks/home/HomeAbout";
 
-
-
-
-
 export default function Home() {
   // USED FOR HERO AREA TEXT CHANGE FREQUENTLY
   useReplaceMe();
 
   // USED FOR SHOW POPUP WITH IMAGE
   useLightBox();
- 
 
   return (
     <Fragment>
       {/* <DynamicHead title={homeMetaData?.title} description={homeMetaData?.desc} /> */}
       <main className="content-wrapper">
-          <div data-cues="fadeIn" data-group="piv" data-delay="300">
-          <VideoSwiper/>
+        <div data-cues="fadeIn" data-group="piv" data-delay="300">
+          <VideoSwiper />
           <HomeAbout />
-          </div>
-          <Sectors/>
-         <LatestNews/>
-
+        </div>
+        <Sectors />
+        {/* <LatestNews /> */}
       </main>
     </Fragment>
   );
