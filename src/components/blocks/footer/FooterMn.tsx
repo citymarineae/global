@@ -52,9 +52,6 @@ const Footer: React.FC = () => {
                       href="/personal-lines"
                       title="Personal Lines"></NextLink>
                   </li>
-                  {/* <li>
-                    <NextLink href="/news" title="News"></NextLink>
-                  </li> */}
                 </ul>
                 <ul className="list-unstyled mb-0">
                   <li>
@@ -67,6 +64,11 @@ const Footer: React.FC = () => {
                       href="/ports-and-terminals"
                       title="Ports & Terminals"></NextLink>
                   </li>
+                  {/* <li>
+                    <NextLink
+                      href="/personal-lines"
+                      title="Personal Lines"></NextLink>
+                  </li> */}
                 </ul>
               </div>
             </div>
