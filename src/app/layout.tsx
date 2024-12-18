@@ -26,7 +26,7 @@ import "assets/scss/custom-style.scss";
 import NavbarOne from "components/blocks/navbar/navbar-1";
 import Footer from "components/blocks/footer/FooterMn";
 
-const manrope = Manrope({ subsets: ["latin"] });
+const manrope = Manrope({ subsets: ["latin"],adjustFontFallback: false });
 
 import apiService from "services/api";
 
