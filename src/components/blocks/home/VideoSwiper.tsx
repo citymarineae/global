@@ -130,6 +130,7 @@ const VideoSwiper = () => {
                 {totalSlides > 1 && <><span id="current-slide">1</span> <hr /> <span id="total-slides">{totalSlides}</span></>}
               </div>
             </div>
+          
           </div>
         </div>
       </div>
