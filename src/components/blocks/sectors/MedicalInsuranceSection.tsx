@@ -45,7 +45,7 @@ const MedicalInsuranceSection: React.FC = () => {
         />
       </div>
       <div className="container">
-        <div className="row row-cols-1 row-cols-lg-2 gx-lg-14 gy-10" data-cues="fadeIn" data-delay="400" data-group="sd">
+        <div className="row row-cols-1 row-cols-lg-2 gx-lg-14 gy-10">
           <div className="col d-flex order-md-last">
             <div className="img-box img-box-grd flex-grow-1">
               <img

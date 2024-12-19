@@ -65,7 +65,7 @@ const IndiMemeberPage = () => {
         <BannerVideo title="Our Team" videoSrc="/media/team.mp4"  posterSrc="/img/team.png" ></BannerVideo>
             <section className="wrapper py-10 py-lg-14 position-relative">
                 <div className="container">
-                    <div className="row row-cols-1 row-cols-md-2 gy-4 gy-lg-0 gx-lg-14" data-cues="fadeIn" data-group="images" data-delay="400">
+                    <div className="row row-cols-1 row-cols-md-2 gy-4 gy-lg-0 gx-lg-14">
                         <div className="col pe-md-8">
                             <img src={memeberData?.image} width="300" height="300" className="w-100 h-auto" alt={memeberData?.altTag} />
                         </div>

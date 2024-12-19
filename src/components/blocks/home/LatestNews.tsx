@@ -62,7 +62,7 @@ export default function LatestNews() {
     <>
       <section className="wrapper bg-light hm-news-sec"  >
         <div className="container py-lg-14 py-10" >
-          <div className="d-flex justify-content-between align-items-center nswttl gap-3" data-cues="fadeIn">
+          <div className="d-flex justify-content-between align-items-center nswttl gap-3">
             <h2 className="sbttl">Latest News</h2>
             <hr className="my-0" />
             <Link href="/news" className="btn rounded-pill btnCty">
@@ -73,7 +73,7 @@ export default function LatestNews() {
           <div className="row mt-lg-6 mt-5">
             <div className="col-lg-12">
               <Swiper
-                 data-cues="fadeIn"  data-group="gp"
+                 
                 onSwiper={(swiperInstance) => (swiperRef.current = swiperInstance)} // Assign swiper instance
                 slidesPerView={1}
                 spaceBetween={10}
@@ -96,7 +96,7 @@ export default function LatestNews() {
                 className="mySwiper"
               >
                 <SwiperSlide
-                 data-cues="fadeIn" data-delay="300" >
+                  >
                   <div className="nwslfts nsbx">
                   <Link className="rtarw" href={`/news/${formatNewsForUrl(latestNews?.news[0].title || "")}`}> <figure>
                       <img
