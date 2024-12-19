@@ -53,8 +53,7 @@ export default function Claims() {
         <section className="wrapper py-10 py-lg-14 position-relative overflow-hidden">
           <div
             className="shape position-absolute top-20 start-min-2 d-none d-md-block opacity-25"
-            data-cues="fadeIn"
-            data-delay="600">
+            >
             <img
               src="/img/icons/shape-up.svg"
               width="200"
@@ -66,8 +65,7 @@ export default function Claims() {
           <div className="container">
             <div
               className="row row-cols-1 row-cols-lg-2 gy-10"
-              data-cues="fadeIn"
-              data-delay="600">
+              >
               <div className="col d-flex order-lg-last">
                 <div className="img-box img-box-grd flex-grow-1">
                   <img
@@ -92,12 +90,10 @@ export default function Claims() {
         </section>
         <section
           className="wrapper case-stdy pb-10 pb-lg-14"
-          data-cues="fadeIn"
-          data-delay="200">
+          >
           <div
             className="container bg-primary text-white position-relative overflow-hidden"
-            data-cues="fadeIn"
-            data-delay="200">
+            >
             <div className="shape position-absolute top-0 end-10 d-none d-md-block">
               <img
                 src="/img/icons/shape-big-down.svg"
@@ -294,8 +290,7 @@ export default function Claims() {
           <div className="container">
             <div
               className="row row-cols-1 row-cols-lg-2 gy-10"
-              data-cues="fadeIn"
-              data-delay="300">
+              >
               <div className="col d-flex">
                 <div className="img-box img-box-grd flex-grow-1">
                   <img

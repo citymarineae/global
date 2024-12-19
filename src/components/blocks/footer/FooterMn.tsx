@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       <div className="container pt-10 pt-lg-14 pb-lg-8 pb-5">
         <div
           className="row gy-5 gy-lg-7 gy-lg-0 pb-0 pb-md-5 pb-lg-0"
-          data-cues="fadeIn">
+          >
           <div className="col-lg-4">
             <div className="widget">
               <img
@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
         {/* Footer Bottom Section */}
         <div
           className="row d-flex align-items-center gy-5 gy-md-0 mt-md-0 mt-6"
-          data-cues="fadeIn">
+          >
           <div className="col-md-12">
             <hr className="my-lg-8 my-0" />
           </div>

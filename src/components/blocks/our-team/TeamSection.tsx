@@ -46,7 +46,7 @@ if(loading){
 
 
   return (
-    <section className="wrapper team-wrapper py-10 py-lg-14 position-relative overflow-hidden" data-cues="fadeIn"   data-delay="600" >
+    <section className="wrapper team-wrapper py-10 py-lg-14 position-relative overflow-hidden" >
       <div className="container" >
         <div className="row row-cols-2 row-cols-md-3 row-cols-xxl-4 gy-4 gx-xl-10 team-wrapper__div" >
           {memberDatas.map((member: TeamMember, index: number) => (
