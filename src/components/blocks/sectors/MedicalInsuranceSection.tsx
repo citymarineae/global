@@ -53,6 +53,7 @@ const MedicalInsuranceSection: React.FC = () => {
                 className="w-100 h-100 object-fit-cover"
                 alt={personalLinesData?.altTag}
               />
+              
             </div>
           </div>
           <div className="col d-flex flex-column order-md-first gy-7 gy-md-10">
