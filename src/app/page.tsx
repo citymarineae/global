@@ -29,6 +29,7 @@ export default function Home() {
         <hr className="m-0"></hr>
         {/* <LatestNews /> */}
       </main>
+      
     </Fragment>
   );
 }
