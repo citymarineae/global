@@ -17,13 +17,15 @@ export async function POST(req: NextRequest) {
         const message = formData.get("message") as string;
 
         const { data, error } = await resend.emails.send({
-            from: 'Acme <onboarding@resend.dev>',
-            to: ['nivuyt789@gmail.com'],
-            subject: 'Hello world',
+            from: `enquiry@citymarinebrokers.com`,
+            to: ['yasir@globalsurf.ae','harsha@globalsurf.ae'],
+            subject: 'Enquiry from website [citymarinebrokers.com]',
             react: EmailTemplate({ name, phone, email, message }),
+            replyTo: email,
         });
 
         if (error) {
+            console.log(error)
             return NextResponse.json(error, { status: 400 });
         }
         else {
