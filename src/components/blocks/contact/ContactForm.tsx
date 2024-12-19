@@ -196,7 +196,7 @@ const ContactForm: React.FC = () => {
                   </div>
 
                   <div className="col">
-                    <button type="submit" className="btn rounded-pill btnCty d-flex ms-lg-auto">Send Message<i
+                    <button type={isSubmitting ? "button" : "submit"} className="btn rounded-pill btnCty d-flex ms-lg-auto">Send Message<i
                       className="icbc"></i></button>
                   </div>
                 </div>
