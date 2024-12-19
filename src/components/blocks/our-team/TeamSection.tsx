@@ -5,6 +5,7 @@ import teamMembers from 'data/contents/TeamMember';
 import Link from 'next/link';
 import { formatNameForURL } from 'app/helpers/formatLink';
 import apiService from 'services/api';
+import {motion} from 'framer-motion'
 
 // Define the structure of a team member
 interface TeamMember {
@@ -50,7 +51,10 @@ if(loading){
       <div className="container" >
         <div className="row row-cols-2 row-cols-md-3 row-cols-xxl-4 gy-4 gx-xl-10 team-wrapper__div" >
           {memberDatas.map((member: TeamMember, index: number) => (
-            <Link href={`/our-team/${formatNameForURL(member.name)}`} key={index}><div className="col" >
+            <Link href={`/our-team/${formatNameForURL(member.name)}`} key={index}><motion.div className="col" initial={{y:"20%",opacity:0}} whileInView={{y:0,opacity:1}} transition={{
+              duration: Math.random() * 2 + 0.5, // Random duration between 0.5s and 2.5s
+              delay: Math.random() * 0.5, // Random delay between 0s and 0.5s
+            }} viewport={{once:true}}>
               <div className="team-card">
                 {/* <a href={member.detailsLink} className="team-card__link"></a> */}
                 <div className="team-card__head">
@@ -67,7 +71,7 @@ if(loading){
                   <p>{member.position}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
             </Link>
           ))}
         </div>

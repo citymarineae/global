@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import apiService from 'services/api';
 import { PersonalLines } from 'types/PersonalLines';
 import parse from 'html-react-parser'
+import {motion} from 'framer-motion'
 
 const MedicalInsuranceSection: React.FC = () => {
 
@@ -44,7 +45,7 @@ const MedicalInsuranceSection: React.FC = () => {
           style={{ scale: 1.2, transform: 'rotate(275deg)' }}
         />
       </div>
-      <div className="container">
+      <motion.div className="container" initial={{opacity:0,y:"20%"}} transition={{duration:.7,ease:"easeInOut"}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
         <div className="row row-cols-1 row-cols-lg-2 gx-lg-14 gy-10">
           <div className="col d-flex order-md-last">
             <div className="img-box img-box-grd flex-grow-1">
@@ -79,7 +80,7 @@ const MedicalInsuranceSection: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

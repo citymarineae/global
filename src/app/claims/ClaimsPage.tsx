@@ -6,6 +6,7 @@ import apiService from "services/api";
 import Link from "next/link";
 import { Claims as claimsType } from "types/Claims";
 import parse from "html-react-parser";
+import {motion} from 'framer-motion'
 
 export default function Claims() {
   const [loading, setLoading] = useState(true);
@@ -62,7 +63,7 @@ export default function Claims() {
               alt=""
             />
           </div>
-          <div className="container">
+          <motion.div className="container" initial={{opacity:0,y:"20%"}} transition={{duration:.7,ease:"easeInOut"}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
             <div
               className="row row-cols-1 row-cols-lg-2 gy-10"
               >
@@ -86,12 +87,12 @@ export default function Claims() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
         <section
           className="wrapper case-stdy pb-10 pb-lg-14"
           >
-          <div
+          <motion.div
             className="container bg-primary text-white position-relative overflow-hidden"
             >
             <div className="shape position-absolute top-0 end-10 d-none d-md-block">
@@ -272,7 +273,7 @@ export default function Claims() {
                 </article>
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         <section className="wrapper pb-10 pb-lg-14 position-relative overflow-hidden">
@@ -287,7 +288,7 @@ export default function Claims() {
               alt=""
             />
           </div>
-          <div className="container">
+          <motion.div className="container" initial={{opacity:0,y:"20%"}} transition={{duration:.7,ease:"easeInOut"}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
             <div
               className="row row-cols-1 row-cols-lg-2 gy-10"
               >
@@ -336,7 +337,7 @@ export default function Claims() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
       </main>
     </Fragment>
