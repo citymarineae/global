@@ -70,7 +70,7 @@ const MedicalInsuranceSection: React.FC = () => {
                   <span>DHA Complaint</span>
                   <i className="icbc"></i>
                 </a>
-                <a href="https://www.citymarinebrokers.com/wp-content/uploads/2022/07/Flow-Chart-Complaint-process.pdf" className="btn btnCty btn-tall" target='_blank'>
+                <a href="\media\Flow-Chart-Complaint-process.pdf" className="btn btnCty btn-tall" target='_blank'>
                   <span>CMIB-Complaint Procedure</span>
                   <i className="icbc"></i>
                 </a>
