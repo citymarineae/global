@@ -6,7 +6,7 @@ import apiService from 'services/api';
 import { useEffect, useState } from 'react';
 import parse from 'html-react-parser'
 import Link from 'next/link';
-
+import { motion } from "framer-motion"
 
 
 type HomeAboutData = {
@@ -28,6 +28,7 @@ const HomeAbout = () => {
 
   const [loading, setLoading] = useState(true)
   const [homeAboutData, setHomeAboutData] = useState<HomeAboutData | null>(null)
+
 
 
   async function fetchHomeAbout() {
@@ -55,7 +56,7 @@ const HomeAbout = () => {
   // }
 
   return (
-    <section className="wrapper bg-rtps" >
+    <motion.section initial={{opacity:0,y:"20%"}} transition={{duration:.7,ease:"easeInOut"}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="wrapper bg-rtps" >
       {/* Desktop Image */}
       <figure className="d-none d-lg-block">
         <img
@@ -71,7 +72,7 @@ const HomeAbout = () => {
                  >
           <div className="col-lg-6" >
             <div className="pe-lg-13 text-lg-start" >
-              <h2 className="sbttl text-primary mb-xl-6">{homeAboutData?.homeabout[0].title}</h2>
+              <motion.h2 className="sbttl text-primary mb-xl-6">{homeAboutData?.homeabout[0].title}</motion.h2>
 
               {/* Dynamically map over the paragraphs */}
 
@@ -98,7 +99,7 @@ const HomeAbout = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
