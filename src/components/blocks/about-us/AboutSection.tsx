@@ -6,7 +6,7 @@ import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import apiService from 'services/api';
 import { About } from 'types/About';
 import parse from 'html-react-parser';
-
+import {motion} from 'framer-motion'
 
 export const AboutSection = ({setBannerVideoTitle}:{
   setBannerVideoTitle:Dispatch<SetStateAction<string>>
@@ -50,7 +50,7 @@ export const AboutSection = ({setBannerVideoTitle}:{
 
 
   return (
-    <div>
+    <motion.div>
       <section className="" >
         <div className='abt-sec1'>
         <div className="container ">
@@ -69,7 +69,7 @@ export const AboutSection = ({setBannerVideoTitle}:{
         <div className="abt-main__img" >
           <img src={aboutData?.image} width="100" height="100" alt={aboutData?.altTag} />
         </div>
-        <div className="container">
+        <motion.div className="container" initial={{opacity:0,y:"20%"}} transition={{duration:.7,ease:"easeInOut"}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
           <div className="abt-main__div py-10 py-lg-14">
             <div className="abt-main__content" >
               <h2 className="sbttl mb-3">{aboutData?.contentHeading}</h2>
@@ -79,11 +79,11 @@ export const AboutSection = ({setBannerVideoTitle}:{
               ))} */}
             </div>
           </div>
-        </div>
+        </motion.div>
         <div className="shape position-absolute bottom-min-5 start-0 opacity-25 shape-opmob" >
           <img src={aboutContent.shapeImage} width="200" height="200" alt="Shape" />
         </div>
       </section>
-    </div>
+    </motion.div>
   )
 }

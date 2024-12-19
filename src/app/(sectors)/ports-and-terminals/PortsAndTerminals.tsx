@@ -5,6 +5,7 @@ import { BannerVideo } from "components/blocks/includes/BannerVideo";
 import apiService from "services/api";
 import { PortsAndTerminals as portAndTerminalsType } from "types/PortsAndTerminals";
 import parse from 'html-react-parser'
+import {motion} from 'framer-motion'
 
 export default function PortsAndTerminals() {
 
@@ -41,7 +42,7 @@ export default function PortsAndTerminals() {
           videoSrc="/media/port.mp4"
           posterSrc="/media/port.png"
         ></BannerVideo>
-        <section className="wrapper pt-10 py-md-10 py-xl-10 py-xxl-14 position-relative overflow-hidden">
+        <motion.section initial={{opacity:0,y:"20%"}} transition={{duration:.7,ease:"easeInOut"}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="wrapper pt-10 py-md-10 py-xl-10 py-xxl-14 position-relative overflow-hidden">
           <div className="shape position-absolute top-min-15 end-10 d-none d-md-block opacity-50">
             <img
               src="/img/icons/shape-up.svg"
@@ -60,10 +61,10 @@ export default function PortsAndTerminals() {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Second Section */}
-        <section className="wrapper pb-4 pb-lg-5 position-relative overflow-hidden"  >
+        <motion.section className="wrapper pb-4 pb-lg-5 position-relative overflow-hidden" initial={{opacity:0,y:"20%"}} transition={{duration:.7,ease:"easeInOut"}} whileInView={{opacity:1,y:0}} viewport={{once:true}} >
           <div className="container">
             <div className="row row-cols-1 row-cols-lg-2 gy-10">
               <div className="col order-lg-last d-flex">
@@ -82,7 +83,7 @@ export default function PortsAndTerminals() {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Third Section */}
         <section className="wrapper pt-5 pt-md-10 pb-10 pb-lg-14 position-relative overflow-hidden" >
