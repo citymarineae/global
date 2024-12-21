@@ -64,7 +64,7 @@ const MedicalInsuranceSection: React.FC = () => {
               </h2>
               {parse(personalLinesData?.content || "")}
               <div className="d-flex gap-3 gap-xl-5 flex-wrap flex-xxl-nowrap mt-auto">
-                <a href=" https://www.orientonline.ae/PORTALS/Transaction/MedicalPolicyPlansNew.aspx?enc=r%2f1zfya9u7j70xnNqcjpZUSKDuUPbJozHe4kn%2fzUwPlfvNqgrQ8e4KVHD3Kc2Wdr" className="btn btnCty btn-tall" target='_blank'>
+                <a href="https://www.orientonline.ae/PORTALS/GuestLogin.aspx?MasterId=feQnJ5WqcI0ZLouKOOQc0pt0bOlWNYMbKZomHNTdzebaPaFu34oryy8zX3ljXBox" className="btn btnCty btn-tall" target='_blank'>
                   <span>Get Quote</span>
                   <i className="icbc"></i>
                 </a>
