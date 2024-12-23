@@ -5,7 +5,9 @@ const WebsiteTermsAndConditions = () => {
     <main className="content-wrapper web-terms">
       <section
         className="pg-bnr"
-        style={{ backgroundImage: "url(/img/Website-Terms-&-Conditions.jpg)" }}>
+        style={{
+          backgroundImage: "url(/img/Website-Terms-&-Conditions.jpg)",
+        }}>
         <div className="container">
           <div className="pg-bnr__div">
             <h1 className="pg-bnr__ttl">Website Terms & Conditions</h1>
