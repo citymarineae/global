@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import apiService from 'services/api';
 import { PersonalLines } from 'types/PersonalLines';
 import parse from 'html-react-parser'
+import {motion} from 'framer-motion'
 
 const MedicalInsuranceSection: React.FC = () => {
 
@@ -44,8 +45,8 @@ const MedicalInsuranceSection: React.FC = () => {
           style={{ scale: 1.2, transform: 'rotate(275deg)' }}
         />
       </div>
-      <div className="container">
-        <div className="row row-cols-1 row-cols-lg-2 gx-lg-14 gy-10" data-cues="fadeIn" data-delay="400" data-group="sd">
+      <motion.div className="container" initial={{opacity:0,y:"20%"}} transition={{duration:.7,ease:"easeInOut"}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
+        <div className="row row-cols-1 row-cols-lg-2 gx-lg-14 gy-10">
           <div className="col d-flex order-md-last">
             <div className="img-box img-box-grd flex-grow-1">
               <img
@@ -53,6 +54,7 @@ const MedicalInsuranceSection: React.FC = () => {
                 className="w-100 h-100 object-fit-cover"
                 alt={personalLinesData?.altTag}
               />
+              
             </div>
           </div>
           <div className="col d-flex flex-column order-md-first gy-7 gy-md-10">
@@ -62,7 +64,7 @@ const MedicalInsuranceSection: React.FC = () => {
               </h2>
               {parse(personalLinesData?.content || "")}
               <div className="d-flex gap-3 gap-xl-5 flex-wrap flex-xxl-nowrap mt-auto">
-                <a href="https://www.orientonline.ae/PORTALS/Transaction/MedicalPolicyPlansNew.aspx?enc=r%2f1zfya9u7j70xnNqcjpZUSKDuUPbJozHe4kn%2fzUwPlfvNqgrQ8e4KVHD3Kc2Wdr" className="btn btnCty btn-tall" target='_blank'>
+                <a href="https://www.orientonline.ae/PORTALS/GuestLogin.aspx?MasterId=feQnJ5WqcI0ZLouKOOQc0pt0bOlWNYMbKZomHNTdzebaPaFu34oryy8zX3ljXBox" className="btn btnCty btn-tall" target='_blank'>
                   <span>Get Quote</span>
                   <i className="icbc"></i>
                 </a>
@@ -70,7 +72,7 @@ const MedicalInsuranceSection: React.FC = () => {
                   <span>DHA Complaint</span>
                   <i className="icbc"></i>
                 </a>
-                <a href="https://www.citymarinebrokers.com/wp-content/uploads/2022/07/Flow-Chart-Complaint-process.pdf" className="btn btnCty btn-tall" target='_blank'>
+                <a href="\media\Flow-Chart-Complaint-process.pdf" className="btn btnCty btn-tall" target='_blank'>
                   <span>CMIB-Complaint Procedure</span>
                   <i className="icbc"></i>
                 </a>
@@ -78,7 +80,7 @@ const MedicalInsuranceSection: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -26,7 +26,7 @@ import "assets/scss/custom-style.scss";
 import NavbarOne from "components/blocks/navbar/navbar-1";
 import Footer from "components/blocks/footer/FooterMn";
 
-const manrope = Manrope({ subsets: ["latin"] });
+const manrope = Manrope({ subsets: ["latin"],adjustFontFallback: false });
 
 import apiService from "services/api";
 
@@ -43,7 +43,10 @@ type HomeAboutDataType = {
   metaDataDesc: string;
 };
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata(): Promise<Metadata> {
+  
   const data: HomeAboutData = await apiService.get("/home-about");
 
   // Assuming you want to use the first item's metadata for this example
@@ -56,6 +59,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: metadataDescription,
   };
 }
+
 
 export default function RootLayout({
   children,

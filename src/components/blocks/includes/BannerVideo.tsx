@@ -25,7 +25,7 @@ export const BannerVideo: React.FC<BannerVideoProps> = ({
           muted></video>
       </div>
       <div className="container">
-        <div className="pg-bnr__div" data-cues="fadeIn" data-delay="400">
+        <div className="pg-bnr__div">
           <h1 className="pg-bnr__ttl">{title}</h1>
         </div>
       </div>

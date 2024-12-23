@@ -6,6 +6,7 @@ import apiService from 'services/api';
 import { MarineInsuraceSectors } from 'types/MarineInsuraceSectors';
 import { usePathname, useRouter } from 'next/navigation';
 import { formatMarineSectionForURL } from 'app/helpers/formatLink';
+import {motion} from 'framer-motion'
 
 
 interface SectorItem {
@@ -68,7 +69,10 @@ interface SectorItem {
   return (
     <div className="row gy-5 gy-lg-8" >
     {marineInsuranceSectors?.marineSections && marineInsuranceSectors.marineSections.map((item, index) => (
-        <div className="col-6 col-lg-4 col-xxl-3 item-ide" key={index}  >
+        <motion.div initial={{y:"20%",opacity:0}} whileInView={{y:0,opacity:1}} transition={{
+          duration: Math.random() * 2 + 0.5, // Random duration between 0.5s and 2.5s
+          delay: Math.random() * 0.5, // Random delay between 0s and 0.5s
+        }} viewport={{once:true}} className="col-6 col-lg-4 col-xxl-3 item-ide" key={index}>
           <div className="hverbx">
             <Link href={`/marine-energy/${formatMarineSectionForURL(item.title)}`}>
               <figure>
@@ -96,7 +100,7 @@ interface SectorItem {
               </div>
             </Link>
           </div>
-        </div>
+        </motion.div>
 
       ))}
         { readMoreButton && <div className="col-12 text-center">

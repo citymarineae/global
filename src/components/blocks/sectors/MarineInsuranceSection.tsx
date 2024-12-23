@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import apiService from 'services/api';
 import { MarineInsurace } from 'types/MarineInsurance';
 import parse from 'html-react-parser'
+import {motion} from 'framer-motion'
 
 const MarineInsuranceSection: React.FC = () => {
 
@@ -47,8 +48,8 @@ const MarineInsuranceSection: React.FC = () => {
           style={{ transform: 'rotate(90deg)' }}
         />
       </div>
-      <div className="container">
-        <div className="row row-cols-1 row-cols-lg-2 gx-lg-10 gx-xl-14 gy-8" data-cues="fadeIn" data-delay="600">
+      <motion.div className="container" initial={{opacity:0,y:"20%"}} transition={{duration:.7,ease:"easeInOut"}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
+        <div className="row row-cols-1 row-cols-lg-2 gx-lg-10 gx-xl-14 gy-8">
           <div className="col d-flex order-lg-last">
             <div className="img-box img-box-grd flex-grow-1">
               <img
@@ -67,7 +68,7 @@ const MarineInsuranceSection: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

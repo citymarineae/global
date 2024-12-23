@@ -127,9 +127,10 @@ const VideoSwiper = () => {
             <div className="col-lg-3">
               {/* Slide counter */}
               <div className="slide-counter">
-                <span id="current-slide">1</span> <hr /> <span id="total-slides">{totalSlides}</span>
+                {totalSlides > 1 && <><span id="current-slide">1</span> <hr /> <span id="total-slides">{totalSlides}</span></>}
               </div>
             </div>
+          
           </div>
         </div>
       </div>

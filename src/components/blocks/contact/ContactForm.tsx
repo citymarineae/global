@@ -7,6 +7,7 @@ import { Contact } from "types/Contact";
 import parse from 'html-react-parser'
 import Swal from 'sweetalert2'
 import 'sweetalert2/src/sweetalert2.scss'
+import {motion} from 'framer-motion'
 
 type Inputs = {
   name: string
@@ -104,7 +105,7 @@ const ContactForm: React.FC = () => {
 
   return (
     <section className="contact-main overflow-hidden">
-      <div className="container">
+      <motion.div className="container" initial={{opacity:0,y:"20%"}} transition={{duration:.7,ease:"easeInOut"}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
         <div className="row justify-content-between gx-lg-5 contact-main__div">
           <div className="col-lg-6 contact-main__left py-10 py-lg-14">
             <div className="contact-main__head">
@@ -196,7 +197,7 @@ const ContactForm: React.FC = () => {
                   </div>
 
                   <div className="col">
-                    <button type="submit" className="btn rounded-pill btnCty d-flex ms-lg-auto">Send Message<i
+                    <button type={isSubmitting ? "button" : "submit"} className="btn rounded-pill btnCty d-flex ms-lg-auto">Send Message<i
                       className="icbc"></i></button>
                   </div>
                 </div>
@@ -328,7 +329,7 @@ const ContactForm: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

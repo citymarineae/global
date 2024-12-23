@@ -6,6 +6,7 @@ import apiService from "services/api";
 import Link from "next/link";
 import { Claims as claimsType } from "types/Claims";
 import parse from "html-react-parser";
+import {motion} from 'framer-motion'
 
 export default function Claims() {
   const [loading, setLoading] = useState(true);
@@ -53,8 +54,7 @@ export default function Claims() {
         <section className="wrapper py-10 py-lg-14 position-relative overflow-hidden">
           <div
             className="shape position-absolute top-20 start-min-2 d-none d-md-block opacity-25"
-            data-cues="fadeIn"
-            data-delay="600">
+            >
             <img
               src="/img/icons/shape-up.svg"
               width="200"
@@ -63,11 +63,10 @@ export default function Claims() {
               alt=""
             />
           </div>
-          <div className="container">
+          <motion.div className="container" initial={{opacity:0,y:"20%"}} transition={{duration:.7,ease:"easeInOut"}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
             <div
               className="row row-cols-1 row-cols-lg-2 gy-10"
-              data-cues="fadeIn"
-              data-delay="600">
+              >
               <div className="col d-flex order-lg-last">
                 <div className="img-box img-box-grd flex-grow-1">
                   <img
@@ -88,16 +87,14 @@ export default function Claims() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
         <section
           className="wrapper case-stdy pb-10 pb-lg-14"
-          data-cues="fadeIn"
-          data-delay="200">
-          <div
+          >
+          <motion.div
             className="container bg-primary text-white position-relative overflow-hidden"
-            data-cues="fadeIn"
-            data-delay="200">
+            >
             <div className="shape position-absolute top-0 end-10 d-none d-md-block">
               <img
                 src="/img/icons/shape-big-down.svg"
@@ -276,7 +273,7 @@ export default function Claims() {
                 </article>
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         <section className="wrapper pb-10 pb-lg-14 position-relative overflow-hidden">
@@ -291,11 +288,10 @@ export default function Claims() {
               alt=""
             />
           </div>
-          <div className="container">
+          <motion.div className="container" initial={{opacity:0,y:"20%"}} transition={{duration:.7,ease:"easeInOut"}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
             <div
               className="row row-cols-1 row-cols-lg-2 gy-10"
-              data-cues="fadeIn"
-              data-delay="300">
+              >
               <div className="col d-flex">
                 <div className="img-box img-box-grd flex-grow-1">
                   <img
@@ -341,7 +337,7 @@ export default function Claims() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
       </main>
     </Fragment>
