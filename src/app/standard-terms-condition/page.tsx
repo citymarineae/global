@@ -6,7 +6,7 @@ const StandardTermsAndConditions = () => {
       <section
         className="pg-bnr"
         style={{
-          backgroundImage: "url(/img/Standard-Terms-and-Conditions.JPG)",
+          backgroundImage: "url(/img/standard-terms.jpg)",
         }}>
         <div className="container">
           <div className="pg-bnr__div">
