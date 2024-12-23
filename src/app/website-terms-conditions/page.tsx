@@ -6,7 +6,7 @@ const WebsiteTermsAndConditions = () => {
       <section
         className="pg-bnr"
         style={{
-          backgroundImage: "url(/img/Website-Terms-&-Conditions.jpg)",
+          backgroundImage: "url(/img/web-terms.jpg)",
         }}>
         <div className="container">
           <div className="pg-bnr__div">
@@ -18,7 +18,7 @@ const WebsiteTermsAndConditions = () => {
       <section className="wrapper web-sec-1 pt-10 pt-lg-14 overflow-hidden">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <p>
                 This page (together with the documents referred to in it)
                 contains the general terms and conditions (“Terms and
@@ -79,18 +79,18 @@ const WebsiteTermsAndConditions = () => {
                 limited to, text, graphics, logos, links, codes and data.
               </p>
             </div>
-            <div className="col-md-4 col-12 pr-0 my-10 mb-lg-0 d-none d-md-block">
+            {/* <div className="col-md-4 col-12 pr-0 my-10 mb-lg-0 d-none d-md-block">
               <div className="text-md-end">
                 <img src="/img/terms-cond.webp" className="w-100" alt="" />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
       <section className="wrapper web-sec-2 position-relative overflow-hidden ">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3">Accessing the Site</h6>
 
               <p>
@@ -128,7 +128,7 @@ const WebsiteTermsAndConditions = () => {
       <section className="wrapper web-sec-3 ">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className="col-12">
               <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3">
                 What you are allowed to do
               </h6>
@@ -161,7 +161,7 @@ const WebsiteTermsAndConditions = () => {
       <section className="wrapper web-sec-4 ">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3">
                 What you are not allowed to do
               </h6>
@@ -204,7 +204,7 @@ const WebsiteTermsAndConditions = () => {
       <section className="wrapper web-sec-5 position-relative overflow-hidden ">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3">
                 Intellectual Property Rights
               </h6>
@@ -239,7 +239,7 @@ const WebsiteTermsAndConditions = () => {
       <section className="wrapper web-sec-6 position-relative overflow-hidden ">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3">
                 Reliance on Information Posted
               </h6>
@@ -347,7 +347,7 @@ const WebsiteTermsAndConditions = () => {
       <section className="wrapper web-sec-7 position-relative overflow-hidden ">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3">
                 Linking to the Site
               </h6>
@@ -388,7 +388,7 @@ const WebsiteTermsAndConditions = () => {
       <section className="wrapper web-sec-8 position-relative overflow-hidden ">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3">External Links</h6>
 
               <p>
@@ -477,7 +477,7 @@ const WebsiteTermsAndConditions = () => {
       <section className="wrapper web-sec-9 position-relative overflow-hidden ">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3">General</h6>
               <p>
                 City Marine may change these Terms and Conditions from time to
@@ -518,7 +518,7 @@ const WebsiteTermsAndConditions = () => {
       <section className="wrapper web-sec-9 ">
         <div className="container pb-10 pb-lg-14">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3">
                 Governing Law and Jurisdiction
               </h6>

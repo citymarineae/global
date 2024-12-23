@@ -18,7 +18,7 @@ const StandardTermsAndConditions = () => {
       <section className="wrapper web-sec-1 pt-10 pt-lg-14 overflow-hidden">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <p>
                 This Agreement sets out the nature and scope of the services
                 City Marine Insurance Brokers LLC (referred to herein as “Us,”
@@ -81,11 +81,11 @@ const StandardTermsAndConditions = () => {
               </p>
             </div>
 
-            <div className="col-md-4 col-12 pr-0 my-10 mb-lg-0 d-none d-md-block">
+            {/* <div className="col-md-4 col-12 pr-0 my-10 mb-lg-0 d-none d-md-block">
               <div className="text-md-end">
                 <img src="/img/standard-se1.webp" className="w-100" alt="" />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -93,7 +93,7 @@ const StandardTermsAndConditions = () => {
       <section className="wrapper web-sec-2 position-relative overflow-hidden ">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <p>
                 This Agreement will supersede and replace any previous
                 agreements containing the same or similar subject matter and may
@@ -189,7 +189,7 @@ const StandardTermsAndConditions = () => {
       <div className="wrapper web-sec-3 position-relative overflow-hidden">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <p>2.2. Independent Advice</p>
 
               <p>
@@ -324,7 +324,7 @@ const StandardTermsAndConditions = () => {
       <div className="wrapper web-sec-4 ">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <p>2.7. Claims Notification</p>
 
               <p>
@@ -382,7 +382,7 @@ const StandardTermsAndConditions = () => {
       <section className="wrapper web-sec-5 position-relative overflow-hidden ">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <p>2.9. Market Security</p>
 
               <p>
@@ -474,7 +474,7 @@ const StandardTermsAndConditions = () => {
       <div className="wrapper web-sec-6 position-relative overflow-hidden ">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <p>
                 Failure to disclose a material circumstance may entitle an
                 insurer to:
@@ -525,7 +525,7 @@ const StandardTermsAndConditions = () => {
       <section className="wrapper web-sec-7 position-relative overflow-hidden ">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <h6>3.3. Check Documentation and Acceptance of Coverage</h6>
 
               <p>
@@ -596,7 +596,7 @@ const StandardTermsAndConditions = () => {
       <section className="wrapper web-sec-8 position-relative overflow-hidden ">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <p>
                 Where applicable, any other party with an interest in the
                 insurance contract will be advised of any non-payment of premium
@@ -640,7 +640,7 @@ const StandardTermsAndConditions = () => {
       <section className="wrapper web-sec-9 position-relative overflow-hidden ">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <p>3.7. Payment Verification of Our Bank Details </p>
 
               <p>
@@ -706,7 +706,7 @@ const StandardTermsAndConditions = () => {
       <section className="wrapper web-sec-10 position-relative overflow-hidden">
         <div className="container ">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
                 5. Confidentiality and Data Protection
               </h6>
@@ -784,7 +784,7 @@ const StandardTermsAndConditions = () => {
       <section className="wrapper web-sec-11 position-relative overflow-hidden ">
         <div className="container ">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <p>5.3. Data Sharing</p>
 
               <p>
@@ -869,7 +869,7 @@ const StandardTermsAndConditions = () => {
       <section className="wrapper web-sec-12 position-relative overflow-hidden ">
         <div className="container ">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
                 7. Remuneration 
               </h6>
@@ -924,7 +924,7 @@ const StandardTermsAndConditions = () => {
       <section className="wrapper web-sec-13 position-relative overflow-hidden ">
         <div className="container ">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <p>
                 commits a material breach of this Agreement; or
                 <br />
@@ -998,7 +998,7 @@ const StandardTermsAndConditions = () => {
       <div className="wrapper web-sec-14 position-relative overflow-hidden ">
         <div className="container ">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <p>
                 We will also be unable to provide brokerage services to any
                 individuals and/or entities within any country or territory
@@ -1033,7 +1033,7 @@ const StandardTermsAndConditions = () => {
       <section className="wrapper web-sec-15 position-relative overflow-hidden ">
         <div className="container ">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
                 11. Limitation of Liability
               </h6>
@@ -1143,7 +1143,7 @@ const StandardTermsAndConditions = () => {
       <section className="wrapper web-sec-16 position-relative overflow-hidden ">
         <div className="container pb-10 pb-lg-14">
           <div className="row">
-            <div className="col-md-8 col-12">
+            <div className=" col-12">
               <p>
                 This Agreement and any dispute or claim arising out of or in
                 connection with it or its subject matter shall be governed by
