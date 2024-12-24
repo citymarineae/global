@@ -39,7 +39,7 @@ const StandardTermsAndConditions = () => {
                 document carefully as You may wish to refer to it again at a
                 future date.
               </p>
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3">1. Introduction </h6>
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 fw-semibold">1. Introduction </h6>
               <p>
                 1.1 About Us
                 <br />
@@ -157,7 +157,7 @@ const StandardTermsAndConditions = () => {
                 Us.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 2. Our Services
               </h6>
 
@@ -416,7 +416,7 @@ const StandardTermsAndConditions = () => {
                 loss You may suffer as a result of the error and its correction.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 3. Your Responsibilities
               </h6>
 
@@ -677,7 +677,7 @@ const StandardTermsAndConditions = () => {
                 outlined above.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 4. Complaints
               </h6>
 
@@ -707,7 +707,7 @@ const StandardTermsAndConditions = () => {
         <div className="container ">
           <div className="row">
             <div className=" col-12">
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 5. Confidentiality and Data Protection
               </h6>
 
@@ -849,7 +849,7 @@ const StandardTermsAndConditions = () => {
                 meaning given to them under Data Protection Law.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 6. Client Money
               </h6>
 
@@ -870,7 +870,7 @@ const StandardTermsAndConditions = () => {
         <div className="container ">
           <div className="row">
             <div className=" col-12">
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 7. Remuneration 
               </h6>
 
@@ -888,7 +888,7 @@ const StandardTermsAndConditions = () => {
                 retain/recover the remuneration We have earned.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 8. Taxes
               </h6>
 
@@ -901,7 +901,7 @@ const StandardTermsAndConditions = () => {
                 payment of Taxes, that practice shall continue.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 9. Termination
               </h6>
 
@@ -939,7 +939,7 @@ const StandardTermsAndConditions = () => {
                 between Us.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 10. Financial Crime{" "}
               </h6>
 
@@ -1034,7 +1034,7 @@ const StandardTermsAndConditions = () => {
         <div className="container ">
           <div className="row">
             <div className=" col-12">
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 11. Limitation of Liability
               </h6>
 
@@ -1073,7 +1073,7 @@ const StandardTermsAndConditions = () => {
                 have the right to rely on and enforce these terms.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 12. Force Majeure
               </h6>
 
@@ -1082,7 +1082,7 @@ const StandardTermsAndConditions = () => {
                 outside our reasonable control.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 13. Document Retention{" "}
               </h6>
 
@@ -1098,7 +1098,7 @@ const StandardTermsAndConditions = () => {
                 claim under the policy.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 14. Variation and Assignmen{" "}
               </h6>
 
@@ -1107,7 +1107,7 @@ const StandardTermsAndConditions = () => {
                 and Your duly authorised representatives.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 15. Third Party Rights
               </h6>
 
@@ -1117,7 +1117,7 @@ const StandardTermsAndConditions = () => {
                 rights under or in connection with it.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 16. Dispute Resolution, Jurisdiction and Choice of Law
               </h6>
 
@@ -1159,7 +1159,7 @@ const StandardTermsAndConditions = () => {
                 in connection with this Agreement or its subject matter.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 fw-semibold">
                 17. Enforceability{" "}
               </h6>
 
