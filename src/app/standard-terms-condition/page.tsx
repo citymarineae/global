@@ -1160,7 +1160,7 @@ const StandardTermsAndConditions = () => {
               </p>
 
               <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 fw-semibold">
-                17. Enforceability
+                17. Enforceability{''}
               </h6>
 
               <p>
