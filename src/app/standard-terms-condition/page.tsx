@@ -940,7 +940,7 @@ const StandardTermsAndConditions = () => {
               </p>
 
               <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
-                10. Financial Crime{" "}
+                10. Financial Crime
               </h6>
 
               <p>
@@ -1083,7 +1083,7 @@ const StandardTermsAndConditions = () => {
               </p>
 
               <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
-                13. Document Retention{" "}
+                13. Document Retention
               </h6>
 
               <p>
@@ -1099,7 +1099,7 @@ const StandardTermsAndConditions = () => {
               </p>
 
               <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
-                14. Variation and Assignmen{" "}
+                14. Variation and Assignment
               </h6>
 
               <p>
@@ -1160,7 +1160,7 @@ const StandardTermsAndConditions = () => {
               </p>
 
               <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 fw-semibold">
-                17. Enforceability{" "}
+                17. Enforceability
               </h6>
 
               <p>
