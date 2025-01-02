@@ -39,10 +39,11 @@ const StandardTermsAndConditions = () => {
                 document carefully as You may wish to refer to it again at a
                 future date.
               </p>
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3">1. Introduction </h6>
-              <p>
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 fw-semibold">1. Introduction </h6>
+              <p className="fw-normal">
                 1.1 About Us
-                <br />
+                </p>
+                <p>
                 City Marine Insurance Brokers LLC is authorized and regulated by
                 the Central Bank of the UAE as an insurance broker under
                 registration number 231.
@@ -63,7 +64,7 @@ const StandardTermsAndConditions = () => {
                 <br />
               </p>
 
-              <p>1.2. Scope</p>
+              <p className="fw-normal">1.2. Scope</p>
 
               <p>
                 The purpose of this Agreement is to clearly and concisely
@@ -135,7 +136,7 @@ const StandardTermsAndConditions = () => {
                 </li>
               </ul>
 
-              <p>1.3. Communication</p>
+              <p className="fw-normal">1.3. Communication</p>
               <p>
                 We may communicate with each other by electronic mail, sometimes
                 attaching further electronic data. By consenting to this method
@@ -157,12 +158,11 @@ const StandardTermsAndConditions = () => {
                 Us.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 2. Our Services
               </h6>
 
-              <p>2.1. Treating You fairly</p>
-
+              <p className="fw-normal">2.1. Treating You fairly</p>
               <p>
                 We always aim to treat You fairly and will always endeavour to:
               </p>
@@ -190,7 +190,7 @@ const StandardTermsAndConditions = () => {
         <div className="container">
           <div className="row">
             <div className=" col-12">
-              <p>2.2. Independent Advice</p>
+            <p className="fw-normal">2.2. Independent Advice</p>
 
               <p>
                 As an independent insurance intermediary, We act as Your agent.
@@ -209,7 +209,7 @@ const StandardTermsAndConditions = () => {
                 received Your informed consent to Our intended course of action.
               </p>
 
-              <p>2.3. Obtaining Terms</p>
+              <p className="fw-normal">2.3. Obtaining Terms</p>
 
               <p>
                 City Marine will act as Your insurance broker.  We look to
@@ -245,7 +245,7 @@ const StandardTermsAndConditions = () => {
                 You or other work done before We became Your insurance broker.
               </p>
 
-              <p>2.4. Provision of Documentation</p>
+              <p className="fw-normal">2.4. Provision of Documentation</p>
 
               <p>
                 We will provide You with written policy documentation in a
@@ -280,7 +280,7 @@ const StandardTermsAndConditions = () => {
                 Your behalf shall belong to Us.
               </p>
 
-              <p>2.5. Debit Note</p>
+              <p className="fw-normal">2.5. Debit Note</p>
 
               <p>
                 Our debit note (or equivalent document) will show the premium,
@@ -298,7 +298,7 @@ const StandardTermsAndConditions = () => {
                 payable amount.
               </p>
 
-              <p>2.6. Midterm Amendments and Adjustments</p>
+              <p className="fw-normal">2.6. Midterm Amendments and Adjustments</p>
 
               <p>
                 Any changes to Your circumstances that could impact Your
@@ -325,7 +325,7 @@ const StandardTermsAndConditions = () => {
         <div className="container">
           <div className="row">
             <div className=" col-12">
-              <p>2.7. Claims Notification</p>
+            <p className="fw-normal">2.7. Claims Notification</p>
 
               <p>
                 You must notify Us as soon as possible of any loss, claim or
@@ -336,7 +336,7 @@ const StandardTermsAndConditions = () => {
                 to the claim.
               </p>
 
-              <p>2.8. Claims Procedures</p>
+              <p className="fw-normal">2.8. Claims Procedures</p>
 
               <p>
                 Where we undertake to handle or manage claims on your behalf: -
@@ -383,7 +383,7 @@ const StandardTermsAndConditions = () => {
         <div className="container">
           <div className="row">
             <div className=" col-12">
-              <p>2.9. Market Security</p>
+            <p className="fw-normal">2.9. Market Security</p>
 
               <p>
                 The insurers We use are regulated by the relevant authorities
@@ -403,7 +403,7 @@ const StandardTermsAndConditions = () => {
                 liability in the event of the insurer becoming insolvent.
               </p>
 
-              <p>2.10. Incorrect Premium Calculation</p>
+              <p className="fw-normal">2.10. Incorrect Premium Calculation</p>
 
               <p>
                 City Marine makes every effort to correctly determine the
@@ -416,11 +416,11 @@ const StandardTermsAndConditions = () => {
                 loss You may suffer as a result of the error and its correction.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 3. Your Responsibilities
               </h6>
 
-              <p>
+              <p className="fw-normal">
                 3.1. Provision of Instructions, Information and Completion of
                 Any Required Form
               </p>
@@ -436,7 +436,7 @@ const StandardTermsAndConditions = () => {
                 for You.
               </p>
 
-              <p>3.2. Duty of Fair Representation</p>
+              <p className="fw-normal">3.2. Duty of Fair Representation</p>
 
               <p>
                 An insurance contract is one of the utmost good faith. You owe a
@@ -526,7 +526,7 @@ const StandardTermsAndConditions = () => {
         <div className="container">
           <div className="row">
             <div className=" col-12">
-              <h6>3.3. Check Documentation and Acceptance of Coverage</h6>
+            <p className="fw-normal">3.3. Check Documentation and Acceptance of Coverage</p>
 
               <p>
                 It is Your responsibility to check the documentation We send You
@@ -546,7 +546,7 @@ const StandardTermsAndConditions = () => {
                 It is important that You keep Your insurance documents safe.
               </p>
 
-              <p>3.4. Warranties and Subjectivities</p>
+              <p className="fw-normal">3.4. Warranties and Subjectivities</p>
 
               <p>
                 It is important that You are clear and understand all the terms
@@ -566,7 +566,7 @@ const StandardTermsAndConditions = () => {
                 promptly satisfy any subjectivity so that it can be removed.
               </p>
 
-              <p>3.5. Payment Terms</p>
+              <p className="fw-normal">3.5. Payment Terms</p>
 
               <p>
                 In order for Us to meet an insurer’s premium payment terms, You
@@ -607,7 +607,7 @@ const StandardTermsAndConditions = () => {
                 payment date(s) to insurer(s) on Your behalf until We have
                 received cleared funds from You by the relevant due date.
               </p>
-              <h6>3.6. Currency</h6>
+              <p className="fw-normal">3.6. Currency</p>
               <p>
                 When conducting Your business, We may have to convert funds to
                 another currency in order to settle amounts due to insurers. If
@@ -641,7 +641,7 @@ const StandardTermsAndConditions = () => {
         <div className="container">
           <div className="row">
             <div className=" col-12">
-              <p>3.7. Payment Verification of Our Bank Details </p>
+            <p className="fw-normal">3.7. Payment Verification of Our Bank Details </p>
 
               <p>
                 For new clients, on the first occasion that We provide You with
@@ -677,7 +677,7 @@ const StandardTermsAndConditions = () => {
                 outlined above.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 4. Complaints
               </h6>
 
@@ -707,7 +707,7 @@ const StandardTermsAndConditions = () => {
         <div className="container ">
           <div className="row">
             <div className=" col-12">
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 5. Confidentiality and Data Protection
               </h6>
 
@@ -748,7 +748,7 @@ const StandardTermsAndConditions = () => {
                 applicable Data Protection Law.
               </p>
 
-              <p>5.1. Your Obligations</p>
+              <p className="fw-normal">5.1. Your Obligations</p>
 
               <p>
                 Where You provide Us with the personal data of individuals, for
@@ -759,7 +759,7 @@ const StandardTermsAndConditions = () => {
                 Privacy Policy.
               </p>
 
-              <p>5.2. Our Obligations</p>
+              <p className="fw-normal">5.2. Our Obligations</p>
 
               <p>
                 We shall comply with applicable Data Protection Law whenever We
@@ -785,7 +785,7 @@ const StandardTermsAndConditions = () => {
         <div className="container ">
           <div className="row">
             <div className=" col-12">
-              <p>5.3. Data Sharing</p>
+              <p className="fw-normal">5.3. Data Sharing</p>
 
               <p>
                 In order to deliver the services described in this Agreement, We
@@ -813,7 +813,7 @@ const StandardTermsAndConditions = () => {
                 for any personal data collected through that channel.
               </p>
 
-              <p>5.4. International Transfers</p>
+              <p className="fw-normal">5.4. International Transfers</p>
 
               <p>
                 Where such disclosures necessitate transfers of personal data to
@@ -822,7 +822,7 @@ const StandardTermsAndConditions = () => {
                 This may include adopting permitted transfer mechanism.
               </p>
 
-              <p>5.5. Call Monitoring</p>
+              <p className="fw-normal">5.5. Call Monitoring</p>
 
               <p>
                 Please note that the telephone calls may be recorded and
@@ -830,7 +830,7 @@ const StandardTermsAndConditions = () => {
                 and other internal investigation purposes.
               </p>
 
-              <p>5.6. Definitions</p>
+              <p className="fw-normal">5.6. Definitions</p>
 
               <p>
                 “Data Protection Law” means the (i) UAE Federal Decree-Law No.
@@ -849,7 +849,7 @@ const StandardTermsAndConditions = () => {
                 meaning given to them under Data Protection Law.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 6. Client Money
               </h6>
 
@@ -870,7 +870,7 @@ const StandardTermsAndConditions = () => {
         <div className="container ">
           <div className="row">
             <div className=" col-12">
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 7. Remuneration 
               </h6>
 
@@ -888,7 +888,7 @@ const StandardTermsAndConditions = () => {
                 retain/recover the remuneration We have earned.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 8. Taxes
               </h6>
 
@@ -901,7 +901,7 @@ const StandardTermsAndConditions = () => {
                 payment of Taxes, that practice shall continue.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 9. Termination
               </h6>
 
@@ -939,8 +939,8 @@ const StandardTermsAndConditions = () => {
                 between Us.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
-                10. Financial Crime{" "}
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
+                10. Financial Crime
               </h6>
 
               <p>
@@ -1034,7 +1034,7 @@ const StandardTermsAndConditions = () => {
         <div className="container ">
           <div className="row">
             <div className=" col-12">
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 11. Limitation of Liability
               </h6>
 
@@ -1073,7 +1073,7 @@ const StandardTermsAndConditions = () => {
                 have the right to rely on and enforce these terms.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 12. Force Majeure
               </h6>
 
@@ -1082,8 +1082,8 @@ const StandardTermsAndConditions = () => {
                 outside our reasonable control.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
-                13. Document Retention{" "}
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
+                13. Document Retention
               </h6>
 
               <p>
@@ -1098,8 +1098,8 @@ const StandardTermsAndConditions = () => {
                 claim under the policy.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
-                14. Variation and Assignmen{" "}
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
+                14. Variation and Assignment
               </h6>
 
               <p>
@@ -1107,7 +1107,7 @@ const StandardTermsAndConditions = () => {
                 and Your duly authorised representatives.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 15. Third Party Rights
               </h6>
 
@@ -1117,7 +1117,7 @@ const StandardTermsAndConditions = () => {
                 rights under or in connection with it.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary">
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
                 16. Dispute Resolution, Jurisdiction and Choice of Law
               </h6>
 
@@ -1159,8 +1159,8 @@ const StandardTermsAndConditions = () => {
                 in connection with this Agreement or its subject matter.
               </p>
 
-              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3">
-                17. Enforceability{" "}
+              <h6 className="mt-lg-10 mt-6 mb-lg-4 mb-3 text-primary fw-semibold">
+                17. Enforceability
               </h6>
 
               <p>
