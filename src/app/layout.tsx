@@ -29,6 +29,7 @@ import Footer from "components/blocks/footer/FooterMn";
 const manrope = Manrope({ subsets: ["latin"], adjustFontFallback: false });
 
 import apiService from "services/api";
+import Script from "next/script";
 
 type HomeAboutData = {
   homeabout: HomeAboutDataType[];
@@ -64,21 +65,16 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         {/* Google Tag Manager Script */}
-        <script
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){
-              w[l]=w[l]||[];
-              w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-              var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
-              j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-              f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-TSL7GZSQ');`,
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TSL7GZSQ');`,
           }}
         />
-      </Head>
+      </head>
       <body className={manrope.className}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
@@ -104,8 +100,7 @@ export default function RootLayout({
           <ThemeProvider>{children}</ThemeProvider>
           <Footer />
         </ScrollCue>
-
-        <PageProgress />
+        <PageProgress />+
       </body>
     </html>
   );
