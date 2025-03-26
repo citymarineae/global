@@ -100,7 +100,7 @@ const IndiMemeberPage = () => {
 
                                         <article>
                                             <span>Email</span>
-                                            <a href="mailto:+stephen@citymarinebrokers.com"
+                                            <a href={`mailto:${memeberData?.email}`}
                                                 className="text-decoration-none text-primary">{memeberData?.email}</a>
                                         </article>
                                     </li>
