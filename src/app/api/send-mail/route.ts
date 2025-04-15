@@ -17,9 +17,9 @@ export async function POST(req: NextRequest) {
         const message = formData.get("message") as string;
 
         const { data, error } = await resend.emails.send({
-            from: `City Marine <info@citymarinebrokers.com>`,
-            to: ['khadar@citymarinebrokers.com'],
-            cc: ['harsha@globalsurf.ae'],
+            from: `City Marine <enquiry@citymarinebrokers.com>`,
+            to: ['info@citymarinebrokers.com'],
+            cc: ['harsha@globalsurf.ae','khadar@citymarinebrokers.com'],
             subject: 'Enquiry from website [citymarinebrokers.com]',
             react: EmailTemplate({ name, phone, email, message }),
             replyTo: email,
