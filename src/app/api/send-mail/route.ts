@@ -18,8 +18,8 @@ export async function POST(req: NextRequest) {
 
         const { data, error } = await resend.emails.send({
             from: `City Marine <enquiry@citymarinebrokers.com>`,
-            to: ['khadar@Citymarinebrokers.com'],
-            cc: ['harsha@globalsurf.ae'],
+            to: ['info@citymarinebrokers.com'],
+            cc: ['harsha@globalsurf.ae','khadar@citymarinebrokers.com'],
             subject: 'Enquiry from website [citymarinebrokers.com]',
             react: EmailTemplate({ name, phone, email, message }),
             replyTo: email,
