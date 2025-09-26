@@ -8,6 +8,7 @@ export type About = {
             image?: string,
             metaDataTitle:string,
             metaDataDesc:string
+            altTag:string
         }
     }
 

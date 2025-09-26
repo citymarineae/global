@@ -14,9 +14,9 @@ interface EmailTemplateProps {
     message
   }) => (
     <div>
-      <h1>You have a new message</h1>
-      <h3>Sender Name : {name}</h3>
-      <h5>Sender Phone : {phone} Email : {email}</h5>
-      <p>message : {message}</p>
+      <p>Name : {name}</p>
+      <p>Phone : {phone}</p> 
+      <p>Email : {email}</p>
+      <p>Message : {message}</p>
     </div>
   );

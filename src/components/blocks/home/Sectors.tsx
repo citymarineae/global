@@ -17,7 +17,7 @@ export default function Sectors() {
         height={477}
       />
 
-      <div className="container py-lg-14 py-10"  data-cues="fadeIn">
+      <div className="container py-lg-14 py-10" >
         <h2 className="sbttl text-white">Sectors</h2>
 
         <ul className="nav nav-tabs nav-tabs-basic sctnv mb-lg-7 mb-5">
@@ -35,7 +35,7 @@ export default function Sectors() {
 
         <div className="tab-content mt-0 mt-md-5">
           {/* Marine, Energy & Crewing Tab */}
-          <div className="tab-pane fade show active" id="tab3-1" data-cues="fadeIn" data-group="In">
+          <div className="tab-pane fade show active" id="tab3-1">
             <SectorItem/>
 
           </div>

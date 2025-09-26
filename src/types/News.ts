@@ -7,4 +7,5 @@ export type News = {
   date: Date;
   metaDataTitle:string;
   metaDataDesc:string;
+  altTag:string
 };

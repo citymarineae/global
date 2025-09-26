@@ -15,7 +15,7 @@ export default function BlocksNavItem() {
               <li className="col" key={id}>
                 <Link href={url} className="dropdown-item">
                   <div className="rounded img-svg d-none d-lg-block p-4 mb-lg-2">
-                    <img className="rounded-0" src={thumnail} alt="" />
+                    <img className="rounded-0" src={thumnail} alt=""></img>
                   </div>
 
                   <span>{title}</span>

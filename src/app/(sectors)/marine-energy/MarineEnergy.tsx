@@ -11,11 +11,11 @@ export default function MarineEnergy() {
           title="Marine, Energy & Crewing"
           videoSrc="/media/marine-energy.mp4"
           posterSrc="/media/marine-energy.png"
-          data-cues="fadeIn" data-delay="1600"
+          
         ></BannerVideo>
-        <div data-cues="fadeIn" data-delay="800" data-group="sd">
+        <div>
         <MarineInsuranceSection /></div>
-        <section className="marine-grid  position-relative" data-cues="fadeIn" data-delay="100" >
+        <section className="marine-grid  position-relative" >
           <div className=" lit-bg py-10 py-lg-14 ">
           <div className="container"  >
             <SectorItem />

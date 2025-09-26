@@ -5,5 +5,7 @@ export type PortsAndTerminals = {
     imageOne:string
     imageTwo:string,
     metaDataTitle:string,
-    metaDataDesc:string
+    metaDataDesc:string,
+    altTagImageOne:string,
+    altTagImageTwo:string
 }

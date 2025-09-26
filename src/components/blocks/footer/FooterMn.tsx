@@ -7,7 +7,9 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-primary">
       <div className="container pt-10 pt-lg-14 pb-lg-8 pb-5">
-        <div className="row gy-5 gy-lg-7 gy-lg-0 pb-0 pb-md-5 pb-lg-0" data-cues="fadeIn">
+        <div
+          className="row gy-5 gy-lg-7 gy-lg-0 pb-0 pb-md-5 pb-lg-0"
+          >
           <div className="col-lg-4">
             <div className="widget">
               <img
@@ -16,12 +18,16 @@ const Footer: React.FC = () => {
                 alt="City Marine Logo"
               />
               <hr />
-              <h5 className="mb-4">Securing Maritime Excellence Since 1997</h5>
+              {/* <h5 className="mb-4">Securing Maritime Excellence Since 1997</h5> */}
               <nav className="nav social social-white">
-                <a href="https://www.linkedin.com/company/city-insurance-brokers/" target="_blank">
+                <a
+                  href="https://www.linkedin.com/company/city-insurance-brokers/"
+                  target="_blank">
                   <img src="/img/icons/linkedin.svg" alt="LinkedIn" />
                 </a>
-                <a href="https://www.youtube.com/channel/UCnXWVnX-lKHY0Cq_DwOnSNw" target="_blank">
+                <a
+                  href="https://www.youtube.com/channel/UCnXWVnX-lKHY0Cq_DwOnSNw"
+                  target="_blank">
                   <img src="/img/icons/youtube.svg" alt="YouTube" />
                 </a>
               </nav>
@@ -42,28 +48,27 @@ const Footer: React.FC = () => {
                     <NextLink href="/our-team" title="Our Team"></NextLink>
                   </li>
                   <li>
-                    <NextLink href="/news" title="News"></NextLink>
+                    <NextLink
+                      href="/personal-lines"
+                      title="Personal Lines"></NextLink>
                   </li>
                 </ul>
                 <ul className="list-unstyled mb-0">
                   <li>
                     <NextLink
                       href="/marine-energy"
-                      title="Marine, Energy & Crewing"
-                    ></NextLink>
+                      title="Marine, Energy & Crewing"></NextLink>
                   </li>
                   <li>
                     <NextLink
                       href="/ports-and-terminals"
-                      title="Ports & Terminals"
-                    ></NextLink>
+                      title="Ports & Terminals"></NextLink>
                   </li>
-                  <li>
+                  {/* <li>
                     <NextLink
                       href="/personal-lines"
-                      title="Personal Lines"
-                    ></NextLink>
-                  </li>
+                      title="Personal Lines"></NextLink>
+                  </li> */}
                 </ul>
               </div>
             </div>
@@ -80,9 +85,7 @@ const Footer: React.FC = () => {
                 </div>
                 <NextLink
                   href="mailto:info@citymarinebrokers.com"
-                  title="info@citymarinebrokers.com"
-
-                ></NextLink>
+                  title="info@citymarinebrokers.com"></NextLink>
               </div>
               <div className="d-flex gap-4 align-items-center">
                 <div className="ftr-iconbox">
@@ -90,22 +93,19 @@ const Footer: React.FC = () => {
                 </div>
                 <NextLink
                   href="tel:97165758800"
-                  title="+971 6 575 8800"
-                ></NextLink>
+                  title="+971 6 575 8800"></NextLink>
               </div>
 
               <ul className="list-unstyled mb-0 mt-8">
                 <li>
                   <NextLink
                     href="/standard-terms-condition"
-                    title="Standard Terms & Conditions"
-                  ></NextLink>
+                    title="Standard Terms & Conditions"></NextLink>
                 </li>
                 <li>
                   <NextLink
                     href="/website-terms-conditions"
-                    title="Website Terms & Conditions"
-                  ></NextLink>
+                    title="Website Terms & Conditions"></NextLink>
                 </li>
               </ul>
             </div>
@@ -115,8 +115,7 @@ const Footer: React.FC = () => {
         {/* Footer Bottom Section */}
         <div
           className="row d-flex align-items-center gy-5 gy-md-0 mt-md-0 mt-6"
-          data-cues="fadeIn"
-        >
+          >
           <div className="col-md-12">
             <hr className="my-lg-8 my-0" />
           </div>
@@ -151,8 +150,7 @@ const Footer: React.FC = () => {
           className="progress-circle svg-content"
           width="100%"
           height="100%"
-          viewBox="-1 -1 102 102"
-        >
+          viewBox="-1 -1 102 102">
           <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
       </div>

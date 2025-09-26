@@ -148,7 +148,7 @@ const NewsPage: React.FC = () => {
                 </div>
                 <h2 className="sbttl text-primary">{news?.title}</h2>
                 <div className="news-dtbox__img py-6">
-                  <img src={news?.image} width="200" height="200" className="w-100 h-auto" alt="" />
+                  <img src={news?.image} width="200" height="200" className="w-100 h-auto" alt={news?.altTag} />
                 </div>
                 <p>{parse(news?.content)}</p>
 
@@ -169,7 +169,7 @@ const NewsPage: React.FC = () => {
                 {latestNews?.news.map((item) => (
                 <div className="smbox mb-5" key={item.id}>
                   <div className="smbox__head">
-                    <img src={item.image} width="100" height="100" alt="" />
+                    <img src={item.image} width="100" height="100" alt={item.altTag} />
                   </div>
                   <div className="smbox__body">
                     <h3 className="sbttl-sm">{item.title}</h3>

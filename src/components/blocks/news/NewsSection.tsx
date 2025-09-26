@@ -68,7 +68,7 @@ const NewsSection: React.FC = () => {
             <div className="bigbox h-100">
               <div className="bigbox__imgbox">
                 <Link href={`/news/${formatNewsForUrl(news[0].title)}`} className="news-link text-primary">
-                  <img src={news[0].image} width="100" height="100" className="w-100 h-100" alt="" />
+                  <img src={news[0].image} width="100" height="100" className="w-100 h-100" alt={news[0].altTag} />
                   </Link>
               </div>
               <div className="bigbox__content">
@@ -94,7 +94,7 @@ const NewsSection: React.FC = () => {
                 <div className="news-card">
                   <div className="news-card__head">
                   <Link href={`/news/${formatNewsForUrl(item.title)}`} >
-                    <img src={item.image} alt=""/>
+                    <img src={item.image} alt={item.altTag}/>
                     </Link>
                   </div>
                   <div className="news-card__body">
