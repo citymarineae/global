@@ -68,7 +68,7 @@ const MedicalInsuranceSection: React.FC = () => {
                   <span>Get Quote</span>
                   <i className="icbc"></i>
                 </a>
-                <a href="http://hical.eclaimlink.ae/tracassist/enquiry?mylocale=en" className="btn btnCty btn-tall" target='_blank'>
+                <a href="https://services.dha.gov.ae/mga/sps/auth" className="btn btnCty btn-tall" target='_blank'>
                   <span>DHA Complaint</span>
                   <i className="icbc"></i>
                 </a>
