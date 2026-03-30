@@ -1,9 +1,10 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { BannerVideo } from "components/blocks/includes/BannerVideo";
-import apiService from 'services/api'
+// import apiService from 'services/api'
+import Image from 'next/image';
 
 type Team = {
     id: string
@@ -13,66 +14,67 @@ type Team = {
     description: string
     phone: string
     email: string
-    altTag:string
+    altTag: string
 }
 
-const IndiMemeberPage = () => {
+const IndiMemeberPage = ({ data }: { data: Team }) => {
 
     const params = useParams()
-    const { memberName } = params
-    // const member = memberName[0].replace(/-/g, '')
-    // const user = teamMembers.find((item)=>item.name.replace(/ /g, '').replace(/,/g, '').replace(/\./g, '').toLowerCase()==member)
+    // const { memberName } = params
+    // // const member = memberName[0].replace(/-/g, '')
+    // // const user = teamMembers.find((item)=>item.name.replace(/ /g, '').replace(/,/g, '').replace(/\./g, '').toLowerCase()==member)
 
-    const [loading, setLoading] = useState(true)
-    const [memeberData, setMemberData] = useState<{
-        id: string
-        name: string
-        image: string
-        position: string
-        description: string
-        phone: string
-        email: string,
-        altTag:string
-    } | null>(null)
+    // const [loading, setLoading] = useState(true)
+    // const [memeberData, setMemberData] = useState<{
+    //     id: string
+    //     name: string
+    //     image: string
+    //     position: string
+    //     description: string
+    //     phone: string
+    //     email: string,
+    //     altTag: string
+    // } | null>(null)
 
-    async function fetchDataWithId(memberName: string) {
-        setLoading(true);
-        try {
+    // async function fetchDataWithId(memberName: string) {
+    //     setLoading(true);
+    //     try {
 
-            const data: Team = await apiService.get("/team?slug=" + memberName);
-            if (data) {
-                setMemberData(data);
-            }
-            console.log(data)
-            console.log("one news:", data);
-        } catch (error) {
-            console.error("Failed to fetch data:", error);
-        } finally {
-            setLoading(false);
-        }
-    }
+    //         const data: Team = await apiService.get("/team?slug=" + memberName);
+    //         if (data) {
+    //             setMemberData(data);
+    //         }
+    //         console.log(data)
+    //         console.log("one news:", data);
+    //     } catch (error) {
+    //         console.error("Failed to fetch data:", error);
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // }
 
     //   console.log(newsTitle);
 
-    useEffect(() => {
-        if (!memberName) return;
-        fetchDataWithId(memberName as string);
-    }, [memberName]);
+    // useEffect(() => {
+    //     if (!memberName) return;
+    //     console.log(memberName)
+    //     fetchDataWithId(memberName as string);
+    // }, [memberName]);
 
     return (
         <main className="content-wrapper">
 
-        <BannerVideo title="Our Team" videoSrc="/media/team.mp4"  posterSrc="/img/team.png" ></BannerVideo>
+            <BannerVideo title="Our Team" videoSrc="/media/team.mp4" posterSrc="/img/team.png" ></BannerVideo>
             <section className="wrapper py-10 py-lg-14 position-relative">
                 <div className="container">
                     <div className="row row-cols-1 row-cols-md-2 gy-4 gy-lg-0 gx-lg-14">
                         <div className="col pe-md-8">
-                            <img src={memeberData?.image} width="300" height="300" className="w-100 h-auto" alt={memeberData?.altTag} />
+                            <Image src={data?.image || ""} width="600" height="600" className="w-100 h-auto" alt={data?.altTag || ""} />
                         </div>
                         <div className="col d-flex flex-column justify-content-between">
                             <article className="member-details">
-                                <h2 className="sbttl text-primary">{memeberData?.name}</h2>
-                                <p>{memeberData?.description}
+                                <h2 className="sbttl text-primary">{data?.name}</h2>
+                                <p>{data?.description}
                                 </p>
                             </article>
                             <div className="pb-lg-10 pt-4 pt-xl-0">
@@ -87,7 +89,7 @@ const IndiMemeberPage = () => {
 
                                         <article>
                                             <span>Phone</span>
-                                            <a href="tel:+97165758800" className="text-decoration-none text-primary">{memeberData?.phone}</a>
+                                            <a href="tel:+97165758800" className="text-decoration-none text-primary">{data?.phone}</a>
                                         </article>
                                     </li>
                                     <li>
@@ -100,10 +102,10 @@ const IndiMemeberPage = () => {
 
                                         <article>
                                             <span>Email</span>
-                                            <a href={`mailto:${memeberData?.email}`}
-                                                className="text-decoration-none text-primary">{memeberData?.email}</a>
+                                            <a href={`mailto:${data?.email}`}
+                                                className="text-decoration-none text-primary">{data?.email}</a>
                                         </article>
-                                        
+
                                     </li>
                                 </ul>
                             </div>
@@ -112,13 +114,13 @@ const IndiMemeberPage = () => {
                             <div className="go-back">
                                 <Link href="/our-team"
                                     className="text-decoration-none text-primary d-flex align-items-center gap-2 fw-500">
-                                    <img src="/img/icons/arrow-left.svg" width="50" height="100" className="" alt="" />
+                                    <Image src="/img/icons/arrow-left.svg" width="50" height="100" className="" alt="" />
                                     <span>Back</span></Link>
                             </div>
                         </div>
                     </div>
                     <div className="shape position-absolute bottom-10 end-2 d-none d-md-block opacity-25">
-                        <img src="/img/icons/shape-up.svg" width="200" height="200" alt="" />
+                        <Image src="/img/icons/shape-up.svg" width="200" height="200" alt="" />
                     </div>
                 </div>
             </section>

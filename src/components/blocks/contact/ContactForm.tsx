@@ -7,7 +7,8 @@ import { Contact } from "types/Contact";
 import parse from 'html-react-parser'
 import Swal from 'sweetalert2'
 import 'sweetalert2/src/sweetalert2.scss'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
+import Image from "next/image";
 
 type Inputs = {
   name: string
@@ -17,37 +18,44 @@ type Inputs = {
 };
 
 
-const ContactForm: React.FC = () => {
-  const [contactData, setContactData] = useState<{
+const ContactForm = ({ data }: {
+  data: {
     fax: string;
     phone?: string;
     address: string;
     map: string;
-  } | null | null>(null);
-
-  const [loading, setLoading] = useState(true)
-
-
-  async function fetchContactData() {
-    setLoading(true);
-    try {
-      const data: Contact = await apiService.get("/contact-us");
-      if (data.contact[0]) {
-        const contactData = data.contact[0]
-        setContactData(contactData);
-      }
-
-      console.log("one news:", data);
-    } catch (error) {
-      console.error("Failed to fetch data:", error);
-    } finally {
-      setLoading(false);
-    }
   }
+}) => {
+  // const [contactData, setContactData] = useState<{
+  //   fax: string;
+  //   phone?: string;
+  //   address: string;
+  //   map: string;
+  // } | null | null>(null);
 
-  useEffect(() => {
-    fetchContactData();
-  }, []);
+  // const [loading, setLoading] = useState(true)
+
+
+  // async function fetchContactData() {
+  //   setLoading(true);
+  //   try {
+  //     const data: Contact = await apiService.get("/contact-us");
+  //     if (data.contact[0]) {
+  //       const contactData = data.contact[0]
+  //       setContactData(contactData);
+  //     }
+
+  //     console.log("one news:", data);
+  //   } catch (error) {
+  //     console.error("Failed to fetch data:", error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   fetchContactData();
+  // }, []);
 
 
   // const handleChange = (
@@ -88,7 +96,7 @@ const ContactForm: React.FC = () => {
         Swal.fire({
           icon: "success",
           title: "Thank You",
-          text:"Your submission has been received",
+          text: "Your submission has been received",
           showConfirmButton: false,
           timer: 1500
         });
@@ -105,7 +113,7 @@ const ContactForm: React.FC = () => {
 
   return (
     <section className="contact-main overflow-hidden">
-      <motion.div className="container" initial={{opacity:0,y:"20%"}} transition={{duration:.7,ease:"easeInOut"}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
+      <motion.div className="container" initial={{ opacity: 0, y: "20%" }} transition={{ duration: .7, ease: "easeInOut" }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
         <div className="row justify-content-between gx-lg-5 contact-main__div">
           <div className="col-lg-6 contact-main__left py-10 py-lg-14">
             <div className="contact-main__head">
@@ -255,7 +263,7 @@ const ContactForm: React.FC = () => {
               </form> */}
               <div className="contact-main__shape d-none d-lg-block">
                 <div className="img-box">
-                  <img src="/img/icons/shape-down.svg" alt="shape" />
+                  <Image width={600} height={600} src="/img/icons/shape-down.svg" alt="shape" />
                 </div>
               </div>
             </div>
@@ -263,7 +271,7 @@ const ContactForm: React.FC = () => {
           <div className="col-lg-5 contact-main__right p-md-0 mb-10 mb-md-0">
             <div className="contact-main__info px-0 pt-8 pb-6 p-lg-10 p-xl-12 ps-xl-14">
               <div className="contact-main__info-shape d-none d-lg-block">
-                <img
+                <Image
                   src="/img/icons/shape-up.svg"
                   width="100"
                   height="100"
@@ -272,7 +280,7 @@ const ContactForm: React.FC = () => {
               </div>
               <ul className="list-unstyled">
                 <li>
-                  <img
+                  <Image
                     src="/img/icons/phone.svg"
                     width="16"
                     height="16"
@@ -280,11 +288,11 @@ const ContactForm: React.FC = () => {
                   />
                   <article>
                     <span>Phone</span>
-                    <a href="tel:+97165758800">{contactData?.phone}</a>
+                    <a href="tel:+97165758800">{data?.phone}</a>
                   </article>
                 </li>
                 <li>
-                  <img
+                  <Image
                     src="/img/icons/fax.svg"
                     width="16"
                     height="16"
@@ -292,11 +300,11 @@ const ContactForm: React.FC = () => {
                   />
                   <article>
                     <span>Fax</span>
-                    <a href="tel:+97165758878">{contactData?.fax}</a>
+                    <a href="tel:+97165758878">{data?.fax}</a>
                   </article>
                 </li>
                 <li>
-                  <img
+                  <Image
                     src="/img/icons/map-icon.svg"
                     width="16"
                     height="16"
@@ -309,7 +317,7 @@ const ContactForm: React.FC = () => {
                       Golden Tower, Office # 1701, 1702, 1703 & 1704 <br />
                       P.O Box 26629 <br />
                       Al Majaz 1, Sharjah United Arab Emirates */}
-                      {parse(contactData?.address || "")}
+                      {parse(data?.address || "")}
                     </address>
                   </article>
                 </li>
@@ -317,7 +325,7 @@ const ContactForm: React.FC = () => {
             </div>
             <div className="contact-main__map mt-auto pb-5 pb-md-0">
               <iframe
-                src={contactData?.map}
+                src={data?.map}
                 width="600"
                 height="300"
                 style={{ border: 0 }}

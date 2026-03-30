@@ -1,13 +1,8 @@
-import { BannerVideo } from "components/blocks/includes/BannerVideo";
-import TeamSection from "components/blocks/our-team/TeamSection";
-import { Fragment } from "react";
-export default function About() {
+import Index from "components/blocks/our-team/Index";
+export default async function Team() {
+  const response = await fetch(`${process.env.BASE_URL}/team`, { next: { revalidate: 60 } });
+  const data = await response.json();
   return (
-    <Fragment>
-         <main className="content-wrapper"  >
-        <BannerVideo title="Our Team" videoSrc="/media/team.mp4"  posterSrc="/img/team.png" ></BannerVideo>
-        <TeamSection/>
-        </main>
-    </Fragment>
+    <Index data={data} />
   );
 }

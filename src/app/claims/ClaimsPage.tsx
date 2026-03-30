@@ -6,9 +6,18 @@ import apiService from "services/api";
 import Link from "next/link";
 import { Claims as claimsType } from "types/Claims";
 import parse from "html-react-parser";
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
+import Image from "next/image";
 
-export default function Claims() {
+export default function Claims({ data }: {
+  data: {
+    pageHeading: string;
+    contentHeading: string;
+    content: string;
+    image?: string;
+    altTag: string;
+  }
+}) {
   const [loading, setLoading] = useState(true);
   const [claimsData, setClaimsData] = useState<{
     pageHeading: string;
@@ -18,44 +27,44 @@ export default function Claims() {
     altTag: string;
   } | null | null>();
 
-  async function fetchClaimsData() {
-    console.log("Called fetch");
-    setLoading(true);
-    try {
-      const data: claimsType = await apiService.get("/claims");
-      // setClaimsData(data);
+  // async function fetchClaimsData() {
+  //   console.log("Called fetch");
+  //   setLoading(true);
+  //   try {
+  //     const data: claimsType = await apiService.get("/claims");
+  //     // setClaimsData(data);
 
-      if (data.claims[0]) {
-        const claimsData = data.claims[0];
-        console.log(claimsData);
-        setClaimsData(claimsData);
-      }
+  //     if (data.claims[0]) {
+  //       const claimsData = data.claims[0];
+  //       console.log(claimsData);
+  //       setClaimsData(claimsData);
+  //     }
 
-      console.log("one news:", data);
-    } catch (error) {
-      console.error("Failed to fetch data:", error);
-    } finally {
-      setLoading(false);
-    }
-  }
+  //     console.log("one news:", data);
+  //   } catch (error) {
+  //     console.error("Failed to fetch data:", error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }
 
-  useEffect(() => {
-    console.log("useeffect");
-    fetchClaimsData();
-  }, []);
+  // useEffect(() => {
+  //   console.log("useeffect");
+  //   fetchClaimsData();
+  // }, []);
 
   return (
     <Fragment>
       <main className="content-wrapper">
         <BannerVideo
-          title={claimsData?.pageHeading || ""}
+          title={data?.pageHeading || ""}
           videoSrc="/media/Claim-bnr.mp4"
           posterSrc="/media/claim-bnr.jpg"></BannerVideo>
         <section className="wrapper py-10 py-lg-14 position-relative overflow-hidden">
           <div
             className="shape position-absolute top-20 start-min-2 d-none d-md-block opacity-25"
-            >
-            <img
+          >
+            <Image
               src="/img/icons/shape-up.svg"
               width="200"
               height="200"
@@ -63,16 +72,18 @@ export default function Claims() {
               alt=""
             />
           </div>
-          <motion.div className="container" initial={{opacity:0,y:"20%"}} transition={{duration:.7,ease:"easeInOut"}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
+          <motion.div className="container" initial={{ opacity: 0, y: "20%" }} transition={{ duration: .7, ease: "easeInOut" }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div
               className="row row-cols-1 row-cols-lg-2 gy-10"
-              >
+            >
               <div className="col d-flex order-lg-last">
                 <div className="img-box img-box-grd flex-grow-1">
-                  <img
-                    src={claimsData?.image}
+                  <Image
+                    src={data?.image || ""}
                     className="w-100 h-100"
-                    alt={claimsData?.altTag}
+                    width={600}
+                    height={600}
+                    alt={data?.altTag}
                   />
                 </div>
               </div>
@@ -80,9 +91,9 @@ export default function Claims() {
                 <div className="wrapper-content d-flex flex-column h-100 mainsecrp">
                   <div>
                     <h2 className="sbttl text-primary mb-lg-6">
-                      {claimsData?.contentHeading}
+                      {data?.contentHeading}
                     </h2>
-                    <p>{parse(claimsData?.content || "")}</p>
+                    <p>{parse(data?.content || "")}</p>
                   </div>
                 </div>
               </div>
@@ -91,12 +102,12 @@ export default function Claims() {
         </section>
         <section
           className="wrapper case-stdy pb-10 pb-lg-14"
-          >
+        >
           <motion.div
             className="container bg-primary text-white position-relative overflow-hidden"
-            >
+          >
             <div className="shape position-absolute top-0 end-10 d-none d-md-block">
-              <img
+              <Image
                 src="/img/icons/shape-big-down.svg"
                 width="200"
                 height="200"
@@ -169,7 +180,7 @@ export default function Claims() {
               </div>
               <div className="bg-primary-lit case-stdy-box p-8 position-relative">
                 <div className="shape shape-white position-absolute top-min-15 end-5 d-none d-md-block">
-                  <img
+                  <Image
                     src="/img/icons/shape-down.svg"
                     width="200"
                     height="200"
@@ -251,7 +262,7 @@ export default function Claims() {
               </div>
               <div className="bg-primary-lit case-stdy-box p-8 position-relative">
                 <div className="shape shape-white position-absolute top-min-15 end-5 d-none d-md-block">
-                  <img
+                  <Image
                     src="/img/icons/shape-down.svg"
                     width="200"
                     height="200"
@@ -281,22 +292,24 @@ export default function Claims() {
           <div
             className="shape shape-rotate position-absolute bottom-0 end-10 d-none d-md-block"
             style={{ opacity: 0.5 }}>
-            <img
+            <Image
               src="/img/icons/shape-up.svg"
               width="200"
               height="200"
               alt=""
             />
           </div>
-          <motion.div className="container" initial={{opacity:0,y:"20%"}} transition={{duration:.7,ease:"easeInOut"}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
+          <motion.div className="container" initial={{ opacity: 0, y: "20%" }} transition={{ duration: .7, ease: "easeInOut" }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div
               className="row row-cols-1 row-cols-lg-2 gy-10"
-              >
+            >
               <div className="col d-flex">
                 <div className="img-box img-box-grd flex-grow-1">
-                  <img
+                  <Image
                     src="/img/claim-bottom-img.webp"
                     className="w-100 h-100 object-fit-cover"
+                    width={600}
+                    height={600}
                     alt="marine energy"
                   />
                 </div>
