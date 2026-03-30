@@ -6,7 +6,7 @@ import Link from "next/link";
 
 
 
-export default function Sectors() {
+export default function Sectors({ data }: { data: { title: string, img: string }[] }) {
   return (
     <section className="wrapper bg-primary sctrbs">
       <Image
@@ -36,7 +36,7 @@ export default function Sectors() {
         <div className="tab-content mt-0 mt-md-5">
           {/* Marine, Energy & Crewing Tab */}
           <div className="tab-pane fade show active" id="tab3-1">
-            <SectorItem/>
+            <SectorItem data={data} />
 
           </div>
 

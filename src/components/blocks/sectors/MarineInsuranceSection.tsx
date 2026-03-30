@@ -1,33 +1,33 @@
 "use client"
 
-import React, { useEffect, useState } from 'react';
-import apiService from 'services/api';
+import React from 'react';
+// import apiService from 'services/api';
 import { MarineInsurace } from 'types/MarineInsurance';
 import parse from 'html-react-parser'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 
-const MarineInsuranceSection: React.FC = () => {
+const MarineInsuranceSection = ({ data }: { data: MarineInsurace }) => {
 
-  const [loading,setLoading] = useState(true)
-  const [marineInsuranceData,setMarineInsuranceData] = useState<MarineInsurace | null>(null)
+  // const [loading, setLoading] = useState(true)
+  // const [marineInsuranceData, setMarineInsuranceData] = useState<MarineInsurace | null>(null)
 
-  async function fetchMarineInsuranceData() {
-    setLoading(true);
-    try {
-      const data:MarineInsurace = await apiService.get("/sectors/marine");
-      setMarineInsuranceData(data);
-      console.log("one news:", data);
-    } catch (error) {
-      console.error("Failed to fetch data:", error);
-    } finally {
-      setLoading(false);
-    }
-  }
+  // async function fetchMarineInsuranceData() {
+  //   setLoading(true);
+  //   try {
+  //     const data:MarineInsurace = await apiService.get("/sectors/marine");
+  //     setMarineInsuranceData(data);
+  //     console.log("one news:", data);
+  //   } catch (error) {
+  //     console.error("Failed to fetch data:", error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }
 
 
-  useEffect(() => {
-    fetchMarineInsuranceData();
-  }, []);
+  // useEffect(() => {
+  //   fetchMarineInsuranceData();
+  // }, []);
 
   // if(loading){
   //   return <div>Loading content....</div>
@@ -48,13 +48,13 @@ const MarineInsuranceSection: React.FC = () => {
           style={{ transform: 'rotate(90deg)' }}
         />
       </div>
-      <motion.div className="container" initial={{opacity:0,y:"20%"}} transition={{duration:.7,ease:"easeInOut"}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
+      <motion.div className="container" initial={{ opacity: 0, y: "20%" }} transition={{ duration: .7, ease: "easeInOut" }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
         <div className="row row-cols-1 row-cols-lg-2 gx-lg-10 gx-xl-14 gy-8">
           <div className="col d-flex order-lg-last">
             <div className="img-box img-box-grd flex-grow-1">
               <img
-                src={marineInsuranceData?.image || ""}
-                alt={marineInsuranceData?.altTag}
+                src={data?.image || ""}
+                alt={data?.altTag}
                 className="w-100 h-100 object-fit-cover"
               />
             </div>
@@ -62,9 +62,9 @@ const MarineInsuranceSection: React.FC = () => {
           <div className="col d-flex flex-column order-lg-first gy-7 gy-md-10">
             <div className="wrapper-content h-100">
               <h2 className="sbttl text-primary mb-lg-6 ">
-              {marineInsuranceData?.title}
+                {data?.title}
               </h2>
-              {parse(marineInsuranceData?.content || "")}
+              {parse(data?.content || "")}
             </div>
           </div>
         </div>
