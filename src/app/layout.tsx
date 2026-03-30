@@ -100,7 +100,7 @@ export default function RootLayout({
           <ThemeProvider>{children}</ThemeProvider>
           <Footer />
         </ScrollCue>
-        <PageProgress />+
+        <PageProgress />
       </body>
     </html>
   );
