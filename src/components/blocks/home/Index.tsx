@@ -37,7 +37,6 @@ export default function Home({ data, marineData }: { data: HomeAboutData, marine
                 <hr className="m-0"></hr>
                 {/* <LatestNews /> */}
             </main>
-
         </Fragment>
     );
 }
