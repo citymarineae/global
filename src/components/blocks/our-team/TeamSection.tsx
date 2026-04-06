@@ -62,8 +62,8 @@ const TeamSection = ({ data }: { data: TeamMember[] }) => {
                   <Image
                     src={member.image}
                     className="team-card__img"
-                    width="150"
-                    height="150"
+                    width="400"
+                    height="400"
                     alt={member.altTag}
                   />
                 </div>
